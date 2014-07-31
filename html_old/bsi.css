@@ -1,0 +1,338 @@
+/* Estilo página BSI */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin:0;
+	border: 0;
+	padding: 0;
+	background: #F6F6F6; 
+	color: #404040;
+	font-family: 'Ubuntu', Verdana, sans-serif;
+	font-size: 10pt;
+	overflow: auto; 
+	text-align: center;
+}
+
+h1, h2, h3 {
+	font-family: "Dosis", Arial, sans-serif;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+h1 { font-size: 15pt; 
+	margin: 0.3em 0 0.5em 0;
+}
+
+h2 {
+	font-size: 12pt; 
+	margin: 1.5em 0 0.5em 0;
+}
+
+p {
+	margin: 0 0 1em 0em;
+	line-height: 1.5em;
+	color: #404040;
+}
+
+blockquote {
+	margin: 0 10% 1em 10%;
+	line-height: 1.5em;
+	font-style: italic;
+	padding: 10px 10px 25px;
+	background: #eceeee;
+}
+
+a , a:link {
+	text-decoration: none;
+	border: 0;
+}
+
+a:hover{
+	text-decoration: underline;
+}
+
+.container {
+	text-align: left;
+	margin: 0 auto;
+	width: 960px;
+}
+
+.meio{
+	float: left;
+}
+
+.right{
+	float: right;
+}
+
+/* header */
+
+header {
+	height: 260px;
+	text-align: left;
+	margin: 0px 0px 20px 0px;
+	background-color: #304050;
+}
+
+header nav{	
+	width: 100%;
+	height: 260px;
+	float: left;
+	padding-top: 12px;
+}
+
+/* Ícones das Seções do site*/
+.icone{
+	margin: 0 10px 10px 0px;
+	width: auto;
+	height: auto;
+	float: left;
+	border: 1px solid #304050;
+	opacity: 0.60;
+	-moz-opacity: 0.60;
+	filter: alpha(opacity=60);	
+}
+
+.icone:hover{
+	border-color: silver;
+	opacity:0.80;
+	-moz-opacity: 0.80;
+	filter: alpha(opacity=80);	
+}
+
+.iconeAtivo{
+	margin: 0 10px 10px 0px;
+	width: auto;
+	height: auto;
+	float:left;
+	border: 1px solid #ffffff;
+	opacity:1.0;
+	-moz-opacity: 1.0;
+	filter: alpha(opacity=100);	
+}
+
+.icone img { padding-top: 15px; border: 0;}
+.iconeAtivo img { padding-top: 15px; border: 0;}
+.bsi img { padding-top: 40px; padding-bottom: 5px;}
+.noticias img { padding-top: 60px; }
+
+li.monografia {margin-bottom: 20px;}
+.monografiaTitulo {font-weight: bold;}
+
+.normal, .largo{
+	height: 111px; 
+}
+
+.grande{
+	height: 234px;
+}
+
+.semMargem{
+	margin: 0px !important;
+}
+
+/* cores dos ícones */
+.bsi{background-color: #38719c;}
+.disciplinas{background-color: #ca8977;}
+.alunos{background-color: #96b496;}
+.tcc{background-color: #73adae;}
+.professores{background-color: #c8a0b4;}
+.oportunidades{background-color: #89749f;}
+.secretaria{background-color: #924e4d;}
+.institucional{background-color: #7f8c8d;}
+.noticias{background-color: #b5b583;}
+
+/* Legendas Ícones */
+.subtitle{
+	color: #ffffff;
+	font-size: 11px;
+	font: 12px "Dosis", sans-serif;
+	text-transform: uppercase; 
+	text-align: center;
+	
+}
+
+.subtitleGrande{
+	font-size: 17px;
+}
+
+
+/* Barra de submenu */
+
+aside{
+	font-family: "Dosis", Arial, sans-serif;
+	text-transform: uppercase;	
+	font-size: 10pt;
+/*	float: left;
+    width: 234px;
+	margin-right: 20px;*/
+}
+
+.menuTitulo{
+	font-size: 15pt; 
+	color: #fff; 
+	font-family: "Dosis", Arial, sans-serif;
+	text-transform: uppercase; 
+	font-weight: bold; 
+	display: inline-block; 
+	margin-top: 5px; 
+	padding-bottom: 1px; 
+	padding-left: 10px; 
+	border-left: 1px solid #F6F6F6;
+}
+
+.menu{
+	/*width: 234px;*/
+	list-style-type: none;
+	margin-right: 20px;
+}
+
+.menu li{
+	position: relative;
+}
+
+.menu li a{
+	display: block;
+    text-decoration: none;
+    color: #404040;
+    padding: 10px 20px 10px 10px;
+    border-bottom: 1px solid #ddd;
+    background: #eceeee url(imagens/iSetaPequena.png) no-repeat right;
+}
+
+.menu li a:hover{
+	background: #cfd2d1 url(imagens/iSeta.png) no-repeat right;
+}
+
+.menu li.ativo a {
+	color: #FFFFFF;
+	background: url(imagens/iSetaBranca.png) no-repeat right;
+	font-weight: bold;
+}
+
+.menu li:first-child {
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+aside li.submenu a{
+    padding: 5px 20px 5px 30px;
+	font-size: 8pt;
+}
+
+/* Conteúdo principal */
+article{
+	display:inline; /*Bug da margem dupla para floats no IE*/ 
+/*    float:right;
+    width:720px;*/
+    text-align: justify;
+ 	padding-right: 10px;
+}
+
+article ul, ol, dl {
+	margin: 1em 0 1.5em 0em;
+}
+
+article li, dt, dd {
+	line-height: 1.5em;
+}
+
+article li {
+	margin: 0px 0 0 25px;
+}
+
+article dt {
+    background: url(imagens/iSetaPequena.png);
+    background-repeat: no-repeat;
+    background-position: 0 2px;
+    padding: 0 0 0 15px;
+	font-weight: bold;
+	margin: 0px 0 0.5em 10px;
+}
+
+article dd {
+	margin-left: 25px;
+	margin-bottom: 1.5em;
+}
+
+.imagemIndex{
+	max-width: 600px;
+	width: 100%;
+	max-height: 464px;
+	min-height: auto;
+}
+
+/* Rodapé */
+
+footer {
+	margin-top: 5em;
+}
+
+#RodapeMenu{
+	background-color: #bcc0c0;
+	color: #2c3e50;
+}
+
+#RodapeMenu a{
+	color: #404040;
+	font-weight: normal;
+}
+
+#RodapeMenu a:hover{
+	color: #000000;
+}
+
+#facebook {
+	position: relative;
+	top: -20px;
+}
+
+#RodapeMenu ul{
+	position: relative;
+	top: -20px;
+	margin-bottom: 0px;
+}
+
+#RodapeMenu li {
+	display: inline;
+	font-family: "Dosis", Arial, sans-serif;
+	text-transform: uppercase;	
+	font-size: 9pt;
+	padding: 0 5px;
+	border-left: 1px solid gray;
+	margin-top: -20px;
+}
+
+#RodapeMenu li:first-child {
+	border: 0;
+}
+
+#RodapeLocalizacao{
+	color: #cccccc;
+	background-color: #2c3e50;
+	padding-top: 10px;
+	padding-bottom: 15px;
+}
+
+#RodapeLocalizacao a{
+	margin-top: 5px; 
+}
+
+#RodapeLocalizacao p{
+	color: #c0c0c0;
+	padding-top: 10px;
+	margin-bottom: 0px;
+}
+
+#RodapeLocalizacao img{
+	vertical-align: middle;
+	margin-right: 5px;
+}
+
+#RodapeLocalizacao a{
+	color: #c0c0c0;
+}
