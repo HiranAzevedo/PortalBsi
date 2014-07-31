@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  root 'bsi#home'
+  match '/depoimentos', to: 'bsi#depoimentos', via: 'get'
+  match '/historico', to: 'bsi#historico', via: 'get'
+  match '/localizacao', to: 'bsi#localizacao', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
