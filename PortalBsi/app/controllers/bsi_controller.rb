@@ -14,7 +14,6 @@ class BsiController < ApplicationController
   def secretaria
 
   end
-
   def disciplinas
 
   end
