@@ -1,22 +1,35 @@
 <header> 
-	<div class="container"> 
-      <nav>
-        <%= link_to(root_path) do %>
-            <div class="iconeAtivo grande bsi"><p class="subtitle"><%= image_tag("iBSI.png", alt: "bsi",class: "tamanhoBsi") %><br><span class="titleBSI">BACHARELADO&nbsp;&nbsp;EM<br><span class="subtitleGrande">SISTEMAS&nbsp;DE<br>INFORMA&Ccedil;&Atilde;O</span></span></div>
+  <div class="container">
+    <nav>
+      <%= link_to(root_path) do %>
+          <div class="iconeAtivo grande bsi"><p class="subtitle"><%= image_tag("iBSI.png", alt: "bsi",class: "tamanhoBsi") %><br><span class="titleBSI">BACHARELADO&nbsp;&nbsp;EM<br><span class="subtitleGrande">SISTEMAS&nbsp;DE<br>INFORMA&Ccedil;&Atilde;O</span></span></div>
+      <%end%>
+      <div class="meio">
+        <%= link_to (disciplinas_path) do %>
+            <div class="icone normal disciplinas"><p class="subtitle"><%= image_tag("iDisciplinas.png", alt: "disciplinas",class: "icon") %><br>DISCIPLINAS</p></div>
         <%end%>
-        <div class="meio">
-          <a href="../disciplinas/index.html"><div class="icone normal disciplinas"><p class="subtitle"><%= image_tag("iDisciplinas.png", alt: "disciplinas",class: "icon") %><br>DISCIPLINAS</p></div></a>
-          <a href="../alunos/index.html"><div class= "icone largo alunos"><p class="subtitle"><%= image_tag("iAlunos.png", alt: "alunos") %><br>ALUNOS</p></div></a>
-          <a href="../tcc/index.html"><div class="icone normal tcc"><p class="subtitle"><%= image_tag("iTCC.png", alt: "Trabalho de Conclusão de Curso",class: "icon") %><br>TCC</p></div></a>
-          <!--<br style="clear: both;"> -->
-          <a href="../professores/index.html"><div class= "icone normal professores"><p class="subtitle"><%= image_tag("iProfessores.png", alt: "Professores",class: "icon") %><br>PROFESSORES</p></div></a>
-          <a href="../oportunidades/index.html"><div class= "icone normal oportunidades"><p class="subtitle"><%= image_tag("iOportunidades.png", alt: "oportunidades",class: "icon") %><br>OPORTUNIDADES</p></div></a>
-          <%= link_to (secretaria_path) do %>
-              <div class= "icone normal secretaria"><p class="subtitle"><%= image_tag("iSecretaria.png", alt: "secretaria",class: "icon") %><br>SECRETARIA</p></div>
-          <%end%>
-          <a href="../institucional/index.html"><div class= "icone normal institucional"><p class="subtitle"><%= image_tag("iInstitucional.png", alt: "institucional") %><br>INSTITUCIONAL</p></div></a>
-        </div>
-        <a href="../noticias/index.html" class="tamanho"><div class="noticias icone grande semMargem"><p class="subtitle subtitleGrande"><%= image_tag("iNoticias.png", alt: "notícias", class: "tamanhoNoticias") %><br>NOT&Iacute;CIAS</p></div></a>
-      </nav>
-    </div>
+        <%link_to (alunos_path) do %>
+            <div class= "icone largo alunos"><p class="subtitle"><%= image_tag("iAlunos.png", alt: "alunos") %><br>ALUNOS</p></div>
+        <%end%>
+        <% link_to (tcc_path) do %>
+            <div class="icone normal tcc"><p class="subtitle"><%= image_tag("iTCC.png", alt: "Trabalho de Conclusão de Curso",class: "icon") %><br>TCC</p></div>
+        <%end%>
+        <%= link_to (professores_path) do %>
+            <div class= "icone normal professores"><p class="subtitle"><%= image_tag("iProfessores.png", alt: "Professores",class: "icon") %><br>PROFESSORES</p></div>
+        <%end%>
+        <%= link_to (oportunidades_path) do %>
+            <div class= "icone normal oportunidades"><p class="subtitle"><%= image_tag("iOportunidades.png", alt: "oportunidades",class: "icon") %><br>OPORTUNIDADES</p></div>
+        <%end%>
+        <%= link_to (secretaria_path) do %>
+            <div class= "icone normal secretaria"><p class="subtitle"><%= image_tag("iSecretaria.png", alt: "secretaria",class: "icon") %><br>SECRETARIA</p></div>
+        <%end%>
+        <% link_to (institucional_path) do %>
+            <div class= "icone normal institucional"><p class="subtitle"><%= image_tag("iInstitucional.png", alt: "institucional") %><br>INSTITUCIONAL</p></div>
+        <%end %>
+      </div>
+      <%= link_to (noticias_path) do %>
+          <div class="noticias icone grande semMargem"><p class="subtitle subtitleGrande"><%= image_tag("iNoticias.png", alt: "notícias", class: "tamanhoNoticias") %><br>NOT&Iacute;CIAS</p></div>
+      <%end%>
+    </nav>
+  </div>
 </header>
