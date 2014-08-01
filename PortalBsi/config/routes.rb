@@ -4,6 +4,13 @@ Rails.application.routes.draw do
   match '/historico', to: 'bsi#historico', via: 'get'
   match '/localizacao', to: 'bsi#localizacao', via: 'get'
   match '/secretaria', to: 'bsi#secretaria', via: 'get'
+  match '/disciplinas', to: 'bsi#sdisciplinas', via: 'get'
+  match '/alunos', to: 'bsi#alunos', via: 'get'
+  match '/tcc', to: 'bsi#tcc', via: 'get'
+  match '/noticias', to: 'bsi#noticias', via: 'get'
+  match '/professores', to: 'bsi#professores', via: 'get'
+  match '/oportunidades', to: 'bsi#oportunidades', via: 'get'
+  match '/institucional', to: 'bsi#institucional', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
