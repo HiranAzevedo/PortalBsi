@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="row-offcanvas">
+    <aside class="col-sm-3 col-xs-6 sidebar-offcanvas">
+      <ul class="menu">
+        <li><%= link_to "Institucional", institucional_path %></li>
+        <li class="ativo institucional"><%= link_to "EIA", institucional_eia_path%></li>
+        <li><%= link_to "CCET", institucional_ccet_path %></li>
+        <li><%= link_to "UNIRIO", institucional_unirio_path %></li>
+      </ul>
+    </aside>
+
+
+    <article class="col-sm-9 col-xs-12">
+
+      <p class="pull-left visible-xs visible-sm">
+        <button type="button" class="navbar-toggle" data-toggle="offcanvas">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="sr-only">Menu</span>
+        </button>
+      </p>
+
+      <h1>EIA - Escola de Informática Aplicada</h1>
+
+      <p>A Escola de Informática Aplicada (EIA) foi criada pela
+        <a href="resolucao_2098.pdf">Resolução UNIRIO Número 2.098</a> de 14 de setembro de 1999,
+        com finalidade de prover estrutura organizacional para o curso de
+        <%= link_to "Bacharelado em Sistemas de Informação (BSI)", root_path %>.
+        Essa escola tem por objetivo o ensino de graduação e pós-graduação, a pesquisa e a extensão universitária nas
+        áreas das Tecnologias da Informação e da Comunicação, a serem buscados através de:
+
+      <ul>
+        <li> Incentivo ao aprendizado do conhecimento em Informática e de suas relações interdisciplinares;</li>
+        <li> Formação e aperfeiçoamento de profissionais de Informática capazes de atender às demandas institucionais
+          e sociais, garantindo ao mesmo tempo a elevação de seu nível de qualidade;</li>
+        <li> Estímulo ao desenvolvimento da pesquisa em Informática como instrumento de desenvolvimento social;</li>
+        <li> Implementação de políticas de integração social e programas de modernização e democratização do estado
+          brasileiro, no que tange às Tecnologias da Informação e da Comunicação.</li>
+      </ul>
+      </p>
+
+      <p>
+        <section class="boxgrid caption">
+          <%= image_tag "morganna.jpg", alt: "Moraganna Diniz",class: "photo" %>
+          <div class="cover boxcaption" style="top: 125px;">
+            <a href="http://lattes.cnpq.br/1415781875529432" target="_blank"><h3 class="slidebox">Morganna Diniz</h3></a>
+            <p class="correio">morganna@uniriotec.br</p>
+          </div>
+        </section>
+        </a>A atual diretora da escola é a Prof<sup>a</sup>. Morganna</p>
+
+    </article>
+  </div> <!-- row-offcanvas -->
+</div> <!-- Container -->
+<br style="clear: both">
+

@@ -2,15 +2,15 @@
     <div id="RodapeMenu">
     	<div id="facebook"><a href="https://www.facebook.com/bsiunirio"><%= image_tag("iFacebook.png", alt: "Facebook") %></a></div>
 		<ul>
-			<li><a href="..\bsi\index.html">BSI</a>
-			<li><a href="..\disciplinas\index.html">DISCIPLINAS</a>
-			<li><a href="..\professores\index.html">PROFESSORES</a>
-			<li><a href="..\alunos\index.html">ALUNOS</a>
-			<li><a href="..\oportunidades\index.html">OPORTUNIDADES</a>
-			<li><a href="..\tcc\index.html">TCC</a>
-			<li><a href="..\secretaria\index.html">SECRETARIA</a>
-			<li><a href="..\institucional\index.html">INSTITUCIONAL</a>
-			<li><a href="..\noticias\index.html">NOT&Iacute;CIAS</a>
+			<li><%= link_to "BSI", root_path %>
+			<li><%= link_to "DISCIPLINAS", disciplinas_path %>
+			<li><%= link_to "PROFESSORES", professores_path %>
+			<li><%= link_to "ALUNOS", alunos_path %>
+			<li><%= link_to "OPORTUNIDADES", oportunidades_path %>
+			<li><%= link_to "TCC", tcc_path %>
+			<li><%= link_to "SECRETARIA", secretaria_path %>
+			<li><%= link_to "INSTITUCIONAL", institucional_path %>
+			<li><%= link_to "NOTÍCIAS", noticias_path %>
 		</ul>
 	</div>	
 
