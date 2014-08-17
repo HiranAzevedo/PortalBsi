@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row-offcanvas">
+    <aside class="col-sm-3 col-xs-6 sidebar-offcanvas">
+      <ul class="menu">
+        <li class="ativo institucional"><%= link_to "Institucional", institucional_path%></li>
+        <li><%= link_to "EIA", institucional_eia_path %></li>
+        <li><%= link_to "CCET", institucional_ccet_path %></li>
+        <li><%= link_to "UNIRIO", institucional_unirio_path %></li>
+      </ul>
+    </aside>
+
+    <article class="col-sm-9 col-xs-12">
+
+      <p class="pull-left visible-xs visible-sm">
+        <button type="button" class="navbar-toggle" data-toggle="offcanvas">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="sr-only">Menu</span>
+        </button>
+      </p>
+
+      <h1>Institucional</h1>
+
+      <p>O Bacharelado em Sistemas de Informação é um curso da <%= link_to "Escola de Informática Aplicada (EIA)", institucional_eia_path %>
+        , que é uma unidade acadêmica do <a href="ccet.html">Centro de Ciências Exatas e Tecnologia (CCET)</a>
+        da <%= link_to "Universidade Federal do Estado do Rio de Janeiro (UNIRIO)", institucional_unirio_path %>.</p>
+
+
+      <p>
+        <%= image_tag "organograma.png", alt: "organograma", border: "0",width: "719",height: "500", usemap: "#organogramamap" %>
+        <map name="organogramamap">
+          <area shape="rect" coords="300,2,387,100" href="ccet.html"  alt="UNIRIO" title="UNIRIO">
+          <area shape="rect" coords="260,185,343,248" href="ccet.html" alt="CCET" title="CCET">
+          <area shape="rect" coords="347,263,430,326" href="http://www2.uniriotec.br/ppgi" alt="PPGI" title="PPGI">
+          <area shape="rect" coords="182,354,254,417" href="eia.html" alt="EIA" title="EIA">
+          <area shape="rect" coords="178,436,256,495" href="../bsi/index.html" alt="BSI" title="BSI">
+        </map>
+      </p>
+
+
+      <p>Vale lembrar que também temos o curso <a href="http://www2.uniriotec.br/ppgi" target="_blank">PPGI (Programa de Pós-Graduação em Informática)</a>, que é voltado para os que já terminaram a graduação e desejam cursar um Mestrado em Informática com ênfase em Sistemas de Informação.</p>
+
+    </article>
+  </div> <!-- row-offcanvas -->
+</div> <!-- Container -->
+<br style="clear: both">
+

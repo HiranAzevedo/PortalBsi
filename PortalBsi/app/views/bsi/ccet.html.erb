@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row-offcanvas">
+    <aside class="col-sm-3 col-xs-6 sidebar-offcanvas">
+      <ul class="menu">
+        <li><%= link_to "Institucional", institucional_path %></li>
+        <li><%= link_to"EIA", institucional_eia_path %></li>
+        <li class="ativo institucional"><%= link_to "CCET" %></li>
+        <li><a href="unirio.html">UNIRIO</a></li>
+      </ul>
+    </aside>
+
+
+    <article class="col-sm-9 col-xs-12">
+
+      <p class="pull-left visible-xs visible-sm">
+        <button type="button" class="navbar-toggle" data-toggle="offcanvas">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="sr-only">Menu</span>
+        </button>
+      </p>
+
+      <h1>CCET - Centro de Ciências Exatas e Tecnologia</h1>
+
+      <p>O curso <%= link_to "BSI", root_path %> é um dos cursos do Centro
+        de Ciências Exatas e Tecnologia (CCET). Um centro agrega os cursos de uma mesma área, e contém as estruturas
+        administrativas para o funcionamento desses cursos.</p>
+
+      <p>O CCET tem como missão:</p>
+      <blockquote>"Promover o desenvolvimento científico e tecnológico com inovação e compromisso social, na sociedade
+        em geral e na UNIRIO em particular, através de atuação inter e multidisciplinar em ensino, pesquisa e extensão
+        nas áreas de Matemática, Estatística e Informática."</blockquote>
+
+      <p>&nbsp;</p>
+
+      <section class="boxgrid caption">
+        <%= image_tag("amancio.jpg",alt: "Amancio", class: "photo" ) %>
+        <div class="cover boxcaption" style="top: 125px;">
+          <a href="http://lattes.cnpq.br/7778216751519163" target="_blank"><h3 class="slidebox">Luiz Amancio</h3></a>
+          <p class="correio">amancio@uniriotec.br</p>
+        </div>
+      </section>
+      <p>O atual decano do CCET é o Prof. Amancio<br>
+        Para mais informações, consulte o <a href="http://www3.uniriotec.br/UNIRIO-CCET" target="_blank">site do CCET</a></p>
+
+
+    </article>
+  </div> <!-- row-offcanvas -->
+</div> <!-- Container -->
+<br style="clear: both">

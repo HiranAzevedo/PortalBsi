@@ -6,11 +6,15 @@ Rails.application.routes.draw do
   match '/secretaria', to: 'bsi#secretaria', via: 'get'
   match '/disciplinas', to: 'bsi#sdisciplinas', via: 'get'
   match '/alunos', to: 'bsi#alunos', via: 'get'
-  match '/tcc', to: 'bsi#tcc', via: 'get'
+  match '/tcc', to: 'bsi#tccs', via: 'get'
   match '/noticias', to: 'bsi#noticias', via: 'get'
   match '/professores', to: 'bsi#professores', via: 'get'
   match '/oportunidades', to: 'bsi#oportunidades', via: 'get'
   match '/institucional', to: 'bsi#institucional', via: 'get'
+  match '/institucional/eia', to: 'bsi#eia', via: 'get'
+  match '/institucional/ccet', to: 'bsi#ccet', via: 'get'
+  match '/institucional/unirio', to: 'bsi#unirio', via: 'get'
+  resources :tccs
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
