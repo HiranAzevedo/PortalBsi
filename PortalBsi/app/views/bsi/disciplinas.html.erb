@@ -1,0 +1,97 @@
+<div class="disciplinas navbar navbar-default" role="navigation">
+	<div class="container">
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+		<a class="navbar-brand" href="index.html">Disciplinas</a>
+	<!-- <span class="menuTitulo">BSI</span> -->
+	</div> <!-- navbar-header -->
+	</div> <!-- container -->
+	<div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav menu">
+            <li><a href="obrigatorias.html">Obrigatórias</a></li>
+			<li><a href="eletivas.html">Eletivas</a></li>
+			<li><a href="optativas.html">Optativas</a></li>
+			<li><a href="aces.html">Atividades Complementares</a></li>
+			<li><a href="horario.html">Horário</a></li>
+          </ul>
+    </div>
+</div> <!-- navbar -->
+
+<div class="container"> 
+
+<div class="row-offcanvas">
+<aside class="col-sm-3 col-xs-6 sidebar-offcanvas">
+	<ul class="menu">
+		<li class="ativo disciplinas"><a href="index.html">Disciplinas</a></li>
+		<li><a href="obrigatorias.html">Obrigatórias</a></li>
+		<li><a href="eletivas.html">Eletivas</a></li>
+		<li><a href="optativas.html">Optativas</a></li>
+		<li><a href="aces.html">Atividades Complementares</a></li>
+		<li><a href="horario.html">Horário</a></li>
+	</ul>
+</aside>
+
+<article class="col-sm-9 col-xs-12">
+
+<h1>Disciplinas</h1>
+
+<p>A estrutura curricular do curso de BSI está organizada em dois núcleos: um de formação básica, coberto nos quatro primeiros períodos, e um de formação profissional, coberto nos quatro últimos períodos.</p>
+
+<div style="text-align: center">
+<%= image_tag "fluxograma.png", alt: "fluxograma", border: "0" , width: "715" , height: "700" , usemap: "#Map" %>
+<map name="Map" id="Map">
+  <area shape="rect" coords="9,61,80,81" href="fsi.html" title="Fundamentos de Sistemas de Informa&ccedil;&atilde;o" />
+  <area shape="rect" coords="279,60,350,80" href="as.html" title="An&aacute;lise de Sistemas" />
+  <area shape="rect" coords="370,61,439,80" href="pcs.html" title="Projeto e Constru&ccedil;&otilde;es de Sistemas" />
+  <area shape="rect" coords="549,60,620,80" href="procsoft.html" title="Processos de Software" />
+  <area shape="rect" coords="459,100,530,121" href="progmod.html" title="Programa&ccedil;&atilde;o Modular" />
+  <area shape="rect" coords="640,99,710,121" href="gpi.html" title="Ger&ecirc;ncia de Projetos em Inform&aacute;tica" />
+  <area shape="rect" coords="190,140,260,161" href="bd1.html" title="Banco de Dados I"/>
+  <area shape="rect" coords="370,140,440,160" href="bd2.html" title="Banco de Dados II" />
+  <area shape="rect" coords="459,139,530,161" href="pcssgbd.html" title="Projeto e Constru&ccedil;&atilde;o de Sistemas com SGBD" />
+  <area shape="rect" coords="9,180,80,200" href="tp1.html" title="T&eacute;cnicas de Programa&ccedil;&atilde;o I"/>
+  <area shape="rect" coords="99,179,169,200" href="tp2.html" title="T&eacute;cnicas de Programa&ccedil;&atilde;o II"/>
+  <area shape="rect" coords="190,179,260,200" href="ed1.html" title="Estrutura de Dados I"/>
+  <area shape="rect" coords="279,180,349,200" href="ed2.html" title="Estruturas de Dados II"/>
+  <area shape="rect" coords="369,180,440,200" href="aa.html" title="An&aacute;lise de Algoritmos"/>
+  <area shape="rect" coords="550,220,620,241" href="pg1.html" title="Projeto de Gradua&ccedil;&atilde;o I" />
+  <area shape="rect" coords="640,220,710,241" href="pg2.html" title="Projeto de Gradua&ccedil;&atilde;o II" />
+  <area shape="rect" coords="9,259,80,281" href="dpw.html" title="Desenvolvimento de P&aacute;ginas Web" />
+  <area shape="rect" coords="279,259,350,281" href="ihc.html" title="Intera&ccedil;&atilde;o Humano Computador" />
+  <area shape="rect" coords="10,299,80,321" href="oc.html" title="Organiza&ccedil;&atilde;o de Computadores" />
+  <area shape="rect" coords="190,299,260,321" href="so.html" title="Sistemas Operacionais" />
+  <area shape="rect" coords="280,301,350,320" href="redes1.html" title="Redes I"/>
+  <area shape="rect" coords="370,299,440,321" href="redes2.html" title="Redes II"/>
+  <area shape="rect" coords="99,339,170,360" href="intlogcomp.html" title="Introdu&ccedil;&atilde;o a L&oacute;gica Computacional" />
+  <area shape="rect" coords="189,339,260,359" href="edc.html" title="Estruturas Discretas" />
+  <area shape="rect" coords="280,340,350,359" href="lfa.html" title="Linguagens Formais e Aut&ocirc;matas" />
+  <area shape="rect" coords="100,379,170,400" href="aea.html" title="An&aacute;lise Administrativa e Empresarial" />
+  <area shape="rect" coords="369,379,440,400" href="empreen.html" title="Empreendedorismo" />
+  <area shape="rect" coords="99,419,171,440" href="alglinear.html" title="&Aacute;lgebra Linear" />
+  <area shape="rect" coords="460,419,531,440" href="admfinanceira.html" title="Administra&ccedil;&atilde;o Financeira"/>
+  <area shape="rect" coords="99,458,170,480" href="calc1.html" title="C&aacute;lculo I" />
+  <area shape="rect" coords="189,459,261,480" href="calc2.html" title="C&aacute;lculo II" />
+  <area shape="rect" coords="9,499,80,520" href="matematica.html" title="Matem&aacute;tica B&aacute;sica" />
+  <area shape="rect" coords="189,498,260,520" href="prob.html" title="Probabilidade"/>
+  <area shape="rect" coords="279,498,350,519" href="estatistica.html" title="Estat&iacute;stica" />
+  <area shape="rect" coords="9,538,80,559" href="tpdiscursivas.html" title="Teorias e Pr&aacute;ticas Discursivas" />
+  <area shape="rect" coords="369,658,440,679" href="aces.html" title="Atividade Curricular de Extens&atilde;o"/>
+</map>
+</div>
+<p> FLUXOGRAMA </p>
+<%= link_to image_tag("pdf.png", width: "35", height: "35", alt: "Fluxograma"), asset_path("fluxograma.pdf") %>
+
+<p>O Núcleo Básico, constando de 1.710 horas-aula, contém disciplinas obrigatórias de Ciências da Computação, Matemática, Estatística e Ciências Administrativas, além de disciplinas obrigatórias de formação profissional nas áreas de Organização de Computadores, Sistemas Operacionais, Redes de Computadores, Engenharia de Software, Sistemas de Informação 
+e Banco de Dados. O objetivo é dar ao aluno uma formação generalista técnico-teórica que dê base para cursar as disciplinas do Núcleo Profissional nos quatro períodos finais, como também dê a formação necessária para futuramente cursar programas de pós-graduação dando prosseguimento à sua educação continuada ao longo da sua vida profissional.</p>
+
+<p>O Núcleo Profissionalizante, com 1.530 horas-aula, contém as disciplinas optativas, que são aquelas em que o aluno escolhe cursar dentre as opções ofertadas no curso. As disciplinas optativas abordam conteúdos específicos, geralmente atuais e aplicados, visando possibilitar o aluno se aprofundar nas áreas de conhecimento em que pretente atuar profissionalmente. Nesse núcleo também constam as disciplinas Atividades Curriculares de Extensão (ACE), voltadas, por exemplo, para Estágio Supervisionado. Também estão as disciplinas de Projeto Final do Curso (PG - projeto de graduação) em que o aluno elabora seu <a href="../tcc/index.html">TCC</a>.</p>
+
+</article>  
+</div> <!-- row-offcanvas -->
+</div> <!-- Container --> 
+<br style="clear: both">
