@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'bsi#home'
   match '/depoimentos', to: 'bsi#depoimentos', via: 'get'
   match '/historico', to: 'bsi#historico', via: 'get'
