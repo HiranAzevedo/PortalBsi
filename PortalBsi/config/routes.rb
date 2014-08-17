@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   match '/localizacao', to: 'bsi#localizacao', via: 'get'
   match '/secretaria', to: 'bsi#secretaria', via: 'get'
   match '/disciplinas', to: 'bsi#disciplinas', via: 'get'
+  match '/disciplinas/eletivas', to: 'bsi#eletivas', via: 'get'
   match '/alunos', to: 'bsi#alunos', via: 'get'
   match '/tcc', to: 'bsi#tccs', via: 'get'
   match '/noticias', to: 'bsi#noticias', via: 'get'

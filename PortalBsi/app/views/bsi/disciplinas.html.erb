@@ -27,9 +27,9 @@
 <div class="row-offcanvas">
 <aside class="col-sm-3 col-xs-6 sidebar-offcanvas">
 	<ul class="menu">
-		<li class="ativo disciplinas"><a href="index.html">Disciplinas</a></li>
+		<li class="ativo disciplinas"><%= link_to "Disciplinas", disciplinas_path%></li>
 		<li><a href="obrigatorias.html">Obrigatórias</a></li>
-		<li><a href="eletivas.html">Eletivas</a></li>
+		<li><%= link_to "Eletivas", disciplinas_eletivas_path%></li>
 		<li><a href="optativas.html">Optativas</a></li>
 		<li><a href="aces.html">Atividades Complementares</a></li>
 		<li><a href="horario.html">Horário</a></li>

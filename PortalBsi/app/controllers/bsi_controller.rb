@@ -11,6 +11,8 @@ class BsiController < ApplicationController
   end
   def disciplinas
   end
+  def eletivas
+  end  
   def alunos
   end
   def tcc
