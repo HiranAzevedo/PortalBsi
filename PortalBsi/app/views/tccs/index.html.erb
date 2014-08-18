@@ -1,0 +1,6 @@
+<h1>LISTAGEM DE TCCS</h1>
+<ul>
+  <% @tccs.each do |tcc| %>
+      <li><%= link_to tcc.titulo, tcc %> </li>
+  <% end %>
+</ul>

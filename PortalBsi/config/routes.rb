@@ -8,7 +8,11 @@ Rails.application.routes.draw do
   match '/disciplinas', to: 'bsi#disciplinas', via: 'get'
   match '/disciplinas/eletivas', to: 'bsi#eletivas', via: 'get'
   match '/alunos', to: 'bsi#alunos', via: 'get'
-  match '/tcc', to: 'bsi#tccs', via: 'get'
+  match '/tccs/home', to: 'tccs#home', via: 'get'
+  match '/tccs/tipos', to: 'tccs#tipos', via: 'get'
+  match '/tccs/processo', to: 'tccs#processo', via: 'get'
+  match '/tccs/projetos', to: 'tccs#projetos', via: 'get'
+  match '/tccs/modelo', to: 'tccs#modelo', via: 'get'
   match '/noticias', to: 'bsi#noticias', via: 'get'
   match '/professores', to: 'bsi#professores', via: 'get'
   match '/oportunidades', to: 'bsi#oportunidades', via: 'get'
@@ -21,7 +25,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  # root 'welcome#home'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
