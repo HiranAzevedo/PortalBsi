@@ -1,26 +1,26 @@
-* Passar o html para o rails
-* Devise
+* Passar o html para o rails - almost done
+* Devise -feito
 * Tirar os grandes comentarios do html estatico
-* Agendar os TCCs
-* Montar a avaliação de materias
+* Agendar os TCCs - in progress
+* Montar a avaliação de materias - não vai ser feito
 * Tratar depoimentos
-* @uniriotec como imagens??
+* @uniriotec como imagens?? - feito
 
 
 
-Cadastro de tcc (enviar email bsi_alunos),
+Cadastro de tcc (enviar email bsi_alunos), - hiran
 
-publicar TCC (evnio de email),
+publicar TCC (evnio de email), - hiran
 
 Pagina de Turma (pagina),
 
-Realizar solicitacao na secretaria(envio de email),
-visualizar historico de solicitacoes,
+Realizar solicitacao na secretaria(envio de email), - tarefa pros 2 novos
+visualizar historico de solicitacoes,- tarefa pros 2 novos
 
-alterar o perfil,
+alterar o perfil, - thiago
 ADMIN ->
-perfil de admin
-cadastrar alunos
+perfil de admin - thiago
+cadastrar alunos - thiago
 cadastrar Tags
-cadastrar professores
-cadastrar tipos de entradas para secretaria
+cadastrar professores - tarefa pros 2 novos
+cadastrar tipos de entradas para secretaria - tarefa pros 2 novos
