@@ -1,6 +1,23 @@
 <h1>LISTAGEM DE TCCS</h1>
-<ul>
-  <% @tccs.each do |tcc| %>
-      <li><%= link_to tcc.titulo, tcc %> </li>
-  <% end %>
-</ul>
+<div class="container">
+  <div class="row-offcanvas">
+    <aside class="col-sm-3 col-xs-6 sidebar-offcanvas">
+      <ul class="menu">
+        <li><%= link_to 'TCC', tccs_home_path %></li>
+        <li><a href="tipos.html">Tipos de TCC</a></li>
+        <li><a href="processo.html">Processo</a></li>
+        <li><a href="modelo.html">Modelo</a></li>
+        <li><a href="projetos.html">Projetos para TCC</a></li>
+        <li><a href="publicacoes.html">Publicações</a></li>
+        <li><a href="agenda.html">Próximas Defesas</a></li>
+        <li><%= link_to "Cadastro de Tcc", new_tcc_path %></li>
+        <li class="ativo tcc"><%= link_to "Listar Tccs", tccs_path %></li>
+      </ul>
+    </aside>
+    <ul>
+      <% @tccs.each do |tcc| %>
+          <li><%= link_to tcc.titulo, tcc %> </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
