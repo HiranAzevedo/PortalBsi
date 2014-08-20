@@ -1,0 +1,42 @@
+<% if @tcc.errors.any? %>
+    <div id="error_explanation">
+      <h2>Infelizmente não foi possível completar a ação pois o formulário possui os seguintes erros:</h2>
+      <ul>
+        <% @tcc.errors.full_messages.each do |message|%>
+            <li><%= message %> </li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+
+<%= form_for @tcc do |f| %>
+
+    <p>
+      <%= f.label :titulo  %><br/>
+      <%= f.text_field :titulo %>
+    </p>
+    <p>
+      <%= f.label :resumo %> <br/>
+      <%= f.text_field :resumo %>
+    </p>
+    <p>
+      <%= f.label :data  %> <br/>
+      <%= f.date_select :data %>
+    </p>
+    <p>
+      <%= f.label :orientador %><br/>
+      <%= f.text_field :orientador %>
+    </p>
+    <p>
+      <%= f.label :local %><br/>
+      <%= f.text_field :local %>
+    </p>
+    <p>
+      <%= f.label :coorientador %><br/>
+      <%= f.text_field :coorientador %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>
