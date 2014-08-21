@@ -1,16 +1,6 @@
 <div class="container">
   <div class="row-offcanvas">
-    <aside class="col-sm-3 col-xs-6 sidebar-offcanvas">
-      <ul class="menu">
-        <li><a href="index.html">TCC</a></li>
-        <li><a href="tipos.html">Tipos de TCC</a></li>
-        <li><a href="processo.html">Processo</a></li>
-        <li class="ativo tcc"><a href="modelo.html">Modelo</a></li>
-        <li><a href="projetos.html">Projetos para TCC</a></li>
-        <li><a href="publicacoes.html">Publicações</a></li>
-        <li><a href="agenda.html">Próximas Defesas</a></li>
-      </ul>
-    </aside>
+    <%= render partial: "menu", locals: {tipo: 'modelo'} %>
 
 
     <article class="col-sm-9 col-xs-12">

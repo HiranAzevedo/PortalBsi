@@ -24,3 +24,5 @@ cadastrar alunos - thiago
 cadastrar Tags
 cadastrar professores - tarefa pros 2 novos
 cadastrar tipos de entradas para secretaria - tarefa pros 2 novos
+
+Relacionamento ALUNO - TCC (incluir o campo de string do arquivo de tcc e o booleano de TccApresentado na migration)
