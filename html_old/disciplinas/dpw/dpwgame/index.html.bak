@@ -1,0 +1,85 @@
+<!DOCTYPE html> 
+
+<html lang="pt-br">
+
+<head>
+
+<title>DPW-Game</title>
+<script type="text/javascript" src="js/GameManager.js"></script>
+<script type="text/javascript" src="js/Rectangle.js"></script>
+<script type="text/javascript" src="js/VisualObject.js"></script>
+<script type="text/javascript" src="js/AnimatedObject.js"></script>
+<script type="text/javascript" src="js/Power.js"></script>
+<script type="text/javascript" src="js/Player.js"></script>
+<script type="text/javascript" src="js/Enemy.js"></script>
+<script type="text/javascript" src="js/HorizontalParallaxScrollingObject.js"></script>
+<script type="text/javascript" src="js/Bricks.js"></script>
+<script type="text/javascript" src="js/Text.js"></script>
+<script type="text/javascript" src="js/Clock.js"></script>
+<script type="text/javascript" src="js/SoundEffects.js"></script>
+<script type="text/javascript" src="js/ScrollingDiv.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Hammersmith+One&v2' rel='stylesheet' type='text/css'>
+
+<script type="text/javascript">
+
+window.onload = init;
+var Game = null;
+
+function init() {
+    Game = new GameManager();
+    Game.setup(document.getElementById('gameCanvas'));
+	Game.setupReport(document.getElementById('gameReport') );
+
+    document.onkeydown = function(event){Game.player.keyDown(event);}
+    document.onkeyup = function(event){Game.player.keyUp(event);}
+	window.focus();
+	document.getElementById('gameCanvas').focus();
+}
+
+function Animate() {
+	if (Game.playing) {
+		Game.draw();
+		setTimeout(function(){Animate()}, 30); //a cada intervalo de tempo, será executada a função gameManager.draw(), que irá renderizar a cena atual. As sucessivas chamadas provocam a animação do jogo.
+	}
+}
+
+
+</script>
+
+	<style type="text/css">
+		* {font-family: 'Hammersmith One', sans-serif; color: #404040; margin: 0 auto;}
+		body {font-size: 11pt;}
+		 #article {text-align: center; width: 760px;}
+		h1 {color: black;}
+		a {color: #4040A0;  text-decoration: none;}
+		a:hover { color: #0000FF; text-decoration: underline;}
+		.aviso {color:#808080;}
+		em {color:#A0A0A0; font-style: italic;}
+		#gameReport {
+			width:600px;
+			height:110px;
+			overflow:auto;
+		}
+		h2 {margin: 10px 10px 2px 10px; font-size: 12pt;}
+		ul {text-align: left; list-style-type: none; padding: 0px; margin: 0px;}
+		li {margin: 0;  padding: 0;}
+	</style>
+</head>
+
+<body onkeydown="" onkeypress="">
+<div id="article">
+<canvas id="gameCanvas" width="600" height="400"><p>Atualize o seu navegador. Este navegador não tem os recursos necessários para rodar o jogo. Use um outro navegador como Chrome, Firefox ou Internet Explorer 9 ou superior.</p></canvas>
+<div id="gameReport">
+<h1>DPW-Game</h1>
+<p>O jogo é uma metáfora para a ação de cursar a disciplina "Desenvolvimento de Páginas Web" - Sistemas de Informação - UNIRIO, <href="http://lattes.cnpq.br/1920411639358905">Prof. Pimentel</a> (Julho 2011)<br>
+<span class="aviso">Para jogar, use as setas do seu teclado <b>&larr;  &uarr; &rarr;</b></p>
+</div>
+<audio id="soundKnowledge" preload><source src="snd/knowledge.mp3" type="audio/mpeg" /><source src="snd/knowledge.ogg" type="audio/ogg" /></audio>
+<audio id="soundBlocked" preload><source src="snd/blocked.mp3" type="audio/mpeg" /><source src="snd/blocked.ogg" type="audio/ogg" /></audio>
+<audio id="soundTask" preload><source src="snd/task.mp3" type="audio/mpeg" /><source src="snd/task.ogg" type="audio/ogg" /></audio>
+
+</div>
+
+</body>
+
+</html>
