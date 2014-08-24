@@ -1,0 +1,16 @@
+<aside class="col-sm-3 col-xs-6 sidebar-offcanvas">
+  <ul class="menu">
+    <li class=" <%=verificaMenuAtivo(tipo,"root")%> bsi">
+      <%= link_to "BSI-UNIRIO", root_path %>
+    </li>
+    <li class=" <%=verificaMenuAtivo(tipo,"historico")%> bsi">
+      <%= link_to "Histórico", historico_path %>
+    </li>
+    <li class=" <%=verificaMenuAtivo(tipo,"localizacao")%> bsi">
+      <%= link_to "Localização e Contato", localizacao_path %>
+    </li>
+    <li class=" <%=verificaMenuAtivo(tipo,"depoimento")%> bsi">
+      <%= link_to "Depoimentos", depoimentos_path %>
+    </li>
+  </ul>
+</aside>

@@ -1,13 +1,13 @@
 <aside class="col-sm-3 col-xs-6 sidebar-offcanvas">
   <ul class="menu">
-    <li class="<%= verificaTipo(tipo,"home") %> tcc"><%= link_to 'TCC', tccs_home_path %></li>
-    <li class="<%= verificaTipo(tipo,"tipos") %> tcc"><%= link_to 'Tipos de TCC', tccs_tipos_path %></li>
-    <li class="<%= verificaTipo(tipo,"processo")%> tcc"><%= link_to "Processo", tccs_processo_path%></li>
-    <li class="<%= verificaTipo(tipo,"modelo")%> tcc"><%= link_to "Modelo",tccs_modelo_path%></li>
-    <li class="<%= verificaTipo(tipo,"projetos")%> tcc"><%= link_to "Projetos para TCC", tccs_projetos_path %></li>
-    <li class="<%= verificaTipo(tipo,"publicacoes")%> tcc"><%= link_to "Publicações", tccs_publicacoes_path %></li>
-    <li class="<%= verificaTipo(tipo,"agenda")%> tcc"><%= link_to "Próximas Defesas", tccs_agenda_path %></li>
-    <li class="<%= verificaTipo(tipo,"new")%> tcc"><%= link_to "Cadastro de Tcc", new_tcc_path %></li>
-    <li class="<%= verificaTipo(tipo,"index")%> tcc"><%= link_to "Listar Tccs", tccs_path %></li>
+    <li class="<%= verificaMenuAtivo(tipo,"home") %> tcc"><%= link_to 'TCC', tccs_home_path %></li>
+    <li class="<%= verificaMenuAtivo(tipo,"tipos") %> tcc"><%= link_to 'Tipos de TCC', tccs_tipos_path %></li>
+    <li class="<%= verificaMenuAtivo(tipo,"processo")%> tcc"><%= link_to "Processo", tccs_processo_path%></li>
+    <li class="<%= verificaMenuAtivo(tipo,"modelo")%> tcc"><%= link_to "Modelo",tccs_modelo_path%></li>
+    <li class="<%= verificaMenuAtivo(tipo,"projetos")%> tcc"><%= link_to "Projetos para TCC", tccs_projetos_path %></li>
+    <li class="<%= verificaMenuAtivo(tipo,"publicacoes")%> tcc"><%= link_to "Publicações", tccs_publicacoes_path %></li>
+    <li class="<%= verificaMenuAtivo(tipo,"agenda")%> tcc"><%= link_to "Próximas Defesas", tccs_agenda_path %></li>
+    <li class="<%= verificaMenuAtivo(tipo,"new")%> tcc"><%= link_to "Cadastro de Tcc", new_tcc_path %></li>
+    <li class="<%= verificaMenuAtivo(tipo,"index")%> tcc"><%= link_to "Listar Tccs", tccs_path %></li>
   </ul>
 </aside>
