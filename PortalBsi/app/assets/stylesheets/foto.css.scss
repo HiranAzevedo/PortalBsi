@@ -1,0 +1,76 @@
+/* Estilo FOTO */
+
+.boxcaption a{
+  color: #C8DCE5;
+  text-decoration: none;
+}
+
+.boxcaption a:focus, .boxcaption a:hover, .boxcaption a:active{
+  color: #C8DCE5;
+  text-decoration: underline;
+}
+
+h3.slidebox{
+  margin: 5px 5px 5px 5px;
+  text-transform: none;
+  color: #FFF;
+  font: 11pt Arial, sans-serif;
+}
+
+.boxgrid{
+  width: 155px;
+  height: 155px;
+  margin: 0 20px 20px 0;
+  float: left;
+  background: #161613;
+  border: solid 0px #000000;
+  overflow: hidden;
+  position: relative;
+}
+.boxgrid .photo{
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0;
+  width: 155px;
+  height: 155px;
+}
+.boxgrid .correio{	/* correio */
+  padding: 0 2px;
+  color: #afafaf;
+  font-weight: bold;
+  font: 8pt Arial, sans-serif;
+}
+
+.boxgrid p{
+  padding: 0 5px;
+  color: #afafaf;
+  font-weight: bold;
+  font: 10pt Arial, sans-serif;
+}
+
+.boxcaption{
+  float: left;
+  position: absolute;
+  background: #000;
+  height: 50px;
+  width: 100%;
+  opacity: 0.66;
+  -moz-opacity: 0.66;
+  filter: alpha(opacity=66);
+}
+.captionfull .boxcaption {
+  top: 155;
+  left: 0;
+}
+.caption .boxcaption {
+  top: 125;
+  left: 0;
+}
+
+.correioImage {
+  max-width: 78px;
+  vertical-align: bottom;
+  width: 68px;
+  height: 14px;
+}

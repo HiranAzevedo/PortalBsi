@@ -1,32 +1,18 @@
 <div class="container">
-  <div class="row-offcanvas">
-    <aside class="col-sm-3 col-xs-6 sidebar-offcanvas">
-      <ul class="menu">
-        <li class="ativo noticias"><%= link_to "Notícias", noticias_path %></li>
-      </ul>
-    </aside>
+  <aside>
+    <ul class="menu">
+      <li class="ativo noticias"><a href="index.html">Notícias</a></li>
+    </ul>
+  </aside>
 
 
-    <article class="col-sm-9 col-xs-12">
+  <article>
 
-      <p class="pull-left visible-xs visible-sm">
-        <button type="button" class="navbar-toggle" data-toggle="offcanvas">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="sr-only">Menu</span>
-        </button>
-      </p>
+    <h1>Notícias</h1>
 
-      <h1>Notícias</h1>
-
-      <p>Palestra da EY (Ernst & Young)</p>
-      <p><%= link_to image_tag("palestra_ey.jpg"), asset_path("Cartaz eletronico bike.pdf") %></p>
-
-
-      <div class="fb-like-box" data-href="http://www.facebook.com/bsiunirio" data-width="719" data-show-faces="true" data-header="true" data-stream="true" data-show-border="false"></div>
-    </article>
-  </div> <!-- row-offcanvas -->
+    <div class="fb-like-box" data-href="http://www.facebook.com/bsiunirio" data-width="719" data-show-faces="true" data-header="true" data-stream="true" data-show-border="false"></div>
+  </article>
 </div> <!-- Container -->
 <br style="clear: both">
+
 
