@@ -5,7 +5,7 @@ class TccMailer < ActionMailer::Base
     @tcc = tcc
     mail({
              to: "bsi-alunos@uniriotec.br",
-             bcc: "hiran.tassinari@gmail.com",
+             bcc: ['hiran.tassinari@gmail.com'],
              subject: "Novo Tcc criado"
          })
   end
