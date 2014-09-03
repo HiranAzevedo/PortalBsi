@@ -1,10 +1,7 @@
 module ApplicationHelper
-  def verificaTipo(tipo,nome_do_link)
+  def verificaMenuAtivo(tipo,nome_do_link)
     if tipo == nome_do_link
-      return "ativo tcc"
+      return "ativo"
     end
-  else
-    return ""
   end
-
 end

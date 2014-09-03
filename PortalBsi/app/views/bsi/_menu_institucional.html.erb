@@ -1,0 +1,16 @@
+<aside class="col-sm-3 col-xs-6 sidebar-offcanvas">
+  <ul class="menu">
+    <li class="<%= verificaMenuAtivo(tipo,"institucional") %> institucional">
+      <%= link_to "Institucional", institucional_path%>
+    </li>
+    <li class=" <%= verificaMenuAtivo(tipo,"eia") %> institucional" >
+      <%= link_to "EIA", institucional_eia_path %>
+    </li>
+    <li class=" <%= verificaMenuAtivo(tipo,"ccet") %> institucional">
+      <%= link_to "CCET", institucional_ccet_path %>
+    </li>
+    <li class=" <%= verificaMenuAtivo(tipo,"unirio") %> institucional">
+      <%= link_to "UNIRIO", institucional_unirio_path %>
+    </li>
+  </ul>
+</aside>

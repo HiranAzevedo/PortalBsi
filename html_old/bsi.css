@@ -1,5 +1,6 @@
 /* Estilo página BSI */
 
+
 * {
 	margin: 0;
 	padding: 0;
@@ -42,8 +43,6 @@ blockquote {
 	margin: 0 10% 1em 10%;
 	line-height: 1.5em;
 	font-style: italic;
-	padding: 10px 10px 25px;
-	background: #eceeee;
 }
 
 a , a:link {
@@ -58,16 +57,9 @@ a:hover{
 .container {
 	text-align: left;
 	margin: 0 auto;
-	width: 960px;
+	width: 980px;
 }
 
-.meio{
-	float: left;
-}
-
-.right{
-	float: right;
-}
 
 /* header */
 
@@ -78,11 +70,11 @@ header {
 	background-color: #304050;
 }
 
-header nav{	
-	width: 100%;
+header nav{
+	width: 980px;
 	height: 260px;
 	float: left;
-	padding-top: 12px;
+	margin-top: 12px;
 }
 
 /* Ícones das Seções do site*/
@@ -90,9 +82,9 @@ header nav{
 	margin: 0 10px 10px 0px;
 	width: auto;
 	height: auto;
-	float: left;
+	float:left;
 	border: 1px solid #304050;
-	opacity: 0.60;
+	opacity:0.60;
 	-moz-opacity: 0.60;
 	filter: alpha(opacity=60);	
 }
@@ -117,22 +109,29 @@ header nav{
 
 .icone img { padding-top: 15px; border: 0;}
 .iconeAtivo img { padding-top: 15px; border: 0;}
-.bsi img { padding-top: 40px; padding-bottom: 5px;}
-.noticias img { padding-top: 60px; }
+.bsi img { padding-top: 40px;}
+.noticias img { padding-top: 60px;}
 
 li.monografia {margin-bottom: 20px;}
 .monografiaTitulo {font-weight: bold;}
 
-.normal, .largo{
-	height: 111px; 
+.normal{
+    width: 111px; 
+	height: 111px;   
+}
+
+.largo{
+	width: 234px; /* 2 pixels a mais para compensar a borda dos ícones em baixo */
+	height: 111px;
 }
 
 .grande{
+	width: 234px;
 	height: 234px;
 }
 
 .semMargem{
-	margin: 0px !important;
+	margin: 0px;
 }
 
 /* cores dos ícones */
@@ -153,7 +152,6 @@ li.monografia {margin-bottom: 20px;}
 	font: 12px "Dosis", sans-serif;
 	text-transform: uppercase; 
 	text-align: center;
-	
 }
 
 .subtitleGrande{
@@ -167,33 +165,19 @@ aside{
 	font-family: "Dosis", Arial, sans-serif;
 	text-transform: uppercase;	
 	font-size: 10pt;
-/*	float: left;
-    width: 234px;
-	margin-right: 20px;*/
-}
-
-.menuTitulo{
-	font-size: 15pt; 
-	color: #fff; 
-	font-family: "Dosis", Arial, sans-serif;
-	text-transform: uppercase; 
-	font-weight: bold; 
-	display: inline-block; 
-	margin-top: 5px; 
-	padding-bottom: 1px; 
-	padding-left: 10px; 
-	border-left: 1px solid #F6F6F6;
+	float:left;
+    width:234px;
 }
 
 .menu{
-	/*width: 234px;*/
+	width: 234px;
 	list-style-type: none;
-	margin-right: 20px;
 }
 
 .menu li{
 	position: relative;
 }
+
 
 .menu li a{
 	display: block;
@@ -219,19 +203,23 @@ aside{
 	font-weight: bold;
 }
 
+
 aside li.submenu a{
     padding: 5px 20px 5px 30px;
 	font-size: 8pt;
 }
 
+
+
 /* Conteúdo principal */
 article{
 	display:inline; /*Bug da margem dupla para floats no IE*/ 
-/*    float:right;
-    width:720px;*/
+    float:right;
+    width:720px;
     text-align: justify;
  	padding-right: 10px;
 }
+
 
 article ul, ol, dl {
 	margin: 1em 0 1.5em 0em;
@@ -258,14 +246,6 @@ article dd {
 	margin-left: 25px;
 	margin-bottom: 1.5em;
 }
-
-.imagemIndex{
-	max-width: 600px;
-	width: 100%;
-	max-height: 464px;
-	min-height: auto;
-}
-
 /* Rodapé */
 
 footer {
@@ -273,6 +253,7 @@ footer {
 }
 
 #RodapeMenu{
+	height: 50px;
 	background-color: #bcc0c0;
 	color: #2c3e50;
 }
@@ -291,11 +272,15 @@ footer {
 	top: -20px;
 }
 
+#facebook a {
+
+}
+
 #RodapeMenu ul{
 	position: relative;
 	top: -20px;
-	margin-bottom: 0px;
 }
+
 
 #RodapeMenu li {
 	display: inline;
@@ -304,7 +289,7 @@ footer {
 	font-size: 9pt;
 	padding: 0 5px;
 	border-left: 1px solid gray;
-	margin-top: -20px;
+	margin-top: -20px;		
 }
 
 #RodapeMenu li:first-child {
@@ -313,9 +298,9 @@ footer {
 
 #RodapeLocalizacao{
 	color: #cccccc;
+	height: 70px;
 	background-color: #2c3e50;
 	padding-top: 10px;
-	padding-bottom: 15px;
 }
 
 #RodapeLocalizacao a{

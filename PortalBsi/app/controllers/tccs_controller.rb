@@ -11,6 +11,12 @@ class TccsController < ApplicationController
   def modelo
 
   end
+  def agenda
+
+  end
+  def publicacoes
+
+  end
   def new
     @tcc = Tcc.new
   end
