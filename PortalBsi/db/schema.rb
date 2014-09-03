@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140817045018) do
+ActiveRecord::Schema.define(version: 20140903044244) do
 
   create_table "tccs", force: true do |t|
     t.string   "titulo"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20140817045018) do
     t.string   "coorientador"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "nome_arquivo"
+    t.boolean  "apresentado"
   end
 
   create_table "users", force: true do |t|
