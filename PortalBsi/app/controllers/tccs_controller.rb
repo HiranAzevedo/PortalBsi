@@ -1,22 +1,16 @@
 class TccsController < ApplicationController
   before_action :authenticate_user!, only: [:new,:edit]
   def home
-
   end
   def tipos
-
   end
   def processo
-
   end
   def modelo
-
   end
   def agenda
-
   end
   def publicacoes
-
   end
   def new
     @tcc = Tcc.new
@@ -39,6 +33,13 @@ class TccsController < ApplicationController
   end
   def edit
     @tcc = Tcc.find(params[:id])
+  end
+  def publicar
+    @tcc = Tcc.find(params[:id])
+  end
+  def Salvar_Publicado
+  params[:tc][:apresentado] = true
+  redirect_to update
   end
   def update
     @tcc = Tcc.find(params[:id])

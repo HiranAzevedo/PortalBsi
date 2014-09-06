@@ -1,0 +1,21 @@
+<%= @tcc.id %>
+<% if @tcc.errors.any? %>
+    <div id="error_explanation">
+      <h2>Infelizmente não foi possível completar a ação pois o formulário possui os seguintes erros:</h2>
+      <ul>
+        <% @tcc.errors.full_messages.each do |message|%>
+            <li><%= message %> </li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+
+<%= form_for @tcc, :url => { :action => "Salvar_Publicado" },
+             :html => { :multipart => true } do |f| %>
+    <p>
+      <%= f.label :arquivo %>
+    </p>
+    <p>
+      <%= f.submit "Publicar", %>
+    </p>
+<% end %>
