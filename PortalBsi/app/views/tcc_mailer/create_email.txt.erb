@@ -1,3 +1,11 @@
-<%= @tcc.title %>
-Resumo: <%=  @tcc.resumo %>
-<%= link_to(@tcc, @tcc) %>
+Olá Bsi,
+Temos uma nova apresentação de TCC agendada, do aluno "ENTRAR NOME DO ALUNO".
+
+  Titulo: <%= @tcc.titulo %>
+
+  Resumo: <%= @tcc.resumo %>
+
+  Data: <%=  @tcc.data %>
+
+  <%= link_to(@tcc.titulo, tcc_url(@tcc), port:3000) %>
+

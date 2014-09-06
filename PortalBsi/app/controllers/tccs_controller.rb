@@ -28,6 +28,7 @@ class TccsController < ApplicationController
     @tcc = Tcc.new(tcc_params)
     @tcc.user_id = current_user.id
     if @tcc.save
+      TccMailer.create_email(@tcc)
       redirect_to @tcc, notice: 'Cadastro de TCC criado com sucesso!'
     else
       render action: :new
