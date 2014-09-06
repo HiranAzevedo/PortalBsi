@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140903044244) do
+ActiveRecord::Schema.define(version: 20140906173638) do
 
   create_table "tccs", force: true do |t|
     t.string   "titulo"
@@ -24,7 +24,10 @@ ActiveRecord::Schema.define(version: 20140903044244) do
     t.datetime "updated_at"
     t.string   "nome_arquivo"
     t.boolean  "apresentado"
+    t.integer  "user_id"
   end
+
+  add_index "tccs", ["user_id"], name: "index_tccs_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

@@ -1,4 +1,5 @@
 class TccsController < ApplicationController
+  before_action :authenticate_user!, only: [:new,:edit]
   def home
 
   end
@@ -25,6 +26,7 @@ class TccsController < ApplicationController
   end
   def create
     @tcc = Tcc.new(tcc_params)
+    @tcc.user_id = current_user.id
     if @tcc.save
       redirect_to @tcc, notice: 'Cadastro de TCC criado com sucesso!'
     else

@@ -1,0 +1,34 @@
+<aside class="col-sm-3 col-xs-6 sidebar-offcanvas">
+  <ul class="menu">
+    <li class=" <%=verificaMenuAtivo(tipo,"index")%> alunos">
+      <%= link_to "Alunos", root_path %>
+    </li>
+    <li class=" <%=verificaMenuAtivo(tipo,"historico")%> alunos">
+      <%= link_to "Matriculados", historico_path %>
+    </li>
+    <li class=" <%=verificaMenuAtivo(tipo,"localizacao")%> alunos">
+      <%= link_to "Turmas", localizacao_path %>
+    </li>
+    <li class=" <%=verificaMenuAtivo(tipo,"depoimento")%> alunos">
+      <%= link_to "Portal do Aluno", depoimentos_path %>
+    </li>
+    <li class=" <%=verificaMenuAtivo(tipo,"depoimento")%> alunos">
+      <%= link_to "Diretório Acadêmico", depoimentos_path %>
+    </li>
+    <li class=" <%=verificaMenuAtivo(tipo,"depoimento")%> alunos">
+      <%= link_to "Carteirinha de Estudante", depoimentos_path %>
+    </li>
+    <li class=" <%=verificaMenuAtivo(tipo,"depoimento")%> alunos">
+      <%= link_to "ENADE", depoimentos_path %>
+    </li>
+    <% if !user_signed_in? %>
+        <li class=" <%=verificaMenuAtivo(tipo,"login")%> alunos">
+          <%= link_to "Login", new_user_session_path %>
+        </li>
+    <% elsif user_signed_in? %>
+        <li class=" <%=verificaMenuAtivo(tipo,"logout")%> alunos">
+          <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+        </li>
+    <% end %>
+  </ul>
+</aside>

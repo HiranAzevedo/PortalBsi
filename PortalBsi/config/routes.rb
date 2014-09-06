@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   match '/secretaria', to: 'bsi#secretaria', via: 'get'
   match '/disciplinas', to: 'bsi#disciplinas', via: 'get'
   match '/disciplinas/eletivas', to: 'bsi#eletivas', via: 'get'
-  match '/alunos', to: 'bsi#alunos', via: 'get'
+  match '/alunos', to: 'alunos#index', via: 'get'
   match '/tccs/home', to: 'tccs#home', via: 'get'
   match '/tccs/tipos', to: 'tccs#tipos', via: 'get'
   match '/tccs/processo', to: 'tccs#processo', via: 'get'
