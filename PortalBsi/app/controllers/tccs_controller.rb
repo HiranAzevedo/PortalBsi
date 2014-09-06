@@ -26,6 +26,7 @@ class TccsController < ApplicationController
   def create
     @tcc = Tcc.new(tcc_params)
     if @tcc.save
+      TccMailer.create_email(@tcc)
       redirect_to @tcc, notice: 'Cadastro de TCC criado com sucesso!'
     else
       render action: :new

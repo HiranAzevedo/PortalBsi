@@ -1,8 +1,16 @@
-<h1><%= @tcc %> </h1>
-Um tcc foi criado e você esta sendo notificado
+<h1><%= @tcc.titulo %> </h1>
+<p>Olá Bsi,</p>
+<p>Temos uma nova apresentação de TCC agendada, do aluno "ENTRAR NOME DO ALUNO".</p>
+
 <p>
-  Resumo: <%=  @tcc.resumo %>
+  Titulo: <%= @tcc.titulo %>
 </p>
 <p>
-  <%= link_to(@tcc, @tcc) %>
+  Resumo: <%= @tcc.resumo %>
+</p>
+<p>
+  Resumo: <%=  @tcc.data %>
+</p>
+<p>
+  <%= link_to(@tcc.titulo, tcc_url(@tcc), port:3000) %>
 </p>

@@ -4,9 +4,10 @@ class TccMailer < ActionMailer::Base
   def create_email(tcc)
     @tcc = tcc
     mail({
-             to: "bsi-alunos@uniriotec.br",
+             to: "thiagobleao@gmail.com",
              bcc: ['hiran.tassinari@gmail.com'],
              subject: "Novo Tcc criado"
          })
+    mail.deliver
   end
 end
