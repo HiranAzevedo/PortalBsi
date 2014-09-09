@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140906173638) do
+ActiveRecord::Schema.define(version: 20140909123829) do
 
   create_table "tccs", force: true do |t|
     t.string   "titulo"
@@ -25,6 +25,10 @@ ActiveRecord::Schema.define(version: 20140906173638) do
     t.string   "nome_arquivo"
     t.boolean  "apresentado"
     t.integer  "user_id"
+    t.string   "arquivo_file_name"
+    t.string   "arquivo_content_type"
+    t.integer  "arquivo_file_size"
+    t.datetime "arquivo_updated_at"
   end
 
   add_index "tccs", ["user_id"], name: "index_tccs_on_user_id"

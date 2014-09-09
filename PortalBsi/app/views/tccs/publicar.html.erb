@@ -10,12 +10,13 @@
     </div>
 <% end %>
 
-<%= form_for @tcc, :url => { :action => "Salvar_Publicado" },
+<%= form_for @tcc, :url => { :action => "salva_publicado" },
              :html => { :multipart => true } do |f| %>
     <p>
       <%= f.label :arquivo %>
+      <%= f.file_field :arquivo %>
     </p>
     <p>
-      <%= f.submit "Publicar", %>
+      <%= f.submit "Publicar" %>
     </p>
 <% end %>
