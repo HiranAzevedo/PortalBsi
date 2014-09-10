@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140909123829) do
+ActiveRecord::Schema.define(version: 20140910021703) do
+
+  create_table "oportunidades", force: true do |t|
+    t.string   "company_name"
+    t.string   "title"
+    t.string   "description"
+    t.date     "expiration_date"
+    t.boolean  "is_approved"
+    t.string   "has_partnership"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tccs", force: true do |t|
     t.string   "titulo"
