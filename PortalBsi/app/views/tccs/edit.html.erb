@@ -2,3 +2,5 @@
 
 <%= render partial: "menu", locals: {tipo: 'new'} %>
 <%= render 'form' %>
+
+<%= link_to "Publicar Tcc", tccs_publicar_path(@tcc.id) %>

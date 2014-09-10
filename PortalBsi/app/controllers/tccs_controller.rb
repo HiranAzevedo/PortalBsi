@@ -1,5 +1,5 @@
 class TccsController < ApplicationController
-  before_action :authenticate_user!, only: [:new,:edit]
+  before_action :authenticate_user!, only: [:new,:edit, :publicar]
   def home
   end
   def tipos
