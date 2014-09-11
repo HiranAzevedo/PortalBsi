@@ -1,5 +1,5 @@
 class TccsController < ApplicationController
-  before_action :authenticate_user!, only: [:new,:edit]
+  before_action :authenticate_user!, only: [:new,:edit, :publicar]
   def home
   end
   def tipos
@@ -37,20 +37,29 @@ class TccsController < ApplicationController
   def publicar
     @tcc = Tcc.find(params[:id])
   end
-  def Salvar_Publicado
-  params[:tc][:apresentado] = true
-  redirect_to update
+  def salva_publicado
+    params[:tcc][:apresentado] = true
+    @tcc = Tcc.find(params[:id])
+    @tcc.user_id = current_user.id
+    if @tcc.update(tcc_params)
+      redirect_to @tcc, notice: 'Cadastro atualizado com sucesso!' and return
+    end
+  else render action: :index
   end
   def update
     @tcc = Tcc.find(params[:id])
-    if @tcc.update(user_params)
+    @tcc.user_id = current_user.id
+    if @tcc.update(tcc_params)
       redirect_to @tcc, notice: 'Cadastro atualizado com sucesso!'
-    else
-      render action: :edit
     end
+  else render action: :index
   end
   private
   def tcc_params
-    params.require(:tcc).permit(:titulo, :resumo, :data, :orientador, :local, :coorientador)
+    params.require(:tcc).permit(:titulo, :resumo, :data, :orientador, :local,
+                                :coorientador, :arquivo,:nome_arquivo,:apresentado)
+  end
+  def find_by_id(params)
+    @tcc = Tcc.find(params[:id])
   end
 end

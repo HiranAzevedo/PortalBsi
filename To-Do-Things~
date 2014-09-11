@@ -9,11 +9,15 @@
 
 
 
-Alterar o campo "resumo" para textArea 
+Alterar o campo "resumo" para textArea (DONE)
 Cadastro de tcc (enviar email bsi_alunos), - hiran (DONE)
 publicar TCC (evnio de email), - hiran
+Colocar erros ao lado do form
+Listar TCCS na pagina de publicação
+So abilitar no view o edit se o cara for dono do tcc
+Erros em portugues
 SMTP DO GOOGLE ***->
-UPLOAD DE ARQUIVO ***
+UPLOAD DE ARQUIVO ***(DONE)
 
 Pagina de Turma (pagina),
 
