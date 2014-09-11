@@ -26,6 +26,9 @@
           <%= link_to "Login", new_user_session_path %>
         </li>
     <% elsif user_signed_in? %>
+        <li class=" <%=verificaMenuAtivo(tipo,"edit")%> alunos">
+          <%= link_to "Editar Perfil", edit_user_registration_path %>
+        </li>
         <li class=" <%=verificaMenuAtivo(tipo,"logout")%> alunos">
           <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
         </li>
