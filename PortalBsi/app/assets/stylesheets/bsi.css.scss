@@ -1,3 +1,6 @@
+@import "shadow";
+$error-text-color: #b84947;
+
 * {
 	margin: 0;
 	padding: 0;
@@ -335,6 +338,36 @@ footer {
 	color: #c0c0c0;
 }
 
+/*Customizada nas Mensagens de erro */
+
+.field_with_errors {
+  display: inline;
+  label { color: $error-text-color; }
+  input[type=text], input[type=password], textarea {
+    border: 1px solid rgba(189,74,72, 0.5);
+    @include shadow(rgba(189,74,72, 0.2), 0px, 0px, 8px);
+    &:focus { border: 1px solid rgba(189,74,72, 0.6); }
+  }
+}
+.error_message {
+  margin-left: 5px;
+  display: inline;
+  color: $error-text-color;
+}
+
+.padded_flash {
+  padding: 10px;
+  margin: 10px 0;
+  font-weight: bold;
+  width: 500px;
+}
+#error_explanation {
+  border: 1px solid $error-text-color;
+  color: $error-text-color;
+  background-color: #F2DEDE;
+  @extend .padded_flash;
+}
+/* ------------------------------------------------ */
 /*!
  * Bootstrap v3.1.1 (http://getbootstrap.com)
  * Copyright 2011-2014 Twitter, Inc.

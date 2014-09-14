@@ -1,16 +1,24 @@
+<% if @oportunidade.errors.any? %>
+  <div id="error_explanation">
+    Há erros no formulário, por favor verifique.
+  </div>
+<% end %>
 <%= form_for @oportunidade do |f| %>
     
     <p>
       <%= f.label :title %><br/>
       <%= f.text_field :title %>
+      <%= error_tag @oportunidade, :title %>
     </p>
     <p>
       <%= f.label :company_name %><br/>
       <%= f.text_field :company_name %>
+      <%= error_tag @oportunidade, :company_name %>
     </p>
     <p>
       <%= f.label :description %><br/>
       <%= f.text_area :description %><br/>
+      <%= error_tag @oportunidade ,:description %>
     </p>
     <p>
       <%= f.label :expiration_date %><br/>
@@ -18,7 +26,11 @@
     </p>
     <p>
       <%= f.label :has_partnership %><br/>
-      <%= f.check_box :has_partnership %><br/>
+      <%= f.radio_button :has_partnership, :value => "true" %> 
+      <%= f.label :has_partnership, "Yes" %> &nbsp;
+      <%= f.radio_button :has_partnership, :value => "false" %> 
+      <%= f.label :has_partnership, "No" %>
+      
     </p>
     <p>
       <%=f.submit %>
