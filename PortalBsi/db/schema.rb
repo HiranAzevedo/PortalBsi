@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140910021703) do
+ActiveRecord::Schema.define(version: 20140913233412) do
 
   create_table "oportunidades", force: true do |t|
     t.string   "company_name"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20140910021703) do
     t.string   "description"
     t.date     "expiration_date"
     t.boolean  "is_approved"
-    t.string   "has_partnership"
+    t.boolean  "has_partnership", limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
