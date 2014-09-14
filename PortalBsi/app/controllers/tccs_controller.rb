@@ -1,7 +1,5 @@
 class TccsController < ApplicationController
   before_action :authenticate_user!, only: [:new,:edit, :publicar]
-  def home
-  end
   def tipos
   end
   def processo
@@ -42,6 +40,7 @@ class TccsController < ApplicationController
     @tcc = Tcc.find(params[:id])
     @tcc.user_id = current_user.id
     if @tcc.update(tcc_params)
+      TccMailer.publish_email(@tcc)
       redirect_to @tcc, notice: 'Cadastro atualizado com sucesso!' and return
     end
   else render action: :index

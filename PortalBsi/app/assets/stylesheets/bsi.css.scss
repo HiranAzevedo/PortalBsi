@@ -135,7 +135,12 @@ li.monografia {margin-bottom: 20px;}
 .semMargem{
 	margin: 0px !important;
 }
-
+$error-text-color: #B94A48;
+.error_message {
+  margin-left: 5px;
+  display: inline;
+  color: $error-text-color;
+}
 /* cores dos ícones */
 .bsi{background-color: #38719c;}
 .disciplinas{background-color: #ca8977;}

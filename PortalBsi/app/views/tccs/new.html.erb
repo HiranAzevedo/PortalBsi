@@ -1,7 +1,9 @@
-<h1>Agendar TCC</h1>
-<div class="container">
-  <div class="row-offcanvas">
+<article>
+  <%= render partial: "menu", locals: {tipo: 'new'} %>
+  <h1>Agendar TCC</h1>
+  <%= render 'form' %>
 
-    <%= render partial: "menu", locals: {tipo: 'new'} %>
-    <%= render 'form' %>
-  </div></div>
+ </article>
+</div> <!-- Container -->
+<br style="clear: both">
+
