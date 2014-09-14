@@ -1,0 +1,12 @@
+<aside class="col-sm-3 col-xs-6 sidebar-offcanvas">
+  <ul class="menu">
+
+    <li class="<%= verificaMenuAtivo(tipo,"home") %> oportunidades"><%= link_to 'Oportunidades', oportunidades_home_path %></li>
+    <li class="<%= verificaMenuAtivo(tipo,"bolsas_permanencia") %> oportunidades"><%= link_to 'Bolsas Permanência' %></li>
+    <li class="<%= verificaMenuAtivo(tipo,"jovens_talentos")%> oportunidades"><%= link_to "Jovens Talentos" %></li>
+    <li class="<%= verificaMenuAtivo(tipo,"monitoria")%> oportunidades"><%= link_to "Monitoria" %></li>
+    <li class="<%= verificaMenuAtivo(tipo,"iniciacao_cientifica")%> oportunidades"><%= link_to "Iniciação Científica" %></li>
+    <li class="<%= verificaMenuAtivo(tipo,"ciencia_sem_fronteira")%> oportunidades"><%= link_to "Ciência Sem Fronteira" %></li>
+    <li class="<%= verificaMenuAtivo(tipo,"mobilidade_academica_nacional")%> oportunidades"><%= link_to "Mobilidade Acadêmica Nacional" %></li>
+  </ul>
+</aside>

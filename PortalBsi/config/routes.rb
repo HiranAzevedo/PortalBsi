@@ -19,11 +19,11 @@ Rails.application.routes.draw do
   match '/tccs/agenda', to: 'tccs#agenda', via: 'get'
   match '/noticias', to: 'bsi#noticias', via: 'get'
   match '/professores', to: 'bsi#professores', via: 'get'
-  match '/oportunidades', to: 'bsi#oportunidades', via: 'get'
   match '/institucional', to: 'bsi#institucional', via: 'get'
   match '/institucional/eia', to: 'bsi#eia', via: 'get'
   match '/institucional/ccet', to: 'bsi#ccet', via: 'get'
   match '/institucional/unirio', to: 'bsi#unirio', via: 'get'
+  match '/oportunidades/home', to: 'oportunidades#home', via: 'get'
   resources :tccs
   resources :oportunidades
   # The priority is based upon order of creation: first created -> highest priority.
