@@ -26,10 +26,10 @@
     </p>
     <p>
       <%= f.label :has_partnership %><br/>
-      <%= f.radio_button :has_partnership, :value => "true" %> 
-      <%= f.label :has_partnership, "Yes" %> &nbsp;
-      <%= f.radio_button :has_partnership, :value => "false" %> 
-      <%= f.label :has_partnership, "No" %>
+      <%= f.radio_button :has_partnership, true %> 
+      <%= f.label :has_partnership, "Yes", :value => "true" %> &nbsp;
+      <%= f.radio_button :has_partnership, false %> 
+      <%= f.label :has_partnership, "No", :value => "false" %>
       
     </p>
     <p>
