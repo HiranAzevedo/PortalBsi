@@ -10,4 +10,13 @@ class TccMailer < ActionMailer::Base
          })
     mail.deliver
   end
+  def publish_email(tcc)
+    @tcc = tcc
+    mail({
+        to: "thiagobleao@gmail.com",
+    bcc: ['hiran.tassinari@gmail.com'],
+    subject: 'Tcc publicado'
+         })
+    mail.deliver
+  end
 end

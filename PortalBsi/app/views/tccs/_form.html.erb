@@ -1,4 +1,4 @@
-<% if @tcc.errors.any? %>
+<!--<% if @tcc.errors.any? %>
     <div id="error_explanation">
       <h2>Infelizmente não foi possível completar a ação pois o formulário possui os seguintes erros:</h2>
       <ul>
@@ -7,36 +7,62 @@
         <% end %>
       </ul>
     </div>
-<% end %>
-
+<% end %>-->
+<div id="form_tcc" class="col-sm-9 col-xs-12">
 <%= form_for @tcc do |f| %>
 
     <p>
-      <%= f.label :titulo  %><br/>
-      <%= f.text_field :titulo %>
+      <%= f.label :titulo, style: "padding-right: 7px;" %><br/>
+      <%= f.text_field :titulo, style: "width:640px;" %>
+      <% if @tcc.errors.has_key? :titulo %>
+        <div class="error_message">
+          <%= @tcc.errors[:titulo].first %>
+        </div>
+    <% end %>
     </p>
     <p>
-      <%= f.label :resumo %> <br/>
-      <%= f.text_area :resumo %>
+      <%= f.label :resumo, style: "padding-right: 17px;" %> <br/>
+      <%= f.text_area :resumo, style: "height:215px; max-height:215px; width:717px; max-width:717px" %>
     </p>
     <p>
-      <%= f.label :data  %> <br/>
-      <%= f.date_select :data %>
+      <%= f.label :data, style: "padding-right: 38px;" %> <br/>
+      <%= f.date_select :data, style: "margin: 0 4px 0 2px; width: 25px" %>
+      <% if @tcc.errors.has_key? :data %>
+        <div class="error_message">
+          <%= @tcc.errors[:data].first %>
+        </div>
+    <% end %>
     </p>
     <p>
-      <%= f.label :orientador %><br/>
-      <%= f.text_field :orientador %>
+      <%= f.label :orientador, style: "padding-right: 2px;" %><br/>
+      <%= f.select :orientador,options_for_select([["Pimentel", "pimentel"], ["Geiza", "geiza"]],@tcc.orientador) %>
+      <% if @tcc.errors.has_key? :orientador %>
+        <div class="error_message">
+          <%= @tcc.errors[:orientador].first %>
+        </div>
+    <% end %>
     </p>
     <p>
-      <%= f.label :local %><br/>
+      <%= f.label :local, style:"padding-right: 2px;margin-left: 143px" %><br/>
       <%= f.text_field :local %>
+      <% if @tcc.errors.has_key? :local %>
+        <div class="error_message">
+          <%= @tcc.errors[:local].first %>
+        </div>
+    <% end %>
     </p>
     <p>
-      <%= f.label :coorientador %><br/>
+      <%= f.label :coorientador,style: "padding-right: 2px;margin-left: 50px" %><br/>
       <%= f.text_field :coorientador %>
+      <% if @tcc.errors.has_key? :coorientador %>
+        <div class="error_message">
+          <%= @tcc.errors[:coorientador].first %>
+        </div>
+    <% end %>
     </p>
 
     <p>
-      <%= f.submit %>
+      <%= f.submit "Enviar TCC" %>
     </p>
 <% end %>
+</div>

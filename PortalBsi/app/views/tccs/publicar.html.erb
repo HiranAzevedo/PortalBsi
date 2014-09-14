@@ -1,5 +1,5 @@
 <%= @tcc.id %>
-<% if @tcc.errors.any? %>
+<!--<% if @tcc.errors.any? %>
     <div id="error_explanation">
       <h2>Infelizmente não foi possível completar a ação pois o formulário possui os seguintes erros:</h2>
       <ul>
@@ -8,13 +8,18 @@
         <% end %>
       </ul>
     </div>
-<% end %>
+<% end %>-->
 
 <%= form_for @tcc, :url => { :action => "salva_publicado" },
              :html => { :multipart => true } do |f| %>
     <p>
       <%= f.label :arquivo %>
       <%= f.file_field :arquivo %>
+      <% if @tcc.errors.has_key? :arquivo %>
+        <div class="error_message">
+          <%= @tcc.errors[:arquivo].first %>
+        </div>
+    <% end %>
     </p>
     <p>
       <%= f.submit "Publicar" %>
