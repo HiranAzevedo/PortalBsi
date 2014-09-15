@@ -4,4 +4,5 @@ class Tcc < ActiveRecord::Base
   validates_attachment_content_type :arquivo, :content_type => ["application/pdf"]
   validates :user_id, presence: true
   validates_presence_of :titulo, :resumo, :data, :orientador, :local
+  validates_uniqueness_of :user_id, allow_nil: false
 end

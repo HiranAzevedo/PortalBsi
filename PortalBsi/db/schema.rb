@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140909123829) do
+ActiveRecord::Schema.define(version: 20140912040958) do
+
+  create_table "tags", force: true do |t|
+    t.string   "nome"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tccs", force: true do |t|
     t.string   "titulo"
@@ -46,9 +52,18 @@ ActiveRecord::Schema.define(version: 20140909123829) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "nome"
+    t.string   "apelido"
+    t.string   "matricula"
+    t.string   "facebook_link"
+    t.string   "github_link"
+    t.integer  "users_id"
+    t.integer  "tccs_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["tccs_id"], name: "index_users_on_tccs_id"
+  add_index "users", ["users_id"], name: "index_users_on_users_id"
 
 end
