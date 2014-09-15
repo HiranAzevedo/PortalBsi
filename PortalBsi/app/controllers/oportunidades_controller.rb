@@ -8,6 +8,7 @@ class OportunidadesController < ApplicationController
   end
 
   def show
+  	@oportunidade = Oportunidade.find(params[:id])
   end	
 
   def create
@@ -26,6 +27,8 @@ class OportunidadesController < ApplicationController
   end
 
   def destroy
+  	@oportunidade.destroy
+  	redirect_to oportunidades_url
   end
   
   private
