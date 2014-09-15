@@ -1,0 +1,13 @@
+<h1> SISTEMA BSI </h1>
+<p>Olá Bsi,</p>
+<p>Temos uma apresentação de TCC publicada, do aluno "ENTRAR NOME DO ALUNO".</p>
+
+<p>
+  Titulo: <%= @tcc.titulo %>
+</p>
+<p>
+  Resumo: <%= @tcc.resumo %>
+</p>
+<p>
+  <%= link_to(@tcc.titulo, tcc_url(@tcc), port:3000) %>
+</p>

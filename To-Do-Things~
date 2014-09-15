@@ -1,35 +1,27 @@
-* Passar o html para o rails - almost done
-* Devise -feito
-* Tirar os grandes comentarios do html estatico DONE
-* Agendar os TCCs - Done
-* Montar a avaliação de materias - não vai ser feito
-* Tratar depoimentos
-* @uniriotec como imagens?? - feito
+BACKLOG->
+* Paginas de disciplinas
+* Tirar os grandes comentarios do html estatico 
+* So abilitar no view o edit se o cara for dono do tcc
+* Pagina de Turma (pagina)
+* Passar o html para o rails 
+* Realizar solicitacao na secretaria(envio de email) + visualizar historico de solicitacoes
+cadastrar tipos de entradas para secretaria
 
 
-
-
-Alterar o campo "resumo" para textArea (DONE)
-Cadastro de tcc (enviar email bsi_alunos), - hiran (DONE)
-publicar TCC (evnio de email), - hiran
-Colocar erros ao lado do form
+HIRAN
+publicar TCC (evnio de email), (DONE)
+Colocar erros ao lado do form(DONE)
 Listar TCCS na pagina de publicação
-So abilitar no view o edit se o cara for dono do tcc
-Erros em portugues
-SMTP DO GOOGLE ***->
-UPLOAD DE ARQUIVO ***(DONE)
+SMTP DO GOOGLE 
+Mudar a home para o index(DONE)
+Trazer html do yuri
 
-Pagina de Turma (pagina),
 
-Realizar solicitacao na secretaria(envio de email), - tarefa pros 2 novos
-visualizar historico de solicitacoes,- tarefa pros 2 novos
+THIAGO
 
-alterar o perfil, - thiago
-ADMIN ->
-perfil de admin - thiago
-cadastrar alunos - thiago
+alterar o perfil,
+perfil de admin -
+cadastrar alunos
 cadastrar Tags
-cadastrar professores - tarefa pros 2 novos
-cadastrar tipos de entradas para secretaria - tarefa pros 2 novos
-
-Relacionamento ALUNO - TCC (incluir o campo de string do arquivo de tcc e o booleano de TccApresentado na migration)
+Relacionameto de tag com usuario e com tcc
+cadastrar professores
