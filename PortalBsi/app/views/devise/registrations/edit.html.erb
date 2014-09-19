@@ -2,21 +2,23 @@
   <h1>Editar Perfil</h1>
   <hr>
   <div class="row">
-    <!-- left column -->
-    <div class="col-md-3">
-      <div class="text-center">
-        <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
-        <h6>Alterar foto...</h6>
-
-        <input type="file" class="form-control">
-      </div>
-    </div>
 
     <!-- edit form column -->
-    <div class="col-md-9 personal-info">
-    <%= devise_error_messages! %>
-      <h3>Informações pessoais</h3>
+
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "form-horizontal" }) do |f| %>
+          <!-- left column -->
+          <div class="col-md-3">
+            <div class="text-center">
+              <%= image_tag(current_user.avatar.url(:thumb), class: "avatar img-circle") %>
+
+              <%= f.file_field :avatar %>
+            </div>
+          </div>
+
+
+        <div class="col-md-9 personal-info">
+          <%= devise_error_messages! %>
+          <h3>Informações pessoais</h3>
 
         <div class="form-group">
           <%= f.label :nome, class: "col-lg-3 control-label" %>
@@ -51,27 +53,27 @@
         <% end %>
 
         <div class="form-group">
-          <%= f.label :password, class: "col-lg-3 control-label" %>
+          <%= f.label "Nova Senha", class: "col-lg-3 control-label" %><i>(Preencha caso queira alterar sua senha)</i><br />
           <div class="col-lg-8">
             <%= f.password_field :password , class: "form-control", autocomplete: "off" %>
           </div>
         </div>
 
         <div class="form-group">
-          <%= f.label :password_confirmation, class: "col-lg-3 control-label" %>
+          <%= f.label "Cofirme a Nova Senha Senha", class: "col-lg-3 control-label" %><i>(Preencha caso queira alterar sua senha)</i><br />
           <div class="col-lg-8">
             <%= f.password_field :password_confirmation , class: "form-control", autocomplete: "off" %>
           </div>
         </div>
 
         <div class="form-group">
-          <%= f.label :current_password, class: "col-lg-3 control-label" %> <i>(we need your current password to confirm your changes)</i><br />
+          <%= f.label "Senha Atual", class: "col-lg-3 control-label" %> <i>(Necessário para confirmar as alterações)</i><br />
           <div class="col-lg-8">
             <%= f.password_field :current_password , class: "form-control", autocomplete: "off" %>
           </div>
         </div>
 
-        <div><%= f.submit "Update" %></div>
+        <div><%= f.submit "Atualizar" %></div>
     <% end %>
     <%= link_to "Back", :back %>
     </div>
