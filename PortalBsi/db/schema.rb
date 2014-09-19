@@ -57,7 +57,6 @@ ActiveRecord::Schema.define(version: 20140915201917) do
     t.string   "matricula"
     t.string   "facebook_link"
     t.string   "github_link"
-    t.integer  "users_id"
     t.integer  "tccs_id"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
