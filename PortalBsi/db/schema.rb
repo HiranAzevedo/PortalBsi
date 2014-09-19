@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140915201917) do
+ActiveRecord::Schema.define(version: 20140919033018) do
+
+  create_table "professors", force: true do |t|
+    t.string   "nome"
+    t.string   "email"
+    t.string   "lattes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+  end
 
   create_table "tags", force: true do |t|
     t.string   "nome"
@@ -57,6 +69,7 @@ ActiveRecord::Schema.define(version: 20140915201917) do
     t.string   "matricula"
     t.string   "facebook_link"
     t.string   "github_link"
+    t.integer  "users_id"
     t.integer  "tccs_id"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"

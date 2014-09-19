@@ -1,0 +1,43 @@
+<div class="container">
+<div class="row-offcanvas">
+<aside class="col-sm-3 col-xs-6 sidebar-offcanvas">
+  <ul class="menu">
+    <li class="ativo professores"><%= link_to "PROFESSORES", professors_path %></li>
+    <% @professors.each do |professor| %>
+        <li><a href="<%= professor.lattes %>"  target="_blank"><%= professor.nome %></a></li>
+    <% end %>
+  </ul>
+</aside>
+
+<article class="col-sm-9 col-xs-12">
+
+<p class="pull-left visible-xs visible-sm">
+  <button type="button" class="navbar-toggle" data-toggle="offcanvas">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="sr-only">Menu</span>
+  </button>
+</p>
+
+<h1>Professores</h1>
+
+<p id="info">O corpo docente do curso BSI é composto por professores altamente qualificados, quase todos doutores. Clique no professor e consulte seu currículo.<br>&nbsp;</p>
+
+<div class="flex-container">
+
+<% @professors.each do |professor| %>
+<section class="boxgrid caption">
+  <%= image_tag professor.avatar.url(:original), alt:professor.nome, class:"photo" %>
+  <div class="cover boxcaption" style="top: 125px;">
+    <h3 class="slidebox"><a href="<%= professor.lattes %>"  target="_blank"><%= professor.nome %></a></h3>
+    <p class="correio"><%= professor.email.split("@")[0] %><%= image_tag "uniriotecbr.gif" ,alt:professor.nome ,class:"correioImage"%></p>
+  </div>
+</section>
+<% end %>
+
+</div>
+</article>
+</div> <!-- row-offcanvas -->
+</div> <!-- Container -->
+<br style="clear: both">

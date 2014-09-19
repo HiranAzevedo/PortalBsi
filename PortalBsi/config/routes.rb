@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :professors
+
   devise_for :users, :controllers => { registrations: 'registrations' }
   root 'bsi#home'
   match '/depoimentos', to: 'bsi#depoimentos', via: 'get'
