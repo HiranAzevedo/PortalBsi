@@ -23,23 +23,23 @@
         <div class="form-group">
           <%= f.label :nome, class: "col-lg-3 control-label" %>
           <div class="col-lg-8">
-            <%= f.text_field :nome, class: "form-control", autofocus: true %>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <%= f.label :apelido, class: "col-lg-3 control-label" %>
-          <div class="col-lg-8">
-            <%= f.text_field :apelido , class: "form-control" %>
+            <%= f.text_field :nome, class: "form-control", disabled: true %>
           </div>
         </div>
 
         <div class="form-group">
           <%= f.label :matricula, class: "col-lg-3 control-label" %>
           <div class="col-lg-8">
-            <%= f.text_field :matricula , class: "form-control" %>
+            <%= f.text_field :matricula , class: "form-control", disabled: true %>
           </div>
         </div>
+
+          <div class="form-group">
+            <%= f.label "Nome de Tratamento", class: "col-lg-3 control-label" %>
+            <div class="col-lg-8">
+              <%= f.text_field :apelido , class: "form-control", value: resource.nome.split[0], autofocus: true %>
+            </div>
+          </div>
 
         <div class="form-group">
           <%= f.label :email, class: "col-lg-3 control-label" %>
