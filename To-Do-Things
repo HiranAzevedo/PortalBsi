@@ -36,16 +36,16 @@ alunos->
 *Campo turma
 
 tcc->
-*Trocar a ordem do form
-*Branco prof
-*Local setar default (sala)
+*Trocar a ordem do form	(DONE)
+*Branco prof	(parcialmente feito)
+*Local setar default (sala)	(DONE)
 *Menu
 *admin pode desfazer ppublicação
 *agenda
 *publicações
 *validar data para publicar
-*adicionar hora na data
-*Projetos de tcc (REMOVER)
+*adicionar hora na data (DONE)
+*Projetos de tcc (REMOVER) (DONE)
 *agendar virar show se já existir TCC
 *Publicar TCC(link no menu)
 *JOB para email

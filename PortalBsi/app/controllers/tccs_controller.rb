@@ -7,6 +7,7 @@ class TccsController < ApplicationController
   def modelo
   end
   def agenda
+    @tcc = Tcc.find_by_apresentado(false)
   end
   def publicacoes
   end
