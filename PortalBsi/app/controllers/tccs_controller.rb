@@ -7,7 +7,7 @@ class TccsController < ApplicationController
   def modelo
   end
   def agenda
-    @tcc = Tcc.find_by_apresentado(false)
+    @tcc = Tcc.where(apresentado:nil)
   end
   def publicacoes
   end
@@ -18,6 +18,7 @@ class TccsController < ApplicationController
     @tccs = Tcc.take(5)
   end
   def create
+    params[:tcc][:apresentado] = false
     @tcc = Tcc.new(tcc_params)
     @tcc.user_id = current_user.id
     if @tcc.save
@@ -39,7 +40,6 @@ class TccsController < ApplicationController
   def salva_publicado
     params[:tcc][:apresentado] = true
     @tcc = Tcc.find(params[:id])
-    @tcc.user_id = current_user.id
     if @tcc.update(tcc_params)
       TccMailer.publish_email(@tcc)
       redirect_to @tcc, notice: 'Cadastro atualizado com sucesso!' and return
@@ -48,7 +48,6 @@ class TccsController < ApplicationController
   end
   def update
     @tcc = Tcc.find(params[:id])
-    @tcc.user_id = current_user.id
     if @tcc.update(tcc_params)
       redirect_to @tcc, notice: 'Cadastro atualizado com sucesso!'
     end

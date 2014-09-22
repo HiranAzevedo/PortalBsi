@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140921165833) do
+ActiveRecord::Schema.define(version: 20140921205642) do
 
   create_table "professors", force: true do |t|
     t.string   "nome"
@@ -23,10 +23,7 @@ ActiveRecord::Schema.define(version: 20140921165833) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.integer  "tccs_id"
   end
-
-  add_index "professors", ["tccs_id"], name: "index_professors_on_tccs_id"
 
   create_table "tags", force: true do |t|
     t.string   "nome"

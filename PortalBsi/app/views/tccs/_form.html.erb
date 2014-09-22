@@ -1,4 +1,4 @@
-<!--<% if @tcc.errors.any? %>
+<% if @tcc.errors.any? %>
     <div id="error_explanation">
       <h2>Infelizmente não foi possível completar a ação pois o formulário possui os seguintes erros:</h2>
       <ul>
@@ -7,7 +7,7 @@
         <% end %>
       </ul>
     </div>
-<% end %>-->
+<% end %>
 <div id="form_tcc" class="col-sm-9 col-xs-12">
   <%= form_for @tcc do |f| %>
       <p>
@@ -59,7 +59,6 @@
           </div>
       <% end %>
       </p>
-
       <p>
         <%= f.submit "Agendar TCC" %>
       </p>
