@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
+  resources :professors
+
+  devise_for :users, :controllers => { registrations: 'registrations' }
   root 'bsi#home'
   match '/depoimentos', to: 'bsi#depoimentos', via: 'get'
   match '/historico', to: 'bsi#historico', via: 'get'
@@ -26,6 +28,8 @@ Rails.application.routes.draw do
   match '/oportunidades/home', to: 'oportunidades#home', via: 'get'
   resources :tccs
   resources :oportunidades
+  resources :tags
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

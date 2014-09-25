@@ -1,7 +1,6 @@
 BACKLOG->
 * Paginas de disciplinas
 * Tirar os grandes comentarios do html estatico 
-* So abilitar no view o edit se o cara for dono do tcc
 * Pagina de Turma (pagina)
 * Passar o html para o rails 
 * Realizar solicitacao na secretaria(envio de email) + visualizar historico de solicitacoes
@@ -9,12 +8,7 @@ cadastrar tipos de entradas para secretaria
 
 
 HIRAN
-publicar TCC (evnio de email), (DONE)
-Colocar erros ao lado do form(DONE)
 Listar TCCS na pagina de publicação
-SMTP DO GOOGLE 
-Mudar a home para o index(DONE)
-Trazer html do yuri
 
 
 THIAGO
@@ -25,3 +19,42 @@ cadastrar alunos
 cadastrar Tags
 Relacionameto de tag com usuario e com tcc
 cadastrar professores
+
+**POR AREA**
+
+prof->
+*CRUD
+*INDEX
+
+alunos->
+*Links/Menu
+*Bloquear (matricula e nome)
+*Acertar foto
+*Apelido -> Nome de tratamento
+*Sugestão nome de tratamento
+*Yuri login
+*Campo turma
+
+tcc->
+*Trocar a ordem do form	(DONE)
+*Branco prof	(parcialmente feito)
+*Local setar default (sala)	(DONE
+*Menu
+*admin pode desfazer ppublicação
+*agenda
+*publicações
+*validar data para publicar
+*adicionar hora na data (DONE)
+*Projetos de tcc (REMOVER) (DONE)
+*agendar virar show se já existir TCC
+*Publicar TCC(link no menu)
+*JOB para email
+
+
+Secretaria ->
+*CRUD
+
+Max->
+
+*mudar senha do email
+*levantar requisitos para deploy

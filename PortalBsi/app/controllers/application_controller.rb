@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
 
   after_filter :store_location
 
+  before_filter :configure_permitted_parameters, if: :devise_controller?
+
   def store_location
     # store last url - this is needed for post-login redirect to whatever the user last visited.
     return unless request.get?
@@ -25,5 +27,14 @@ class ApplicationController < ActionController::Base
 
   def after_sign_out_path_for(resource)
     session[:previous_url] || root_path
+  end
+
+  def after_update_path_for(resource)
+    session[:previous_url] || root_path
+  end
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :email, :password) }
+    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:nome, :apelido, :matricula, :email, :password, :password_confirmation, :current_password, :avatar) }
   end
 end
