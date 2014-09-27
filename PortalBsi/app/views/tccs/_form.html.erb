@@ -25,7 +25,7 @@
       </p>
       <p>
         <%= f.label :orientador, style: "padding-right: 2px;" %><br/>
-        <%= f.select :orientador,options_for_select([["Pimentel", "pimentel"], ["Geiza", "geiza"]],@tcc.orientador) %>
+        <%= f.select :orientador,options_for_select(@prof_names,@tcc.orientador) %>
         <% if @tcc.errors.has_key? :orientador %>
           <div class="error_message">
             <%= @tcc.errors[:orientador].first %>

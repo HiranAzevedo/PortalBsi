@@ -14,7 +14,11 @@ class TccsController < ApplicationController
   end
   def new
     @tcc = Tcc.new
-    @prof = Professor.all
+    prof = Professor.all
+    blank_prof =  ""
+    @prof_names = Array.new
+    @prof_names << blank_prof
+    @prof_names << prof.select(:nome).collect{|a| a.nome}
   end
   def index
     @tccs = Tcc.take(5)
