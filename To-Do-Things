@@ -57,3 +57,11 @@ Secretaria ->
 Max->
 *mudar senha do email(DONE)
 *levantar requisitos para deploy
+
+LANCHINHO -> 
+PRIMEIRO : MANDAR ELE IR A MERDA E/OU TOMAR NO CU !!!!
+
+SEGUNDO: 
+instalar imagemagick.libmagickcore-dev // mas por que ? 
+Na hora que vc der o bundle para instalar a gem carrierwave e o rmagick vai dar erro se vcs nao tiverem o libmagickcore-dev.
+
