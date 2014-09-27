@@ -36,7 +36,7 @@
           <div class="form-group">
             <%= f.label "Nome de Tratamento", class: "col-lg-3 control-label" %>
             <div class="col-lg-8">
-              <%= f.text_field :apelido , class: "form-control", value: resource.nome.split[0], autofocus: true %>
+              <%= f.text_field :apelido , class: "form-control", value: retornaApelido(resource.nome), autofocus: true %>
             </div>
           </div>
 

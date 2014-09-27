@@ -12,7 +12,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20140927200712) do
-
+  
   create_table "oportunidades", force: true do |t|
     t.string   "company_name"
     t.string   "title"
