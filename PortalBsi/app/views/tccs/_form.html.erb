@@ -1,5 +1,5 @@
 <% if @tcc.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="col-sm-9 col-xs-12">
       <h2>Infelizmente não foi possível completar a ação pois o formulário possui os seguintes erros:</h2>
       <ul>
         <% @tcc.errors.full_messages.each do |message|%>
@@ -33,7 +33,7 @@
       <% end %>
       </p>
       <p>
-        <%= f.label :coorientador,style: "padding-right: 2px;margin-left: 50px" %><br/>
+        <%= f.label :coorientador,style: "padding-right: 2px;" %><br/>
         <%= f.text_field :coorientador %>
         <% if @tcc.errors.has_key? :coorientador %>
           <div class="error_message">
@@ -51,7 +51,7 @@
       <% end %>
       </p>
       <p>
-        <%= f.label :local, style:"padding-right: 2px;margin-left: 143px" %><br/>
+        <%= f.label :local, style:"padding-right: 2px;" %><br/>
         <%= f.text_field :local, value: "sala" %>
         <% if @tcc.errors.has_key? :local %>
           <div class="error_message">

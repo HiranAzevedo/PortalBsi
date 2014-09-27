@@ -24,7 +24,11 @@
 <body>
 <%= render 'layouts/barra_brasil' %>
 <%= render 'layouts/header' %>
-<%= yield %>
+<div class="container">
+  <div class="row-offcanvas">
+    <%= yield %>
+  </div>
+</div>
 <%= render 'layouts/footer' %>
 <%= debug(params) if Rails.env.development? %>
 <script src="//barra.brasil.gov.br/barra.js" type="text/javascript"></script>

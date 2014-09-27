@@ -1,12 +1,10 @@
-<div class="container">
-<article>
-  <h1>Edição de TCC</h1>
+    <article>
+      <h1>Edição de TCC</h1>
 
-  <%= render partial: "menu", locals: {tipo: 'new'} %>
-  <%= render 'form' %>
+      <%= render partial: "menu", locals: {tipo: 'new'} %>
+      <%= render 'form' %>
 
-  <% unless @tcc.apresentado %>
-      <%= link_to "Publicar Tcc", tccs_publicar_path(@tcc.id) %>
-  <% end %>
-</article>
-</div>
+      <% unless @tcc.apresentado %>
+          <%= link_to "Publicar Tcc", tccs_publicar_path(@tcc.id) %>
+      <% end %>
+    </article>
