@@ -41,7 +41,7 @@ tcc->
 *Local setar default (sala)	(DONE)
 *admin pode desfazer ppublicação
 *menu para publicar TCC
-*agenda
+*agenda (DONE)
 *publicações
 *validar data para publicar
 *adicionar hora na data (DONE)
@@ -55,6 +55,5 @@ Secretaria ->
 *CRUD
 
 Max->
-
-*mudar senha do email
+*mudar senha do email(DONE)
 *levantar requisitos para deploy

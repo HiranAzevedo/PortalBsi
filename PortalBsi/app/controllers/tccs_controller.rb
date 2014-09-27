@@ -7,7 +7,7 @@ class TccsController < ApplicationController
   def modelo
   end
   def agenda
-    @tcc = Tcc.where(apresentado:false)
+    @tcc = Tcc.where("apresentado = ? and data > ?", false, DateTime.now)
   end
   def publicacoes
   end
