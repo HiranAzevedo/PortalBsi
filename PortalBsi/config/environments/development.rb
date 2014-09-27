@@ -40,9 +40,9 @@ PortalBsi::Application.configure do
   config.action_mailer.smtp_settings = {
       address:              'smtp.gmail.com',
       port:                 587,
-      domain:               'gmail.com',
-      user_name:            'sistemabsi',
-      password:             'rubyonrails',
+      domain:               'uniriotec.br',
+      user_name:            'portalbsi',
+      password:             'novoportaluniriotec',
       authentication:       'plain',
       enable_starttls_auto: true  }
 

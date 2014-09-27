@@ -1,6 +1,3 @@
-
-<div class="container">
-  <div class="row-offcanvas">
     <%= render partial: "menu", locals: {tipo: 'agenda'} %>
 
     <article class="col-sm-9 col-xs-12">
@@ -21,14 +18,10 @@
       <% @tcc.each do |item| %>
           <li class="monografia">
             <%= link_to(item.titulo,item)%>
-              <span class="monografiaTitulo"><%= item.resumo %></span><br>
-            <p>
-              <%= item.user.nome %>
-            </p>
+            <span class="monografiaTitulo"></br><%= item.resumo %></span><br>
+            <p><%= item.user.nome %></p>
           </li>
       <% end %>
 
     </article>
-  </div> <!-- row-offcanvas -->
-</div> <!-- Container -->
 <br style="clear: both">
