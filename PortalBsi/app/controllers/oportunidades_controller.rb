@@ -5,7 +5,7 @@ class OportunidadesController < ApplicationController
   end
 
   def index
-  	@oportunidades = Oportunidade.greater_than_today
+  	@oportunidades = Oportunidade.greater_than_today.page(params[:page]).per(10)
   end
 
   def show

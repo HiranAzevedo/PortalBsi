@@ -8,6 +8,7 @@
         <h2><%= link_to oportunidade.title, oportunidade %></h2>
         <span> <h2> - <%= oportunidade.company_name %></h2></span>
       </article>
-    <% end %>  
+    <% end %> 
+   <%= paginate @oportunidades %>
   </div>
 </div>  
