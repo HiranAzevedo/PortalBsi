@@ -10,6 +10,7 @@ class TccsController < ApplicationController
     @tcc = Tcc.where("apresentado = ? and data > ?", false, DateTime.now)
   end
   def publicacoes
+    @tcc = Tcc.where(apresentado: true)
   end
   def new
     @tcc = Tcc.new
@@ -20,9 +21,9 @@ class TccsController < ApplicationController
   end
   def create
     @tcc = Tcc.new(tcc_params)
+    @prof = Professor.all
     @tcc.apresentado = false
     @tcc.user_id = current_user.id
-    @tcc.apresentado = false
     if @tcc.save
       TccMailer.create_email(@tcc)
       redirect_to @tcc, notice: 'Cadastro de TCC criado com sucesso!'
@@ -32,9 +33,11 @@ class TccsController < ApplicationController
   end
   def show
     @tcc = Tcc.find(params[:id])
+    @prof = Professor.all
   end
   def edit
     @tcc = Tcc.find(params[:id])
+    @prof = Professor.all
   end
   def publicar
     @tcc = Tcc.find(params[:id])
