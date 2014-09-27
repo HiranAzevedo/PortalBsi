@@ -18,8 +18,8 @@ class TccsController < ApplicationController
     @tccs = Tcc.take(5)
   end
   def create
-    params[:tcc][:apresentado] = false
     @tcc = Tcc.new(tcc_params)
+    @tcc.apresentado = false
     @tcc.user_id = current_user.id
     if @tcc.save
       TccMailer.create_email(@tcc)
