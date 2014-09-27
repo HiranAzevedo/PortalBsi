@@ -23,8 +23,8 @@ cadastrar professores
 **POR AREA**
 
 prof->
-*CRUD
-*INDEX
+*CRUD (DONE)
+*INDEX (DONE)
 
 alunos->
 *Links/Menu
@@ -39,9 +39,9 @@ tcc->
 *Trocar a ordem do form	(DONE)
 *Branco prof	(parcialmente feito)
 *Local setar default (sala)	(DONE)
-*Menu
 *admin pode desfazer ppublicação
-*agenda
+*menu para publicar TCC
+*agenda (DONE)
 *publicações
 *validar data para publicar
 *adicionar hora na data (DONE)
@@ -55,6 +55,5 @@ Secretaria ->
 *CRUD
 
 Max->
-
-*mudar senha do email
+*mudar senha do email(DONE)
 *levantar requisitos para deploy

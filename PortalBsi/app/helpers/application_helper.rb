@@ -9,5 +9,12 @@ module ApplicationHelper
   	if model.errors.has_key? attribute
   	  content_tag(:div,model.errors[attribute].first, class: 'error_message')
   	end
+
+  def verificaTccExiste(user_id)
+    if Tcc.find_by_user_id(user_id).nil?
+      return false
+    else
+      return true
+    end
   end
 end

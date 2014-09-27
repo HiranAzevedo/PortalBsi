@@ -7,20 +7,22 @@ class TccsController < ApplicationController
   def modelo
   end
   def agenda
-    @tcc = Tcc.where(apresentado:nil)
+    @tcc = Tcc.where("apresentado = ? and data > ?", false, DateTime.now)
   end
   def publicacoes
   end
   def new
     @tcc = Tcc.new
+    @prof = Professor.all
   end
   def index
     @tccs = Tcc.take(5)
   end
   def create
-    params[:tcc][:apresentado] = false
     @tcc = Tcc.new(tcc_params)
+    @tcc.apresentado = false
     @tcc.user_id = current_user.id
+    @tcc.apresentado = false
     if @tcc.save
       TccMailer.create_email(@tcc)
       redirect_to @tcc, notice: 'Cadastro de TCC criado com sucesso!'
