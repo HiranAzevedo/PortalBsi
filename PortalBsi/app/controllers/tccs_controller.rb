@@ -14,20 +14,16 @@ class TccsController < ApplicationController
   end
   def new
     @tcc = Tcc.new
-    prof = Professor.all
-    blank_prof =  ""
-    @prof_names = Array.new
-    @prof_names << blank_prof
-    @prof_names << prof.select(:nome).collect{|a| a.nome}
+    @prof = Professor.all
   end
   def index
     @tccs = Tcc.take(5)
   end
   def create
     @tcc = Tcc.new(tcc_params)
+    @prof = Professor.all
     @tcc.apresentado = false
     @tcc.user_id = current_user.id
-    @tcc.apresentado = false
     if @tcc.save
       TccMailer.create_email(@tcc)
       redirect_to @tcc, notice: 'Cadastro de TCC criado com sucesso!'
@@ -37,9 +33,11 @@ class TccsController < ApplicationController
   end
   def show
     @tcc = Tcc.find(params[:id])
+    @prof = Professor.all
   end
   def edit
     @tcc = Tcc.find(params[:id])
+    @prof = Professor.all
   end
   def publicar
     @tcc = Tcc.find(params[:id])
