@@ -10,6 +10,7 @@ class TccsController < ApplicationController
     @tcc = Tcc.where("apresentado = ? and data > ?", false, DateTime.now)
   end
   def publicacoes
+    @tcc = Tcc.where(apresentado: true)
   end
   def new
     @tcc = Tcc.new
