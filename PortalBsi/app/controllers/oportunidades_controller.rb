@@ -5,6 +5,7 @@ class OportunidadesController < ApplicationController
   end
 
   def index
+  	@oportunidades = Oportunidade.greater_than_today
   end
 
   def show
@@ -14,7 +15,7 @@ class OportunidadesController < ApplicationController
   def create
     @oportunidade = Oportunidade.new(oportunidade_params)
     if @oportunidade.save
-       redirect_to @oportunidade, notice: 'Oportunidade cadastrada com sucesso.'
+       redirect_to @oportunidade, notice: 'Oportunidade de Estágio cadastrada com sucesso.'
     else
       render action: :new
     end     
@@ -24,6 +25,11 @@ class OportunidadesController < ApplicationController
   end
 
   def update
+  	if @oportunidade.update(oportunidade_params)
+  	  redirect_to @oportunidade, notice: 'Oportunidade de Estágio atualizada com sucesso.'
+  	else
+  	  render :edit
+  	end  
   end
 
   def destroy
