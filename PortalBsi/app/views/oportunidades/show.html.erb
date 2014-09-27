@@ -1,8 +1,12 @@
 <p><%= notice %></p>
-
-<h2>Oportunidade: <%= @oportunidade.title %>
+<article class="col-sm-9 col-xs-12">
+<h2>Oportunidade: <%= @oportunidade.title %></h2>
 <p>Empresa: <%= @oportunidade.company_name %></p>
 <p>Descrição: <%= @oportunidade.description %></p>
+<p>Convênio: <%= @oportunidade.has_partnership %></p>
+<p>Válido até o dia: <%= @oportunidade.expiration_date %></p>
+
+<%= link_to 'Ir para página de visualização de oportunidades', oportunidades_path%>
+</article>
 
 
-<%= link_to 'Divulgar mais oportunidades', new_oportunidade_path %>

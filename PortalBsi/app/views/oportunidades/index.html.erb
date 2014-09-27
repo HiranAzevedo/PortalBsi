@@ -1,7 +1,13 @@
-<h1>Oportunidades de Estágio</h1>
 <div class="container">
   <div class="row-offcanvas">
-    <%= render partial: "menu_oportunidades", locals: {tipo: 'index'} %>
-   
+   <%= render partial: "menu_oportunidades", locals: {tipo: 'index'} %>
+    <h1>Oportunidades de Estágio</h1>
+
+    <% @oportunidades.each do |oportunidade| %>
+      <article class="oportunidade">
+        <h2><%= link_to oportunidade.title, oportunidade %></h2>
+        <span> <h2> - <%= oportunidade.company_name %></h2></span>
+      </article>
+    <% end %>  
   </div>
 </div>  

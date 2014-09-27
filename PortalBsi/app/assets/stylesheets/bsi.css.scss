@@ -372,6 +372,23 @@ footer {
   background-color: #F2DEDE;
   @extend .padded_flash;
 }
+
+/* Oportunidades - Área de Divulgação */
+.oportunidade{
+  background-color: white;
+  padding: 20px 25px;
+  margin-top: 10px;
+  @include shadow(#ccc, 0, 3px, 6px);
+}
+
+.oportunidade h2{
+  display: inline;
+  a { font-size: 1.3em;}
+}
+
+
+
+
 /* ------------------------------------------------ */
 /*!
  * Bootstrap v3.1.1 (http://getbootstrap.com)
