@@ -11,4 +11,12 @@ module ApplicationHelper
       return true
     end
   end
+
+  def retornaApelido(nome)
+    if nome.nil?
+      return nil
+    else
+      return nome.split[0]
+    end
+  end
 end
