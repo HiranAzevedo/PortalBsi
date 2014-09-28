@@ -1,5 +1,7 @@
 class OportunidadesController < ApplicationController
 
+  #authorize_resource
+
   def new
     @oportunidade = Oportunidade.new
   end
@@ -36,18 +38,6 @@ class OportunidadesController < ApplicationController
   	@oportunidade.destroy
   	redirect_to oportunidades_url
   end
-
-  #def picture_url
-  #	@oportunidade.picture_url
-  #end
-
-  #def thumb_url
-  #	@oportunidade.picture.thumb.url
-  #end
-
-  #def has_picture?
-  #	@oportunidade.picture?
-  #end	
   
   private
   def oportunidade_params
