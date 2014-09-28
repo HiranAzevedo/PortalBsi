@@ -29,7 +29,6 @@ Rails.application.routes.draw do
   match '/institucional/ccet', to: 'bsi#ccet', via: 'get'
   match '/institucional/unirio', to: 'bsi#unirio', via: 'get'
   resources :tccs
-  resources :tags
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

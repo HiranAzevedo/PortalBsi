@@ -10,7 +10,11 @@ class TccsController < ApplicationController
     @tcc = Tcc.where("apresentado = ? and data > ?", false, DateTime.now)
   end
   def publicacoes
-    @tcc = Tcc.where(apresentado: true)
+    if params[:tag]
+      @tcc = Tcc.tagged_with(params[:tag]).where(apresentado: true)
+    else
+      @tcc = Tcc.where(apresentado: true)
+    end
   end
   def new
     @tcc = Tcc.new
@@ -43,7 +47,7 @@ class TccsController < ApplicationController
   def publicar
     @tcc = Tcc.find(params[:id])
     authorize!(:publicar, @tcc)
-    if @tcc.data < DateTime.now
+    if @tcc.data > DateTime.now
       redirect_to @tcc, alert: 'Data para publicação não alcançada' and return
     end
   end
@@ -92,7 +96,7 @@ class TccsController < ApplicationController
   private
   def tcc_params
     params.require(:tcc).permit(:titulo, :resumo, :data, :orientador, :local,
-                                :coorientador, :arquivo,:nome_arquivo,:apresentado)
+                                :coorientador, :arquivo,:nome_arquivo,:apresentado, :tag_list)
   end
   def find_by_id(params)
     @tcc = Tcc.find(params[:id])

@@ -3,6 +3,7 @@ class Tcc < ActiveRecord::Base
   has_attached_file :arquivo
   belongs_to :professor
   validates_attachment_content_type :arquivo, :content_type => ["application/pdf"]
+  acts_as_taggable
   validates :user_id, presence: true
   validates_presence_of :titulo, :resumo, :data, :orientador
   validates_uniqueness_of :user_id, allow_nil: false
