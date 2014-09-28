@@ -1,18 +1,11 @@
-<%= @tcc.id %>
-<!--<% if @tcc.errors.any? %>
-    <div id="error_explanation">
-      <h2>Infelizmente não foi possível completar a ação pois o formulário possui os seguintes erros:</h2>
-      <ul>
-        <% @tcc.errors.full_messages.each do |message|%>
-            <li><%= message %> </li>
-        <% end %>
-      </ul>
-    </div>
-<% end %>-->
 
 <% @tcc.each do |tcc| %>
 <li>
   <p><%= tcc.titulo %> -> <%= tcc.user.email %> </p>
-  <%= button_to "Desfazer publicação", tccs_, method: :post %>
+  <%= form_for tcc do |f| %>
+      <p>
+        <%= f.submit "Despublicar" %>
+      </p>
+  <% end %>
 </li>
 <% end  %>

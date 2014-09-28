@@ -48,9 +48,18 @@ class TccsController < ApplicationController
   def lista_publicados
     @tcc = Tcc.all.where(apresentado: true).to_a
   end
-  def desfazer_publicacao
-
+  def desfaz_publicado
+    params[:tcc][:apresentado] = false
+    params[:tcc][:nome_arquivo] = ""
+    @tcc = Tcc.find(params[:id])
+    @tcc.arquivo.destroy
+    if @tcc.update(tcc_params)
+      TccMailer.publish_email(@tcc)
+      redirect_to @tcc, notice: 'Cadastro atualizado com sucesso!' and return
+    end
+  else render action: :index
   end
+
   def salva_publicado
     params[:tcc][:apresentado] = true
     @tcc = Tcc.find(params[:id])
