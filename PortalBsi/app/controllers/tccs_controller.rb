@@ -52,18 +52,25 @@ class TccsController < ApplicationController
   end
   def desfaz_publicado
     @tcc = Tcc.find(params[:id])
-  end
-  def confirma_desfaz_publicado
-    @tcc = Tcc.find(params[:id])
-    params[:tcc][:apresentado] = false
-    params[:tcc][:nome_arquivo] = ""
+    @tcc.apresentado = false
+    @tcc.nome_arquivo = ""
     @tcc.arquivo.destroy
-    if @tcc.update(tcc_params)
-      TccMailer.publish_email(@tcc)
-      redirect_to @tcc, notice: 'Cadastro atualizado com sucesso!' and return
+    if @tcc.save
+      redirect_to @tcc, notice: 'Desfeito' and return
     end
   else render action: :index
   end
+  def confirma_desfaz_publicado
+    @tcc = Tcc.find(params[:id])
+    @tcc.apresentado = false
+    @tcc.nome_arquivo = ""
+    @tcc.arquivo.destroy
+    if @tcc.save
+      redirect_to @tcc, notice: 'Desfeito' and return
+    end
+  else render action: :index
+  end
+
   def salva_publicado
     params[:tcc][:apresentado] = true
     @tcc = Tcc.find(params[:id])
