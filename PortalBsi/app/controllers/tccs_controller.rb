@@ -49,9 +49,12 @@ class TccsController < ApplicationController
     @tcc = Tcc.all.where(apresentado: true).to_a
   end
   def desfaz_publicado
+    @tcc = Tcc.find(params[:id])
+  end
+  def confirma_desfaz_publicado
+    @tcc = Tcc.find(params[:id])
     params[:tcc][:apresentado] = false
     params[:tcc][:nome_arquivo] = ""
-    @tcc = Tcc.find(params[:id])
     @tcc.arquivo.destroy
     if @tcc.update(tcc_params)
       TccMailer.publish_email(@tcc)
@@ -59,7 +62,6 @@ class TccsController < ApplicationController
     end
   else render action: :index
   end
-
   def salva_publicado
     params[:tcc][:apresentado] = true
     @tcc = Tcc.find(params[:id])

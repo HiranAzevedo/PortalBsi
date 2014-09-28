@@ -1,11 +1,6 @@
-
 <% @tcc.each do |tcc| %>
 <li>
   <p><%= tcc.titulo %> -> <%= tcc.user.email %> </p>
-  <%= form_for tcc do |f| %>
-      <p>
-        <%= f.submit "Despublicar" %>
-      </p>
-  <% end %>
-</li>
+  <%= link_to "Desfazer publicação", tccs_desfaz_publicado_path(tcc.id)%>
+  </li>
 <% end  %>
