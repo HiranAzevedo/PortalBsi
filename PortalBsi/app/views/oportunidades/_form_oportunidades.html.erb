@@ -3,6 +3,7 @@
     Há erros no formulário, por favor verifique.
   </div>
 <% end %>
+<article class="col-sm-9 col-xs-12">
 <%= form_for @oportunidade do |f| %>
     
     <p>
@@ -30,9 +31,14 @@
       <%= f.label :has_partnership, "Yes", :value => "true" %> &nbsp;
       <%= f.radio_button :has_partnership, false %> 
       <%= f.label :has_partnership, "No", :value => "false" %>
-      
+    </p>
+    <p>
+      <%= f.label :picture %>
+      <%= f.file_field :picture %>
+      <%= error_tag @oportunidade, :picture %>
     </p>
     <p>
       <%=f.submit %>
     </p>
 <% end %>
+</article>

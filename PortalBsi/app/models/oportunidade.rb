@@ -4,5 +4,7 @@ class Oportunidade < ActiveRecord::Base
   validates_length_of :company_name, minimum: 3, allow_blank: false
   validates_length_of :title, minimum: 10, allow_blank: false
 
+  mount_uploader :picture, PictureUploader
+
   scope :greater_than_today, -> { where("expiration_date >=?", DateTime.now)}
 end

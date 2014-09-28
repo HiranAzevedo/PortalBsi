@@ -5,8 +5,12 @@
 
     <% @oportunidades.each do |oportunidade| %>
       <article class="oportunidade">
+      <div class ="oportunidade-description">
+      <%=image_tag oportunidade.picture_url(:thumb) if oportunidade.picture? %>
+    
         <h2><%= link_to oportunidade.title, oportunidade %></h2>
         <span> <h2> - <%= oportunidade.company_name %></h2></span>
+      </div>
       </article>
     <% end %> 
    <%= paginate @oportunidades %>

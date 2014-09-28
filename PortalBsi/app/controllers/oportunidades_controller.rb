@@ -36,11 +36,23 @@ class OportunidadesController < ApplicationController
   	@oportunidade.destroy
   	redirect_to oportunidades_url
   end
+
+  #def picture_url
+  #	@oportunidade.picture_url
+  #end
+
+  #def thumb_url
+  #	@oportunidade.picture.thumb.url
+  #end
+
+  #def has_picture?
+  #	@oportunidade.picture?
+  #end	
   
   private
   def oportunidade_params
     params.require(:oportunidade).permit(:company_name, :title, :description, :expiration_date, 
-    	                                     :has_partnership)
+    	                                     :has_partnership, :picture)
   end
 
   def find_by_id(params)

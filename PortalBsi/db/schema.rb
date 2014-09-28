@@ -11,8 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140927200712) do
-  
+ActiveRecord::Schema.define(version: 20140928000618) do
+
   create_table "oportunidades", force: true do |t|
     t.string   "company_name"
     t.string   "title"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20140927200712) do
     t.boolean  "has_partnership", limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "picture"
   end
 
   create_table "professors", force: true do |t|
