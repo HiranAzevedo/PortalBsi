@@ -7,5 +7,7 @@
     <li>Resumo: <%= @tcc.resumo %> </li>
     <li>Data: <%= @tcc.data %> </li>
   </ul>
-  <%= link_to 'Editar Tcc', edit_tcc_path(@tcc) %>
+  <% unless @tcc.apresentado %>
+      <%= link_to 'Editar Tcc', edit_tcc_path(@tcc) %>
+  <% end %>
 </article>

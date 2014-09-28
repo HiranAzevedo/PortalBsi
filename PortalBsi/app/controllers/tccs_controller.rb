@@ -8,6 +8,7 @@ class TccsController < ApplicationController
   end
   def agenda
     @tcc = Tcc.where("apresentado = ? and data > ?", false, DateTime.now)
+    @prof = Professor.all
   end
   def publicacoes
     if params[:tag]
