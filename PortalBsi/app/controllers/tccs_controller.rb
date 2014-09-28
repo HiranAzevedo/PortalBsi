@@ -41,6 +41,15 @@ class TccsController < ApplicationController
   end
   def publicar
     @tcc = Tcc.find(params[:id])
+    if @tcc.data < DateTime.now
+      redirect_to @tcc, alert: 'Data para publicação não alcnaçada' and return
+    end
+  end
+  def lista_publicados
+    @tcc = Tcc.all.where(apresentado: true).to_a
+  end
+  def desfazer_publicacao
+
   end
   def salva_publicado
     params[:tcc][:apresentado] = true
