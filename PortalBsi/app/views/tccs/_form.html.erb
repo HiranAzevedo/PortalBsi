@@ -1,13 +1,14 @@
-<% if @tcc.errors.any? %>
-    <div id="error_explanation" class="col-sm-9 col-xs-12">
-      <h2>Infelizmente não foi possível completar a ação pois o formulário possui os seguintes erros:</h2>
-      <ul>
-        <% @tcc.errors.full_messages.each do |message|%>
-            <li><%= message %> </li>
-        <% end %>
-      </ul>
-    </div>
-<% end %>
+    <% if @tcc.errors.any? %>
+        <div id="error_explanation" class="col-sm-9 col-xs-12">
+          <h2>Infelizmente não foi possível completar a ação pois o formulário possui os seguintes erros:</h2>
+          <ul>
+            <% @tcc.errors.full_messages.each do |message|%>
+                <li><%= message %> </li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
 <div id="form_tcc" class="col-sm-9 col-xs-12">
   <%= form_for @tcc do |f| %>
       <p>
@@ -25,7 +26,7 @@
       </p>
       <p>
         <%= f.label :orientador, style: "padding-right: 2px;" %><br/>
-        <%= f.select :orientador, options_from_collection_for_select(@prof.all,:id,:nome),include_blank: true %>
+        <%= f.select :orientador, options_from_collection_for_select(@prof.all,:id,:nome,@tcc.orientador),include_blank: true %>
         <% if @tcc.errors.has_key? :orientador %>
           <div class="error_message">
             <%= @tcc.errors[:orientador].first %>

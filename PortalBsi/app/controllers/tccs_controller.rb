@@ -21,7 +21,6 @@ class TccsController < ApplicationController
     @prof = Professor.all
   end
   def index
-    @tccs = Tcc.take(5)
   end
   def create
     @tcc = Tcc.new(tcc_params)
@@ -61,8 +60,9 @@ class TccsController < ApplicationController
     @tcc.arquivo.destroy
     if @tcc.save
       redirect_to @tcc, notice: 'Desfeito' and return
+    else
+      render action: :index
     end
-  else render action: :index
   end
   def confirma_desfaz_publicado
     @tcc = Tcc.find(params[:id])
@@ -71,8 +71,9 @@ class TccsController < ApplicationController
     @tcc.arquivo.destroy
     if @tcc.save
       redirect_to @tcc, notice: 'Desfeito' and return
+    else
+      render action: :index
     end
-  else render action: :index
   end
 
   def salva_publicado
@@ -82,16 +83,18 @@ class TccsController < ApplicationController
     if @tcc.update(tcc_params)
       TccMailer.publish_email(@tcc)
       redirect_to @tcc, notice: 'Cadastro atualizado com sucesso!' and return
+    else
+      render action: :index
     end
-  else render action: :index
   end
   def update
     @tcc = Tcc.find(params[:id])
     authorize!(:update, @tcc)
     if @tcc.update(tcc_params)
-      redirect_to @tcc, notice: 'Cadastro atualizado com sucesso!'
+      redirect_to @tcc, notice: 'Cadastro atualizado com sucesso!' and return
+    else
+      render action: :index
     end
-  else render action: :index
   end
   private
   def tcc_params
