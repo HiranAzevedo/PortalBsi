@@ -6,6 +6,13 @@
     <li class="<%= verificaMenuAtivo(tipo,"modelo")%> tcc"><%= link_to "Modelo",tccs_modelo_path%></li>
     <li class="<%= verificaMenuAtivo(tipo,"publicacoes")%> tcc"><%= link_to "Publicações", tccs_publicacoes_path %></li>
     <li class="<%= verificaMenuAtivo(tipo,"agenda")%> tcc"><%= link_to "Próximas Defesas", tccs_agenda_path %></li>
-    <li class="<%= verificaMenuAtivo(tipo,"new")%> tcc"><%= link_to "Cadastro de Tcc", new_tcc_path %></li>
+    <% if user_signed_in? %>
+        <% tccId = RetornaTccidByUserid(current_user.id) %>
+        <% if tccId.nil? %>
+            <li class="<%= verificaMenuAtivo(tipo,"new")%> tcc"><%= link_to "Cadastro de Tcc", new_tcc_path %></li>
+        <% else %>
+            <li class="<%= verificaMenuAtivo(tipo,"show")%> tcc"><%= link_to "Meu Tcc", tcc_path(tccId) %></li>
+        <%end %>
+    <%end %>
   </ul>
 </aside>

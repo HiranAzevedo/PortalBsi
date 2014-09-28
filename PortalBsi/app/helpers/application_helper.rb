@@ -26,4 +26,12 @@ module ApplicationHelper
       return nome.split[0]
     end
   end
+  def RetornaTccidByUserid(userid)
+    @tcc = Tcc.find_by_user_id(userid)
+    if @tcc.nil?
+      return nil
+    else
+      return @tcc.id
+    end
+  end
 end
