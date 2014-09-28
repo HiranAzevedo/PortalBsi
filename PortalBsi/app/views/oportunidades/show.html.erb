@@ -10,7 +10,7 @@
    <p>Convênio: Não</p>
 <% end %>
 
-<p>Válido até o dia: <%= @oportunidade.expiration_date %></p>
+<p>Válido até o dia: <%= @oportunidade.expiration_date.strftime("%d/%m/%Y") %></p>
 <p><%= image_tag @oportunidade.picture_url.to_s if @oportunidade.picture_url.present? %><p>
 
 <%= link_to 'Ir para página de visualização de oportunidades', oportunidades_path%>
