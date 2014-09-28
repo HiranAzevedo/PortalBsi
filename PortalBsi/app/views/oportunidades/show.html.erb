@@ -3,7 +3,13 @@
 <h2>Oportunidade: <%= @oportunidade.title %></h2>
 <p>Empresa: <%= @oportunidade.company_name %></p>
 <p>Descrição: <%= @oportunidade.description %></p>
-<p>Convênio: <%= @oportunidade.has_partnership %></p>
+
+<% if @oportunidade.has_partnership? %>
+   <p>Convênio: Sim</p>
+   <% else %>
+   <p>Convênio: Não</p>
+<% end %>
+
 <p>Válido até o dia: <%= @oportunidade.expiration_date %></p>
 <p><%= image_tag @oportunidade.picture_url.to_s if @oportunidade.picture_url.present? %><p>
 
