@@ -38,20 +38,25 @@ class TccsController < ApplicationController
   def edit
     @tcc = Tcc.find(params[:id])
     @prof = Professor.all
+    authorize!(:edit, @tcc)
   end
   def publicar
     @tcc = Tcc.find(params[:id])
+    authorize!(:publicar, @tcc)
     if @tcc.data < DateTime.now
-      redirect_to @tcc, alert: 'Data para publicação não alcnaçada' and return
+      redirect_to @tcc, alert: 'Data para publicação não alcançada' and return
     end
   end
   def lista_publicados
     @tcc = Tcc.all.where(apresentado: true).to_a
   end
   def desfaz_publicado
+    @tcc = Tcc.find(params[:id])
+  end
+  def confirma_desfaz_publicado
+    @tcc = Tcc.find(params[:id])
     params[:tcc][:apresentado] = false
     params[:tcc][:nome_arquivo] = ""
-    @tcc = Tcc.find(params[:id])
     @tcc.arquivo.destroy
     if @tcc.update(tcc_params)
       TccMailer.publish_email(@tcc)
@@ -59,10 +64,10 @@ class TccsController < ApplicationController
     end
   else render action: :index
   end
-
   def salva_publicado
     params[:tcc][:apresentado] = true
     @tcc = Tcc.find(params[:id])
+    authorize!(:salva_publicado, @tcc)
     if @tcc.update(tcc_params)
       TccMailer.publish_email(@tcc)
       redirect_to @tcc, notice: 'Cadastro atualizado com sucesso!' and return
@@ -71,6 +76,7 @@ class TccsController < ApplicationController
   end
   def update
     @tcc = Tcc.find(params[:id])
+    authorize!(:update, @tcc)
     if @tcc.update(tcc_params)
       redirect_to @tcc, notice: 'Cadastro atualizado com sucesso!'
     end
