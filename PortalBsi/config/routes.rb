@@ -30,8 +30,7 @@ Rails.application.routes.draw do
   match '/oportunidades/home', to: 'oportunidades#home', via: 'get'
   resources :tccs
   resources :oportunidades
-  resources :tags
-
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -11,8 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140928000618) do
-
+ActiveRecord::Schema.define(version: 20140928205708) do
+   
   create_table "oportunidades", force: true do |t|
     t.string   "company_name"
     t.string   "title"
@@ -22,9 +22,9 @@ ActiveRecord::Schema.define(version: 20140928000618) do
     t.boolean  "has_partnership", limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "picture"
+    t.string   "picture" 
   end
-
+  
   create_table "professors", force: true do |t|
     t.string   "nome"
     t.string   "email"
@@ -35,13 +35,30 @@ ActiveRecord::Schema.define(version: 20140928000618) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.integer  "tccs_id"
   end
 
-  create_table "tags", force: true do |t|
-    t.string   "nome"
+  add_index "professors", ["tccs_id"], name: "index_professors_on_tccs_id"
+
+  create_table "taggings", force: true do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context",       limit: 128
     t.datetime "created_at"
-    t.datetime "updated_at"
   end
+
+  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context"
+
+  create_table "tags", force: true do |t|
+    t.string  "name"
+    t.integer "taggings_count", default: 0
+  end
+
+  add_index "tags", ["name"], name: "index_tags_on_name", unique: true
 
   create_table "tccs", force: true do |t|
     t.string   "titulo"
@@ -65,7 +82,6 @@ ActiveRecord::Schema.define(version: 20140928000618) do
 
   add_index "tccs", ["professor_id"], name: "index_tccs_on_professor_id"
   add_index "tccs", ["user_id"], name: "index_tccs_on_user_id"
-  add_index "tccs", ["users_id"], name: "index_tccs_on_users_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -85,6 +101,7 @@ ActiveRecord::Schema.define(version: 20140928000618) do
     t.string   "matricula"
     t.string   "facebook_link"
     t.string   "github_link"
+    t.integer  "users_id"
     t.integer  "tccs_id"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
@@ -95,6 +112,5 @@ ActiveRecord::Schema.define(version: 20140928000618) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  add_index "users", ["tccs_id"], name: "index_users_on_tccs_id"
 
 end
