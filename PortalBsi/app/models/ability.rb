@@ -37,6 +37,7 @@ class Ability
     else
       can :read, Professor
       can :read,:update, User
+      #can :read, :create, Oportunidade
     end
   end
 end

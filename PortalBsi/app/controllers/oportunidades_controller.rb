@@ -1,6 +1,5 @@
 class OportunidadesController < ApplicationController
-
-  #authorize_resource
+  #before_action :authenticate_user!, only: [:destroy]
 
   def new
     @oportunidade = Oportunidade.new
