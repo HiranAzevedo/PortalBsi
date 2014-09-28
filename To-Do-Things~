@@ -26,6 +26,9 @@ prof->
 *CRUD (DONE)
 *INDEX (DONE)
 
+tag ->
+TUDO RELACIONADO
+
 alunos->
 *Links/Menu
 *Bloquear (matricula e nome)
@@ -36,14 +39,14 @@ alunos->
 *Campo turma
 
 tcc->
+Botaozinho para editar se for o dono do TCC
 *Trocar a ordem do form	(DONE)
-*Branco prof	(parcialmente feito)
-*Local setar default (sala)	(DONE)
+*Branco prof	(DONE)
+*Local setar default (sala)(DONE)
 *admin pode desfazer ppublicação
-*menu para publicar TCC
-*agenda
-*publicações
-*validar data para publicar
+*agenda (DONE)
+*publicações(DONE)
+*validar data para publicar(DONE)
 *adicionar hora na data (DONE)
 *Projetos de tcc (REMOVER) (DONE)
 *agendar virar show se já existir TCC
@@ -54,7 +57,9 @@ tcc->
 Secretaria ->
 *CRUD
 
-Max->
+Modelo secretaria ->
+*Crud
 
-*mudar senha do email
+Max->
+*mudar senha do email(DONE)
 *levantar requisitos para deploy

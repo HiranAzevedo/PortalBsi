@@ -1,10 +1,11 @@
-    <%= render partial: "menu", locals: {tipo: 'new'} %>
-    <article>
-      <p id="notice"><%= notice %> </p>
-      <h2>Titulo: <%= @tcc.titulo %> </h2>
-      <ul>
-        <li>Resumo: <%= @tcc.resumo %> </li>
-        <li>Data: <%= @tcc.data %> </li>
-      </ul>
-      <%= link_to 'Editar Perfil', edit_tcc_path(@tcc) %>
-    </article>
+<%= render partial: "menu", locals: {tipo: 'new'} %>
+<article>
+  <p id="notice"><%= notice %> </p>
+  <p id="alert"> <%= alert %></p>
+  <h2>Titulo: <%= @tcc.titulo %> </h2>
+  <ul>
+    <li>Resumo: <%= @tcc.resumo %> </li>
+    <li>Data: <%= @tcc.data %> </li>
+  </ul>
+  <%= link_to 'Editar Tcc', edit_tcc_path(@tcc) %>
+</article>
