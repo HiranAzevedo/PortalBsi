@@ -33,25 +33,14 @@ TUDO RELACIONADO
 
 alunos->
 *Links/Menu
-*Bloquear (matricula e nome)(DONE)
-*Acertar foto (DONE)
 *Atualizar form de cadastro de aluno
-*Apelido -> Nome de tratamento(DONE)
-*Sugestão nome de tratamento(DONE)
 *Yuri login
 *Campo turma
 
 tcc->
 *Botaozinho para editar se for o dono do TCC
-*Trocar a ordem do form	(DONE)
-*Branco prof	(DONE)
-*Local setar default (sala)(DONE)
 *admin pode desfazer ppublicação
-*agenda (DONE)
-*publicações(DONE)
-*validar data para publicar(DONE)
-*adicionar hora na data (DONE)
-*Projetos de tcc (REMOVER) (DONE)
+*Acertar relacionamento
 *agendar virar show se já existir TCC
 *Publicar TCC(link no menu)
 *JOB para email
@@ -67,5 +56,4 @@ Modelo secretaria ->
 404
 403
 Max->
-*mudar senha do email(DONE)
 *levantar requisitos para deploy
