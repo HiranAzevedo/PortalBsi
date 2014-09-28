@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   match '/disciplinas/eletivas', to: 'bsi#eletivas', via: 'get'
   match '/alunos', to: 'alunos#index', via: 'get'
   match '/tccs/:id/publicar', to: 'tccs#publicar', via: 'get', as: 'tccs_publicar'
+  match '/tccs/lista_publicados', to: 'tccs#lista_publicados', via: 'get', as: 'tccs_lista_publicado'
+  match '/tccs/:id/desfaz_publicado', to: 'tccs#desfaz_publicado', via: 'patch'
   match '/tccs/:id/salva_publicado', to: 'tccs#salva_publicado', via: 'patch'
   match '/tccs/home', to: 'tccs#home', via: 'get'
   match '/tccs/tipos', to: 'tccs#tipos', via: 'get'

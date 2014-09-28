@@ -1,0 +1,11 @@
+
+<% @tcc.each do |tcc| %>
+<li>
+  <p><%= tcc.titulo %> -> <%= tcc.user.email %> </p>
+  <%= form_for tcc, :url => { :action => "desfaz_publicado" } do |f| %>
+      <p>
+        <%= f.submit "Despublicar" %>
+      </p>
+  <% end %>
+</li>
+<% end  %>

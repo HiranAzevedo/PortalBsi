@@ -6,46 +6,41 @@ BACKLOG->
 * Realizar solicitacao na secretaria(envio de email) + visualizar historico de solicitacoes
 cadastrar tipos de entradas para secretaria
 
-
-HIRAN
-Listar TCCS na pagina de publicação
-
-
-THIAGO
-
-alterar o perfil,
-perfil de admin -
-cadastrar alunos
-cadastrar Tags
-Relacionameto de tag com usuario e com tcc
-cadastrar professores
-
-**POR AREA**
-
+DONES->
 prof->
-*CRUD (DONE)
-*INDEX (DONE)
+	*CRUD (DONE)
+	*INDEX (DONE)
+alunos->
+	*Bloquear (matricula e nome)(DONE)
+	*Acertar foto (DONE)
+	*Apelido -> Nome de tratamento(DONE)
+	*Sugestão nome de tratamento(DONE)
+tcc->
+	*Trocar a ordem do form	(DONE)
+	*Branco prof	(DONE)
+	*Local setar default (sala)(DONE)
+	*agenda (DONE)
+	*publicações(DONE)
+	*validar data para publicar(DONE)
+	*adicionar hora na data (DONE)
+	*Projetos de tcc (REMOVER) (DONE)
+	*mudar senha do email(DONE)
+
+
+**AINDA FALTA**
+tag ->
+TUDO RELACIONADO
 
 alunos->
 *Links/Menu
-*Bloquear (matricula e nome)
-*Acertar foto
-*Apelido -> Nome de tratamento
-*Sugestão nome de tratamento
+*Atualizar form de cadastro de aluno
 *Yuri login
 *Campo turma
 
 tcc->
-*Trocar a ordem do form	(DONE)
-*Branco prof	(parcialmente feito)
-*Local setar default (sala)	(DONE)
+*Botaozinho para editar se for o dono do TCC
 *admin pode desfazer ppublicação
-*menu para publicar TCC
-*agenda (DONE)
-*publicações
-*validar data para publicar
-*adicionar hora na data (DONE)
-*Projetos de tcc (REMOVER) (DONE)
+*Acertar relacionamento
 *agendar virar show se já existir TCC
 *Publicar TCC(link no menu)
 *JOB para email
@@ -54,6 +49,11 @@ tcc->
 Secretaria ->
 *CRUD
 
+Modelo secretaria ->
+*Crud
+
+*PAGINAS
+404
+403
 Max->
-*mudar senha do email(DONE)
 *levantar requisitos para deploy
