@@ -34,9 +34,16 @@ class Ability
       # Non-logged in users cannot destroy Posts.
       # Typically, can is used a lot more than cannot.
       # cannot :destroy, Post, user_id: nil
-    else
-      can :read, Professor
+    elsif user && user.persisted? && !user.admin?
+      can [:edit, :update, :salva_publicado, :publicar], Tcc, ['user_id = ?', user.id] do |tcc|
+        tcc.user_id == user.id
+      end
+      can [:new,:create,:tipos,:modelo,:processo,:agenda,:publicacoes,:index], Tcc
       can :read,:update, User
+    else
+      can [:tipos,:modelo,:processo,:agenda,:publicacoes,:index], Tcc
+      can :read, Professor
+      can :read, User
     end
   end
 end
