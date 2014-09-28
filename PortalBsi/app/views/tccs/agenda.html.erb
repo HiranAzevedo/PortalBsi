@@ -1,28 +1,28 @@
-    <%= render partial: "menu", locals: {tipo: 'agenda'} %>
+<%= render partial: "menu", locals: {tipo: 'agenda'} %>
 
-    <article class="col-sm-9 col-xs-12">
+<article class="col-sm-9 col-xs-12">
 
-      <p class="pull-left visible-xs visible-sm">
-        <button type="button" class="navbar-toggle" data-toggle="offcanvas">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="sr-only">Menu</span>
-        </button>
-      </p>
+  <p class="pull-left visible-xs visible-sm">
+    <button type="button" class="navbar-toggle" data-toggle="offcanvas">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="sr-only">Menu</span>
+    </button>
+  </p>
 
-      <h1>Próximas Defesas</h1>
+  <h1>Próximas Defesas</h1>
 
-      <p>Agenda das próximas defesas de TCC. Assistir uma defesa é uma oportunidade para qualquer aluno aprender sobre um tema atual na área de Sistemas de Informação. Para os alunos em PG1, é uma obrigação assistir ao menos 3 defesas, pois é uma forma dele entender melhor o que se espera de um TCC e se preparar melhor para a sua futura defesa.</p>
+  <p>Agenda das próximas defesas de TCC. Assistir uma defesa é uma oportunidade para qualquer aluno aprender sobre um tema atual na área de Sistemas de Informação. Para os alunos em PG1, é uma obrigação assistir ao menos 3 defesas, pois é uma forma dele entender melhor o que se espera de um TCC e se preparar melhor para a sua futura defesa.</p>
 
-      <%= @data %>
-      <% @tcc.each do |item| %>
-                      <li class="monografia">
-                <%= link_to(item.titulo,item)%>
-                <span class="monografiaTitulo"></br><%= item.resumo %></span><br>
-                <p><%= item.user.nome %></p>
-              </li>
-      <% end %>
+  <%= @data %>
+  <% @tcc.each do |item| %>
+      <li class="monografia">
+        <%=  item.titulo %><br>
+        <p><%= item.user.nome %> .Orientador <%= @prof.find(item.orientador).nome %>. <%= item.data.to_date.strftime("%d/%m/%Y") %></p>
+        <p>Tags: <%= raw item.tag_list.map { |t| link_to t, tccs_publicacoes_path(tag: t) }.join(', ') %></p>
+      </li>
+  <% end %>
 
-    </article>
+</article>
 <br style="clear: both">

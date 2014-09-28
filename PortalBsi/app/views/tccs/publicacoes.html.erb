@@ -26,7 +26,7 @@
 <%@tcc.each do |item| %>
 <li class="monografia">
    <%= link_to item.titulo, item.arquivo.url(:original, false),class: "monografiaTitulo" %><br>
-<p><%= item.user.nome %> .Orientador <%= item.orientador %>. <%= item.data.to_date.strftime("%d/%m/%Y") %></p>
+<p><%= item.user.nome %> .Orientador <%= @prof.find(item.orientador).nome %>. <%= item.data.to_date.strftime("%d/%m/%Y") %></p>
   <p>Tags: <%= raw item.tag_list.map { |t| link_to t, tccs_publicacoes_path(tag: t) }.join(', ') %></p>
 </li>
 <% end %>

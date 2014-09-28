@@ -27,11 +27,11 @@ module ApplicationHelper
     end
   end
   def RetornaTccidByUserid(userid)
-    @tcc = Tcc.find_by_user_id(userid)
-    if @tcc.nil?
+    tcc_menu = Tcc.find_by_user_id(userid)
+    if tcc_menu.nil?
       return nil
     else
-      return @tcc.id
+      return tcc_menu.id
     end
   end
 end
