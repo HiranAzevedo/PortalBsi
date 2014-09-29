@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(version: 20140928205708) do
 
   add_index "tccs", ["professor_id"], name: "index_tccs_on_professor_id"
   add_index "tccs", ["user_id"], name: "index_tccs_on_user_id"
+  add_index "tccs", ["users_id"], name: "index_tccs_on_users_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -98,7 +99,6 @@ ActiveRecord::Schema.define(version: 20140928205708) do
     t.string   "matricula"
     t.string   "facebook_link"
     t.string   "github_link"
-    t.integer  "tccs_id"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
@@ -108,6 +108,5 @@ ActiveRecord::Schema.define(version: 20140928205708) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  add_index "users", ["tccs_id"], name: "index_users_on_tccs_id"
 
 end

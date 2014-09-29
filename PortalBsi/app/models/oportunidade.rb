@@ -5,6 +5,7 @@ class Oportunidade < ActiveRecord::Base
   validates_length_of :title, minimum: 10, allow_blank: false
 
   mount_uploader :picture, PictureUploader
+  acts_as_taggable
 
   scope :greater_than_today, -> { where("expiration_date >=?", DateTime.now)}
 end

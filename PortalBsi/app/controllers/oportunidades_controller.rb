@@ -6,7 +6,11 @@ class OportunidadesController < ApplicationController
   end
 
   def index
-  	@oportunidades = Oportunidade.greater_than_today.page(params[:page]).per(10)
+    if params[:tag]
+  	  @oportunidades = Oportunidade.tagged_with(params[:tag]).greater_than_today.page(params[:page]).per(10)
+    else
+      @oportunidades = Oportunidade.greater_than_today.page(params[:page]).per(10)
+    end  
   end
 
   def show
@@ -41,7 +45,7 @@ class OportunidadesController < ApplicationController
   private
   def oportunidade_params
     params.require(:oportunidade).permit(:company_name, :title, :description, :expiration_date, 
-    	                                     :has_partnership, :picture)
+    	                                     :has_partnership, :picture, :tag_list)
   end
 
   def find_by_id(params)

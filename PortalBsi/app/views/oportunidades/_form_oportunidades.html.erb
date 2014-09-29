@@ -33,6 +33,10 @@
       <%= f.label :has_partnership, "No", :value => "false" %>
     </p>
     <p>
+      <%= f.label :tag_list, "Tags (Separada por vírgulas)" %><br/>
+      <%= f.text_field :tag_list %>
+    </p>
+    <p>
       <%= f.label :picture %>
       <%= f.file_field :picture %>
       <%= error_tag @oportunidade, :picture %>
