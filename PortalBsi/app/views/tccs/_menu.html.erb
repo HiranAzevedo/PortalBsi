@@ -12,6 +12,7 @@
             <li class="<%= verificaMenuAtivo(tipo,"new")%> tcc"><%= link_to "Cadastro de Tcc", new_tcc_path %></li>
         <% else %>
             <li class="<%= verificaMenuAtivo(tipo,"show")%> tcc"><%= link_to "Meu Tcc", tcc_path(tccId) %></li>
+            <li class="<%= verificaMenuAtivo(tipo,"publicar") %> tcc"><%= link_to "Publicar Tcc", tccs_publicar_path(tccId) %></li>
         <%end %>
     <%end %>
   </ul>

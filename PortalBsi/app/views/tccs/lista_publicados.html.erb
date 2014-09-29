@@ -1,3 +1,4 @@
+<%= render partial: "menu", locals: {tipo: 'show'} %>
 <% @tcc.each do |tcc| %>
 <li>
   <p><%= tcc.titulo %> -> <%= tcc.user.email %> </p>

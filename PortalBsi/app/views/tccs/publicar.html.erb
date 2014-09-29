@@ -1,4 +1,4 @@
-<%= @tcc.id %>
+<%= @tcc.titulo %>
 <!--<% if @tcc.errors.any? %>
     <div id="error_explanation">
       <h2>Infelizmente não foi possível completar a ação pois o formulário possui os seguintes erros:</h2>
@@ -9,7 +9,7 @@
       </ul>
     </div>
 <% end %>-->
-
+<%= render partial: "menu", locals: {tipo: 'publicar'} %>
 <%= form_for @tcc, :url => { :action => "salva_publicado" },
              :html => { :multipart => true } do |f| %>
     <p>

@@ -11,6 +11,7 @@ class TccsController < ApplicationController
     @prof = Professor.all
   end
   def publicacoes
+    @prof = Professor.all
     if params[:tag]
       @tcc = Tcc.tagged_with(params[:tag]).where(apresentado: true)
     else

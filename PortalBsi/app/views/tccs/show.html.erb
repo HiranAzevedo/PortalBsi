@@ -9,5 +9,6 @@
   </ul>
   <% unless @tcc.apresentado %>
       <%= link_to 'Editar Tcc', edit_tcc_path(@tcc) %>
+      <%= link_to "Publicar Tcc", tccs_publicar_path(@tcc.id) %>
   <% end %>
 </article>
