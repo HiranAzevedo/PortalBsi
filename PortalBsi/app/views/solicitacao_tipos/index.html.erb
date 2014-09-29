@@ -1,0 +1,27 @@
+<h1>Listing solicitacao_tipos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tipo</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @solicitacao_tipos.each do |solicitacao_tipo| %>
+      <tr>
+        <td><%= solicitacao_tipo.tipo %></td>
+        <td><%= link_to 'Show', solicitacao_tipo %></td>
+        <td><%= link_to 'Edit', edit_solicitacao_tipo_path(solicitacao_tipo) %></td>
+        <td><%= link_to 'Destroy', solicitacao_tipo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Solicitacao tipo', new_solicitacao_tipo_path %>

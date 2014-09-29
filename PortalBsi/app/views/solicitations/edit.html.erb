@@ -1,0 +1,14 @@
+<% provide(:title,"Editar Solicitação") %>
+<%= render partial: "menu", locals: {tipo: "solicitacoes"} %>
+
+<article class="col-sm-9 col-xs-12">
+<h1>Editing solicitation</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @solicitation %> |
+<%= link_to 'Back', solicitations_path %>
+
+</article>
+
+<br style="clear: both">
