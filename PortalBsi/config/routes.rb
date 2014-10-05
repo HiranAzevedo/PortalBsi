@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :solicitations
+
+  resources :solicitacao_tipos
+
   resources :professors
 
   devise_for :users, :controllers => { registrations: 'registrations' }
@@ -10,6 +14,12 @@ Rails.application.routes.draw do
   match '/disciplinas', to: 'bsi#disciplinas', via: 'get'
   match '/disciplinas/eletivas', to: 'bsi#eletivas', via: 'get'
   match '/alunos', to: 'alunos#index', via: 'get'
+  match '/alunos/carteirinha', to: 'alunos#carteirinha', via: 'get'
+  match '/alunos/diretorioAcademico', to: 'alunos#diretorioAcademico', via: 'get'
+  match '/alunos/enade', to: 'alunos#enade', via: 'get'
+  match '/alunos/matriculados', to: 'alunos#matriculados', via: 'get'
+  match '/alunos/portal', to: 'alunos#portal', via: 'get'
+  match '/alunos/turmas', to: 'alunos#turmas', via: 'get'
   match '/tccs/:id/publicar', to: 'tccs#publicar', via: 'get', as: 'tccs_publicar'
   match '/tccs/lista_publicados', to: 'tccs#lista_publicados', via: 'get', as: 'tccs_lista_publicado'
   match '/tccs/:id/desfaz_publicado', to: 'tccs#desfaz_publicado', via: 'post', as:  'tccs_desfaz_publicado'

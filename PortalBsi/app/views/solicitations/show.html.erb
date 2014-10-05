@@ -1,0 +1,25 @@
+<% provide(:title,"Solicitações") %>
+<%= render partial: "menu", locals: {tipo: "solicitacoes"} %>
+<article class="col-sm-9 col-xs-12">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Solicitacao tipos:</strong>
+  <%= RetornaTipoSolicitacao(@solicitation.solicitacao_tipos_id) %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= RetornaUserName(@solicitation.user_id) %>
+</p>
+
+<p>
+  <strong>Observacao:</strong>
+  <%= @solicitation.observacao %>
+</p>
+
+<%= link_to 'Edit', edit_solicitation_path(@solicitation) %> |
+<%= link_to 'Back', solicitations_path %>
+</article>
+
+<br style="clear: both">

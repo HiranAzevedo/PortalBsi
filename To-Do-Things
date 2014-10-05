@@ -10,6 +10,8 @@ DONES->
 prof->
 	*CRUD (DONE)
 	*INDEX (DONE)
+tag ->
+	TUDO RELACIONADO
 alunos->
 	*Bloquear (matricula e nome)(DONE)
 	*Acertar foto (DONE)
@@ -25,24 +27,23 @@ tcc->
 	*adicionar hora na data (DONE)
 	*Projetos de tcc (REMOVER) (DONE)
 	*mudar senha do email(DONE)
+	*admin pode desfazer ppublicação
+	*Acertar relacionamento
+	*agendar virar show se já existir TCC
+	*Publicar TCC(link no menu)
 
 
 **AINDA FALTA**
-tag ->
-TUDO RELACIONADO
+
 
 alunos->
 *Links/Menu
-*Atualizar form de cadastro de aluno
+*Acertar o form de cadastro de aluno
 *Yuri login
-*Campo turma
+*Campo turma(TALVEZ)
 
 tcc->
 *Botaozinho para editar se for o dono do TCC
-*admin pode desfazer ppublicação
-*Acertar relacionamento
-*agendar virar show se já existir TCC
-*Publicar TCC(link no menu)
 *JOB para email
 
 
