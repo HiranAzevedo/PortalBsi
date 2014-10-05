@@ -18,7 +18,7 @@
     </p>
     <p>
       <%= f.label :description %><br/>
-      <%= f.text_area :description %><br/>
+      <%= f.text_area :description, style: "height:215px; max-height:215px; width:717px; max-width:717px"%><br/>
       <%= error_tag @oportunidade ,:description %>
     </p>
     <p>
@@ -42,7 +42,7 @@
       <%= error_tag @oportunidade, :picture %>
     </p>
     <p>
-      <%=f.submit %>
+      <%=f.submit :class=> "btn btn-primary" %>
     </p>
 <% end %>
 </article>

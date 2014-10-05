@@ -2,6 +2,7 @@ pt:
   activerecord:
     models:
       oportunidade: oportunidade
+      empresa: empresa
     attributes:
       oportunidade:
          company_name: Nome da Empresa
@@ -10,3 +11,9 @@ pt:
          expiration_date: Data de Expiração
          has_partnership: Possui Convênio ?
          picture: Foto  
+      empresa:
+         name: Nome do Representante
+         email: Email para Contato
+         message: Informações Adicionais
+         nickname: Apelido
+         file: Arquivo       

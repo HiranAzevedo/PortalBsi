@@ -111,6 +111,9 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    mail_form (1.5.0)
+      actionmailer (>= 3.2, < 5)
+      activemodel (>= 3.2, < 5)
     mailcatcher (0.2.4)
       eventmachine
       haml
@@ -264,6 +267,7 @@ DEPENDENCIES
   jbuilder (= 1.0.2)
   jquery-rails (= 3.0.4)
   kaminari
+  mail_form
   mailcatcher
   paperclip
   pg (= 0.15.1)
