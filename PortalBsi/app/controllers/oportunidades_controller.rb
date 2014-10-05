@@ -38,6 +38,7 @@ class OportunidadesController < ApplicationController
   end
 
   def destroy
+    @oportunidade = Oportunidade.find(params[:id])
   	@oportunidade.destroy
   	redirect_to oportunidades_url
   end
@@ -47,9 +48,4 @@ class OportunidadesController < ApplicationController
     params.require(:oportunidade).permit(:company_name, :title, :description, :expiration_date, 
     	                                     :has_partnership, :picture, :tag_list)
   end
-
-  def find_by_id(params)
-  	@oportunidade = Oportunidade.find(params[:id])
-  end	
-
 end

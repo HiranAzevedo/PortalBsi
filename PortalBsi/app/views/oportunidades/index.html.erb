@@ -15,6 +15,8 @@
         <%=image_tag oportunidade.picture_url(:thumb) if oportunidade.picture? %>
         <h2><%= link_to oportunidade.title, oportunidade %></h2>
         <span> <h2> - <%= oportunidade.company_name %></h2></span>
+        &nbsp; &nbsp; &nbsp; &nbsp; 
+        <%= link_to 'Apagar', oportunidade, method: :delete, data: {confirm: 'Você tem certeza?'}, :class => "btn btn-danger" %>
         <p>Tags: <%= raw oportunidade.tag_list.map { |t| link_to t, oportunidades_path(tag: t) }.join(', ') %></p>
       </div>
       </article>
