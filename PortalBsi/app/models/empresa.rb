@@ -4,7 +4,7 @@ class Empresa < MailForm::Base
 #http://platypus.belighted.com/blog/2013/03/29/mail-form/	
   attribute :nome, :validate => true
   attribute :email, :validate => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
-  attribute :mensage
+  attribute :mensagem
   attribute :nickname, :captcha => true
   attribute :arquivo, :attachment => true
   
@@ -12,7 +12,7 @@ class Empresa < MailForm::Base
   	{
   	  :subject => "Criação de Conta de Usuário tipo Representante Empresa",
   	  :to => "guilherme.albuquerque@uniriotec.br",
-  	  :from => %{"#{name}" <#{email}>}
+  	  :from => %{"#{nome}" <#{email}>}
 
   	}
   end	
