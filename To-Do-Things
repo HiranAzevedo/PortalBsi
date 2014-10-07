@@ -58,3 +58,17 @@ Modelo secretaria ->
 403
 Max->
 *levantar requisitos para deploy
+
+
+****
+alunos-> logout deve mostrar mensagem
+desativar o cadastro do aluno
+adicionar permissao no cadastro do usuario
+pagia de turmas igual de professores, mostrando os alunos
+ao clicar no aluno, mostrar o perfil do aluno
+colocar nova solicitaçao no menu
+pagina pro admin visualizar as solicitaçoes
+tirar o link do publicar e o publicar ir para o meu tcc com o texto em vermelho
+colocar tags no perfil do aluno
+trocar o cadastri de tags pra checkbox
+colocar as paginas estaticas de disciplinas
