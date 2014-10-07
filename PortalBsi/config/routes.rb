@@ -38,6 +38,8 @@ Rails.application.routes.draw do
   match '/institucional/ccet', to: 'bsi#ccet', via: 'get'
   match '/institucional/unirio', to: 'bsi#unirio', via: 'get'
   match '/oportunidades/home', to: 'oportunidades#home', via: 'get'
+  match '/oportunidades/bolsas_permanencia', to:'oportunidades#bolsas_permanencia', via:'get', as: 'oportunidades_bolsas_permanencia'
+  match '/oportunidades/jovens_talentos', to:'oportunidades#jovens_talentos', via:'get', as: 'oportunidades_jovens_talentos'
   match '/empresas', to: 'empresas#new', via: 'get'
   resources :tccs
   resources :oportunidades
