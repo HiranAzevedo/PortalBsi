@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :turmas
+
   resources :solicitations
 
   resources :solicitacao_tipos
@@ -7,11 +9,11 @@ Rails.application.routes.draw do
 
   #devise_for :users, :controllers => { registrations: 'registrations' }
   devise_for :users, :controllers => { registrations: 'registrations' }
-  devise_scope :users do
+  devise_scope :user do
     get '/login' => 'devise/sessions#new'
     get '/logout' => 'devise/sessions#destroy'
   end
-  resources :users, :controller => "user"
+  resources :user, :controller => 'user'
   root 'bsi#home'
   match '/depoimentos', to: 'bsi#depoimentos', via: 'get'
   match '/historico', to: 'bsi#historico', via: 'get'

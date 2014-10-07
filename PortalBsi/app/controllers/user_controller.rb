@@ -1,13 +1,24 @@
 class UserController < ApplicationController
   load_and_authorize_resource
 
+  def index
+    @users = User.excludes(:id => current_user.id)
+  end
+
   def new
-    @usuario = User.new
+    @user = User.new
   end
 
   def create
-    @usuario = User.new(params[:user])
-    if @usuario.save
+    @user = User.new(user_params)
+    turma = Turma.find_by_nome(@user.matricula[0..3] + '.' + @user.matricula[4])
+    if(turma.nil?)
+      turma = Turma.new
+      turma.nome = @user.matricula[0..3] + '.' + @user.matricula[4]
+      turma.save
+    end
+    @user.turma = turma
+    if @user.save
       flash[:notice] = "Successfully created User."
       redirect_to root_path
     else
@@ -15,11 +26,20 @@ class UserController < ApplicationController
     end
   end
 
+  def show
+
+  end
+
   def destroy
-    @usuario = User.find(params[:id])
-    if @usuario.destroy
+    @user = User.find(params[:id])
+    if @user.destroy
       flash[:notice] = "Successfully deleted User."
       redirect_to root_path
     end
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def user_params
+    params.require(:user).permit(:nome,:matricula,:email, :password, :password_confirmation)
   end
 end

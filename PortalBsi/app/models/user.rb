@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_one :tcc
   has_many :solicitations
+  belongs_to :turma
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100#" }, :default_url => "//placehold.it/100"

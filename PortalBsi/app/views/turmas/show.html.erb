@@ -1,0 +1,33 @@
+<% provide(:title, 'Turma ' + @turma.nome) %>
+<%= render partial: "menu", locals: {tipo: "turmas"} %>
+<article class="col-sm-9 col-xs-12">
+
+  <p class="pull-left visible-xs visible-sm">
+    <button type="button" class="navbar-toggle" data-toggle="offcanvas">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="sr-only">Menu</span>
+    </button>
+  </p>
+
+  <h1>Turma <%= @turma.nome %></h1>
+
+  <p id="info">O corpo docente do curso BSI é composto por professores altamente qualificados, quase todos doutores. Clique no professor e consulte seu currículo.<br>&nbsp;</p>
+
+  <div class="flex-container">
+
+    <% @alunos.each do |aluno| %>
+        <section class="boxgrid caption">
+          <%= image_tag aluno.avatar.url(:original), alt:aluno.nome, class:"photo" %>
+          <div class="cover boxcaption" style="top: 125px;">
+            <h3 class="slidebox"><%= link_to aluno.nome , aluno %></h3>
+            <p class="correio"><%= aluno.email.split("@")[0] %><%= image_tag "uniriotecbr.gif" ,alt:aluno.nome ,class:"correioImage"%></p>
+          </div>
+        </section>
+    <% end %>
+
+  </div>
+</article>
+<br style="clear: both">
+
