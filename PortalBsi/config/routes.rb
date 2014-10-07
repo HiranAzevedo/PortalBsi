@@ -5,7 +5,13 @@ Rails.application.routes.draw do
 
   resources :professors
 
+  #devise_for :users, :controllers => { registrations: 'registrations' }
   devise_for :users, :controllers => { registrations: 'registrations' }
+  devise_scope :users do
+    get '/login' => 'devise/sessions#new'
+    get '/logout' => 'devise/sessions#destroy'
+  end
+  resources :users, :controller => "user"
   root 'bsi#home'
   match '/depoimentos', to: 'bsi#depoimentos', via: 'get'
   match '/historico', to: 'bsi#historico', via: 'get'

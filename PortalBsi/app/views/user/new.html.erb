@@ -1,0 +1,30 @@
+<% provide(:title, 'Cadastro') %>
+<%= render partial: "menu", locals: {tipo: "login"} %>
+<article class="col-sm-9 col-xs-12">
+
+  <h2>Cadastre-se</h2>
+
+  <%= form_for(@usuario) do |f| %>
+
+      <div><%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true %></div>
+
+      <div><%= f.label :nome %><br />
+        <%= f.text_field :nome %></div>
+
+      <div><%= f.label :matricula %><br />
+        <%= f.text_field :matricula %></div>
+
+      <div><%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
+        <%= f.password_field :password, autocomplete: "off" %></div>
+
+      <div><%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+
+      <div><%= f.submit "Sign up" %></div>
+  <% end %>
+
+
+</article>
+
+<br style="clear: both">
