@@ -38,8 +38,12 @@ Rails.application.routes.draw do
   match '/institucional/ccet', to: 'bsi#ccet', via: 'get'
   match '/institucional/unirio', to: 'bsi#unirio', via: 'get'
   match '/oportunidades/home', to: 'oportunidades#home', via: 'get'
-  match '/oportunidades/bolsas_permanencia', to:'oportunidades#bolsas_permanencia', via:'get', as: 'oportunidades_bolsas_permanencia'
-  match '/oportunidades/jovens_talentos', to:'oportunidades#jovens_talentos', via:'get', as: 'oportunidades_jovens_talentos'
+  match '/oportunidades/bolsas_permanencia', to: 'oportunidades#bolsas_permanencia', via:'get', as: 'oportunidades_bolsas_permanencia'
+  match '/oportunidades/jovens_talentos', to: 'oportunidades#jovens_talentos', via:'get', as: 'oportunidades_jovens_talentos'
+  match '/oportunidades/monitoria', to: 'oportunidades#monitoria', via:'get', as: 'oportunidades_monitoria'
+  match '/oportunidades/iniciacao_cientifica', to: 'oportunidades#iniciacao_cientifica', via:'get', as: 'oportunidades_iniciacao_cientifica'
+  match '/oportunidades/ciencia_sem_fronteira', to: 'oportunidades#ciencia_sem_fronteira', via:'get', as: 'oportunidades_ciencia_sem_fronteira'
+  match '/oportunidades/mobilidade_academica', to: 'oportunidades#mobilidade_academica', via:'get', as: 'oportunidades_mobilidade_academica'
   match '/empresas', to: 'empresas#new', via: 'get'
   resources :tccs
   resources :oportunidades
