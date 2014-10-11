@@ -2,12 +2,12 @@ class Empresa < MailForm::Base
 #baseado nos sites:
 #http://rubyonrailshelp.wordpress.com/2014/01/08/rails-4-simple-form-and-mail-form-to-make-contact-form/
 #http://platypus.belighted.com/blog/2013/03/29/mail-form/	
-  attribute :nome, :validate => true
+  attribute :name, :validate => true
   attribute :email, :validate => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
-  attribute :telefone, :validate => /\A([2-9][0-9]{3,})-([0-9]{4,})|([2-9][0-9]{4,})-([0-9]{4,})\z/i
-  attribute :mensagem
+  attribute :phone, :validate => /\A([2-9][0-9]{3,})-([0-9]{4,})|([2-9][0-9]{4,})-([0-9]{4,})\z/i
+  attribute :message
   attribute :nickname, :captcha => true
-  attribute :arquivo, :attachment => true
+  attribute :file, :attachment => true
   
 
   def headers

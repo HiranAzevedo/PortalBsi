@@ -1,4 +1,8 @@
 pt:
+  helpers:
+    submit:
+      empresa:
+        create: "Solicitar Criação de Conta"
   activerecord:
     models:
       oportunidade: oportunidade
@@ -10,14 +14,14 @@ pt:
          expiration_date: Data de Expiração
          has_partnership: Possui Convênio ?
          picture: Foto
-  email_form:
-    models:  
-      empresa: empresa
+  mail_form:
+    models:
+      empresa: "empresa"
     attributes:
       empresa:
-        nome: Nome da Empresa
-        email: E-mail para contato
-        telefone: Telefone para contato
-        nickname: apelido
-        arquivo: Arquivo de Comprovação:
-                    
+        name: "Nome do Representante"
+        email: "E-mail para contato"
+        phone: "Telefone"
+        nickname: "apelido"
+        file: "Comprovação de Vínculo com a Empresa:"
+        message: "Informações Adicionais"
