@@ -9,4 +9,15 @@ pt:
          description: Descrição
          expiration_date: Data de Expiração
          has_partnership: Possui Convênio ?
-         picture: Foto         
+         picture: Foto
+  email_form:
+    models:  
+      empresa: empresa
+    attributes:
+      empresa:
+        nome: Nome da Empresa
+        email: E-mail para contato
+        telefone: Telefone para contato
+        nickname: apelido
+        arquivo: Arquivo de Comprovação:
+                    

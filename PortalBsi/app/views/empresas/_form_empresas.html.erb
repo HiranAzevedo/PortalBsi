@@ -17,6 +17,11 @@
       <%= error_tag @empresa, :email %>
     </p>
     <p>
+      <%= f.label :telefone %><br/>
+      <%= f.text_field :telefone %>
+      <%= error_tag @empresa, :telefone %>
+    </p>
+    <p>
       <%= f.label :arquivo %><br/>
       <%= f.file_field :arquivo %><br/>
     </p>
