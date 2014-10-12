@@ -1,5 +1,6 @@
 class EmpresasController < ApplicationController
-
+  authorize_resource
+  
   def new
   	@empresa = Empresa.new
   end

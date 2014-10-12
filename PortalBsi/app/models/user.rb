@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  ROLES = %W[administrador aluno representante_de_empresa]	
   has_one :tcc
   has_many :solicitations
   # Include default devise modules. Others available are:

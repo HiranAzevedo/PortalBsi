@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141006005335) do
+ActiveRecord::Schema.define(version: 20141012033321) do
 
   create_table "oportunidades", force: true do |t|
     t.string   "company_name"
@@ -115,16 +115,14 @@ ActiveRecord::Schema.define(version: 20141006005335) do
     t.string   "matricula"
     t.string   "facebook_link"
     t.string   "github_link"
-    t.integer  "tccs_id"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.boolean  "admin"
+    t.string   "role"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  add_index "users", ["tccs_id"], name: "index_users_on_tccs_id"
 
 end

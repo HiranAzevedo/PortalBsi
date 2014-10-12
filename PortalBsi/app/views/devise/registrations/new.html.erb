@@ -16,6 +16,8 @@
     <div><%= f.label :matricula %><br />
       <%= f.text_field :matricula %></div>
 
+    <div><br/><%= f.collection_select :role, User::ROLES, :to_s, :humanize %></div>  
+
   <div><%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
     <%= f.password_field :password, autocomplete: "off" %></div>
 

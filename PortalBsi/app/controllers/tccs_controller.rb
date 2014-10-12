@@ -1,5 +1,7 @@
 class TccsController < ApplicationController
   before_action :authenticate_user!, only: [:new,:edit, :publicar]
+  authorize_resource
+  
   def tipos
   end
   def processo

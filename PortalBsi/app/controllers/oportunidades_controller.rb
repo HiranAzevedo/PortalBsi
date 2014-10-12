@@ -1,5 +1,5 @@
 class OportunidadesController < ApplicationController
-  #authorize_recource
+  authorize_resource
   
   def new
     @oportunidade = Oportunidade.new
