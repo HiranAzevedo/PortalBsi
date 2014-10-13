@@ -14,7 +14,7 @@ class Empresa < MailForm::Base
   	{
   	  :subject => "Criação de Conta de Usuário tipo Representante Empresa",
   	  :to => "guilherme.albuquerque@uniriotec.br",
-  	  :from => %{"#{nome}" <#{email}>}
+  	  :from => %{"#{name}" <#{email}>}
 
   	}
   end	
