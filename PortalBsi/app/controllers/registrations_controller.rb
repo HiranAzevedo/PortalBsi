@@ -40,7 +40,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def registration_params
-    params.require(:user).permit(:nome,:matricula,:email, :password, :password_confirmation)
+    params.require(:user).permit(:nome,:matricula,:email, :password, :password_confirmation, :role)
   end
 
 end
