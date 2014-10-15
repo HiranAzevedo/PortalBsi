@@ -40,6 +40,7 @@ class Ability
       end
       can [:new,:create,:tipos,:modelo,:processo,:agenda,:publicacoes,:index], Tcc
       can :read,:update, User
+      can [:new,:create], Solicitation
     else
       can [:tipos,:modelo,:processo,:agenda,:publicacoes,:index], Tcc
       can :read, Professor

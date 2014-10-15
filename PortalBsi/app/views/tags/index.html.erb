@@ -1,27 +1,26 @@
-<h1>Listing tags</h1>
+<% provide(:title,"Tags") %>
 
-<table>
-  <thead>
+<article class="col-sm-9 col-xs-12">
+  <h1>Listing tags</h1>
+
+  <table>
+    <thead>
     <tr>
       <th>Nome</th>
-      <th></th>
-      <th></th>
-      <th></th>
     </tr>
-  </thead>
+    </thead>
 
-  <tbody>
+    <tbody>
     <% @tags.each do |tag| %>
-      <tr>
-        <td><%= tag.nome %></td>
-        <td><%= link_to 'Show', tag %></td>
-        <td><%= link_to 'Edit', edit_tag_path(tag) %></td>
-        <td><%= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <tr>
+          <td><%= tag.name %></td>
+        </tr>
     <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
 
-<br>
+  <br>
 
-<%= link_to 'New Tag', new_tag_path %>
+</article>
+
+<br style="clear: both">

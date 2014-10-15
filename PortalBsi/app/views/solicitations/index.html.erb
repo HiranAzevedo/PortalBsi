@@ -22,9 +22,6 @@
         <td><%= RetornaTipoSolicitacao(solicitation.solicitacao_tipos_id) %></td>
         <td><%= RetornaUserName(solicitation.user_id) %></td>
         <td><%= solicitation.observacao %></td>
-        <td><%= link_to 'Show', solicitation %></td>
-        <td><%= link_to 'Edit', edit_solicitation_path(solicitation) %></td>
-        <td><%= link_to 'Destroy', solicitation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,7 +29,6 @@
 
 <br>
 
-<%= link_to 'New Solicitation', new_solicitation_path %>
 </article>
 
 <br style="clear: both">

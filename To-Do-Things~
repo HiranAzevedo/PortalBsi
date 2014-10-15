@@ -10,6 +10,8 @@ DONES->
 prof->
 	*CRUD (DONE)
 	*INDEX (DONE)
+tag ->
+	TUDO RELACIONADO
 alunos->
 	*Bloquear (matricula e nome)(DONE)
 	*Acertar foto (DONE)
@@ -25,24 +27,23 @@ tcc->
 	*adicionar hora na data (DONE)
 	*Projetos de tcc (REMOVER) (DONE)
 	*mudar senha do email(DONE)
+	*admin pode desfazer ppublicação
+	*Acertar relacionamento
+	*agendar virar show se já existir TCC
+	*Publicar TCC(link no menu)
 
 
 **AINDA FALTA**
-tag ->
-TUDO RELACIONADO
+
 
 alunos->
 *Links/Menu
-*Atualizar form de cadastro de aluno
+*Acertar o form de cadastro de aluno
 *Yuri login
-*Campo turma
+*Campo turma(TALVEZ)
 
 tcc->
 *Botaozinho para editar se for o dono do TCC
-*admin pode desfazer ppublicação
-
-*agendar virar show se já existir TCC
-*Publicar TCC(link no menu)
 *JOB para email
 
 
@@ -57,3 +58,17 @@ Modelo secretaria ->
 403
 Max->
 *levantar requisitos para deploy
+
+
+****
+alunos-> logout deve mostrar mensagem
+desativar o cadastro do aluno
+adicionar permissao no cadastro do usuario
+pagia de turmas igual de professores, mostrando os alunos
+ao clicar no aluno, mostrar o perfil do aluno
+colocar nova solicitaçao no menu
+pagina pro admin visualizar as solicitaçoes
+tirar o link do publicar e o publicar ir para o meu tcc com o texto em vermelho
+colocar tags no perfil do aluno
+trocar o cadastri de tags pra checkbox
+colocar as paginas estaticas de disciplinas

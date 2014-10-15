@@ -3,86 +3,62 @@
 <article class="col-sm-9 col-xs-12">
 
   <h1>Editar Perfil</h1>
-  <hr>
-  <div class="row">
 
     <!-- edit form column -->
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "form-horizontal" }) do |f| %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
           <!-- left column -->
-          <div class="col-md-3">
-            <div class="text-center">
-              <%= image_tag(current_user.avatar.url(:thumb), class: "avatar img-circle") %>
-
-              <%= f.file_field :avatar %>
-            </div>
+        <%= devise_error_messages! %>
+        <section style="display: block;width: 720px;height: 178px">
+          <%= image_tag(current_user.avatar.url(:original), class: "photo", style: "width:155px;height:155px" ) %>
+          <div style="top: 125px;">
+            <p><%= f.file_field :avatar %></p>
           </div>
+        </section>
 
+        <%= f.label :nome,style:"padding-right: 7px;" %>
+        <%= f.text_field :nome, style: "width:300px;", disabled: true %>
+        <br><br>
 
-        <div class="col-md-9 personal-info">
-          <%= devise_error_messages! %>
-          <h3>Informações pessoais</h3>
+        <%= f.label :matricula,style:"padding-right: 7px;" %>
+        <%= f.text_field :matricula, style: "width:300px;", disabled: true %>
+        <br><br>
 
-        <div class="form-group">
-          <%= f.label :nome, class: "col-lg-3 control-label" %>
-          <div class="col-lg-8">
-            <%= f.text_field :nome, class: "form-control", disabled: true %>
-          </div>
-        </div>
+        <%= f.label "Nome de Tratamento",style:"padding-right: 7px;" %>
+        <%= f.text_field :apelido, style: "width:289px;", disabled: true %>
+        <br><br>
 
-        <div class="form-group">
-          <%= f.label :matricula, class: "col-lg-3 control-label" %>
-          <div class="col-lg-8">
-            <%= f.text_field :matricula , class: "form-control", disabled: true %>
-          </div>
-        </div>
+        <%= f.label :email,style:"padding-right: 7px;" %>
+        <%= f.text_field :email, style: "width:289px;", disabled: true %>
+        <br><br>
 
-          <div class="form-group">
-            <%= f.label "Nome de Tratamento", class: "col-lg-3 control-label" %>
-            <div class="col-lg-8">
-              <%= f.text_field :apelido , class: "form-control", value: retornaApelido(resource.nome), autofocus: true %>
-            </div>
-          </div>
+        <%= f.label :facebook_link,style:"padding-right: 7px;" %>
+        <%= f.text_field :facebook_link, style: "width:278px;" %>
+        <br><br>
 
-        <div class="form-group">
-          <%= f.label :email, class: "col-lg-3 control-label" %>
-          <div class="col-lg-8">
-            <%= f.email_field :email , class: "form-control" %>
-          </div>
-        </div>
+        <%= f.label :github_link,style:"padding-right: 7px;" %>
+        <%= f.text_field :github_link, style: "width:295px;" %>
+        <br><br>
 
-        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-            <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-        <% end %>
+        <%= f.label "Nova Senha",style:"padding-right: 7px;" %>
+        <%= f.text_field :password, style: "width:295px;", autocomplete: "off" %>
+        <br><br>
 
-        <div class="form-group">
-          <%= f.label "Nova Senha", class: "col-lg-3 control-label" %><i>(Preencha caso queira alterar sua senha)</i><br />
-          <div class="col-lg-8">
-            <%= f.password_field :password , class: "form-control", autocomplete: "off" %>
-          </div>
-        </div>
+        <%= f.label "Confirme a Nova Senha Senha",style:"padding-right: 7px;" %>
+        <%= f.text_field :password_confirmation, style: "width:295px;", autocomplete: "off" %>
+        <br><br>
 
-        <div class="form-group">
-          <%= f.label "Cofirme a Nova Senha Senha", class: "col-lg-3 control-label" %><i>(Preencha caso queira alterar sua senha)</i><br />
-          <div class="col-lg-8">
-            <%= f.password_field :password_confirmation , class: "form-control", autocomplete: "off" %>
-          </div>
-        </div>
+        <%= f.label "Senha Atual",style:"padding-right: 7px;" %>
+        <%= f.text_field :current_password, style: "width:295px;", autocomplete: "off" %>
+        <br><br>
+        <%= f.label :tag_list, "Tags" %><br />
+        <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) %>
+        <br><br>
 
-        <div class="form-group">
-          <%= f.label "Senha Atual", class: "col-lg-3 control-label" %> <i>(Necessário para confirmar as alterações)</i><br />
-          <div class="col-lg-8">
-            <%= f.password_field :current_password , class: "form-control", autocomplete: "off" %>
-          </div>
-        </div>
+        <p><%= f.submit "Salvar Alterações" %></p>
 
-        <div><%= f.submit "Atualizar" %></div>
     <% end %>
     <%= link_to "Back", :back %>
-    </div>
-
-  </div>
-<hr>
 
 </article>
 

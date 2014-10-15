@@ -23,10 +23,7 @@ ActiveRecord::Schema.define(version: 20141007195827) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.integer  "tccs_id"
   end
-
-  add_index "professors", ["tccs_id"], name: "index_professors_on_tccs_id"
 
   create_table "solicitacao_tipos", force: true do |t|
     t.string   "tipo"
@@ -111,7 +108,6 @@ ActiveRecord::Schema.define(version: 20141007195827) do
     t.string   "matricula"
     t.string   "facebook_link"
     t.string   "github_link"
-    t.integer  "users_id"
     t.integer  "tccs_id"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
@@ -122,7 +118,7 @@ ActiveRecord::Schema.define(version: 20141007195827) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: trueß
   add_index "users", ["turma_id"], name: "index_users_on_turma_id"
 
 end

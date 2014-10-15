@@ -1,14 +1,15 @@
-<%= render partial: "menu", locals: {tipo: 'new'} %>
-<article>
+<%= render partial: "menu", locals: {tipo: 'show'} %>
+<article class="col-sm-9 col-xs-12">
   <p id="notice"><%= notice %> </p>
   <p id="alert"> <%= alert %></p>
-  <h2>Titulo: <%= @tcc.titulo %> </h2>
-  <ul>
-    <li>Resumo: <%= @tcc.resumo %> </li>
-    <li>Data: <%= @tcc.data %> </li>
-  </ul>
-  <% unless @tcc.apresentado %>
-      <%= link_to 'Editar Tcc', edit_tcc_path(@tcc) %>
-      <%= link_to "Publicar Tcc", tccs_publicar_path(@tcc.id) %>
-  <% end %>
+
+  <h1>Meu TCC</h1>
+  <p>Titulo: <%= @tcc.titulo %> <br><br>
+    Resumo: <%= @tcc.resumo %> <br><br>
+    <label style="padding-right: 2px;">Orientador: <%= @tcc.orientador %></label>
+    <label style="padding-right: 2px;margin-left: 50px">Coorientador: <%= @tcc.coorientador %></label><br><br>
+    <label style="padding-right: 38px;">Data: <%= @tcc.data %></label>
+    <label style="padding-right: 2px;margin-left: 91px">Local: <%= @tcc.local %></label><br><br>
+    <button style="padding: 3px 10px"type="button"><%= link_to "Editar Tcc", edit_tcc_path(@tcc) %></button>
+    <button style="padding: 3px 10px"type="button"><%= link_to "Publicar Tcc", tccs_publicar_path(@tcc.id) %></button>
 </article>
