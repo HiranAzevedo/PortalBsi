@@ -11,5 +11,5 @@
     <label style="padding-right: 38px;">Data: <%= @tcc.data %></label>
     <label style="padding-right: 2px;margin-left: 91px">Local: <%= @tcc.local %></label><br><br>
     <button style="padding: 3px 10px"type="button"><%= link_to "Editar Tcc", edit_tcc_path(@tcc) %></button>
-    <button style="padding: 3px 10px"type="button"><%= link_to "Publicar Tcc", tccs_publicar_path(@tcc.id) %></button>
+    <button style="padding: 3px 10px; color: red"type="button"><%= link_to "Publicar Tcc", tccs_publicar_path(@tcc.id) %></button>
 </article>
