@@ -9,7 +9,7 @@
     <%= image_tag(@user.avatar.url(:thumb), class: "photo") %>
   </section>
   <p>Nome: <%= @user.nome %><br><br>
-    Nome de tratamento: <% if @user.apelido.nil? %> <%= retornaApelido(@user.nome) %> <% else %> @user.apelido <% end %> <br><br>
+    Nome de tratamento: <% if @user.apelido.nil? %> <%= retornaApelido(@user.nome) %> <% else %> <%= @user.apelido %> <% end %> <br><br>
     Facebook: <a href="<%= @user.facebook_link %>"><%= @user.facebook_link %></a><br><br>
     Github: <a href="<%= @user.github_link %>"><%= @user.github_link %></a><br></p>
 
