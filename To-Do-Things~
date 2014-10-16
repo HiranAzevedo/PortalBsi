@@ -1,0 +1,36 @@
+Alunos ->
+Mensagem de sucesso na tela depois de fazer o login
+Barra na pagina pra fazer o login
+Pagina de turma -> Tirar o FB
+Corrigir links entre as paginas( links no texto) e verificar o menu
+Tirar pagina matriculados para secretaria
+Criar seção de transparencia (tinha outro nome) - colocar matriculados aqui dentro
+
+
+Cadastrar Usuario ->
+Caixa de admin ficar ao lado do nome do campo
+Separa o cadastro de usuario, admin, empresa
+
+Tags->
+Criar categoria para a tag
+Na seleção de tags, fazer a separação em field set por categoria
+Filtro de tag feito por dropbox
+
+Secretaria ->
+Nova Solicitação - YURI
+Lista de solicitação - YURI
+Cadastrar professores
+Cadastrar tipos de solicitação
+
+
+TCC->
+publicar TCC - YURI
+no form, trocar botao agendar por salvar
+nos botões de publicar colocar TCC maiusculo
+Texto terrorista para publicar
+Botão editar sumir e virar criar se o cara nao tiver o tcc cadastrado mas ficar tudo no meu TCC
+
+COLOCAR NO HEROKU!!!!
+
+
+
