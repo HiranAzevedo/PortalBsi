@@ -1,74 +1,36 @@
-BACKLOG->
-* Paginas de disciplinas
-* Tirar os grandes comentarios do html estatico 
-* Pagina de Turma (pagina)
-* Passar o html para o rails 
-* Realizar solicitacao na secretaria(envio de email) + visualizar historico de solicitacoes
-cadastrar tipos de entradas para secretaria
-
-DONES->
-prof->
-	*CRUD (DONE)
-	*INDEX (DONE)
-tag ->
-	TUDO RELACIONADO
-alunos->
-	*Bloquear (matricula e nome)(DONE)
-	*Acertar foto (DONE)
-	*Apelido -> Nome de tratamento(DONE)
-	*Sugestão nome de tratamento(DONE)
-tcc->
-	*Trocar a ordem do form	(DONE)
-	*Branco prof	(DONE)
-	*Local setar default (sala)(DONE)
-	*agenda (DONE)
-	*publicações(DONE)
-	*validar data para publicar(DONE)
-	*adicionar hora na data (DONE)
-	*Projetos de tcc (REMOVER) (DONE)
-	*mudar senha do email(DONE)
-	*admin pode desfazer ppublicação
-	*Acertar relacionamento
-	*agendar virar show se já existir TCC
-	*Publicar TCC(link no menu)
+Alunos ->
+Mensagem de sucesso na tela depois de fazer o login
+Barra na pagina pra fazer o login
+Pagina de turma -> Tirar o FB
+Corrigir links entre as paginas( links no texto) e verificar o menu
+Tirar pagina matriculados para secretaria
+Criar seção de transparencia (tinha outro nome) - colocar matriculados aqui dentro
 
 
-**AINDA FALTA**
+Cadastrar Usuario ->
+Caixa de admin ficar ao lado do nome do campo
+Separa o cadastro de usuario, admin, empresa
 
-
-alunos->
-*Links/Menu
-*Acertar o form de cadastro de aluno
-*Yuri login
-*Campo turma(TALVEZ)
-
-tcc->
-*Botaozinho para editar se for o dono do TCC
-*JOB para email
-
+Tags->
+Criar categoria para a tag
+Na seleção de tags, fazer a separação em field set por categoria
+Filtro de tag feito por dropbox
 
 Secretaria ->
-*CRUD
-
-Modelo secretaria ->
-*Crud
-
-*PAGINAS
-404
-403
-Max->
-*levantar requisitos para deploy
+Nova Solicitação - YURI
+Lista de solicitação - YURI
+Cadastrar professores
+Cadastrar tipos de solicitação
 
 
-****
-alunos-> logout deve mostrar mensagem
-desativar o cadastro do aluno
-adicionar permissao no cadastro do usuario
-pagia de turmas igual de professores, mostrando os alunos
-ao clicar no aluno, mostrar o perfil do aluno
-colocar nova solicitaçao no menu
-pagina pro admin visualizar as solicitaçoes
-tirar o link do publicar e o publicar ir para o meu tcc com o texto em vermelho
-colocar tags no perfil do aluno
-trocar o cadastri de tags pra checkbox
-colocar as paginas estaticas de disciplinas
+TCC->
+publicar TCC - YURI
+no form, trocar botao agendar por salvar
+nos botões de publicar colocar TCC maiusculo
+Texto terrorista para publicar
+Botão editar sumir e virar criar se o cara nao tiver o tcc cadastrado mas ficar tudo no meu TCC
+
+COLOCAR NO HEROKU!!!!
+
+
+
