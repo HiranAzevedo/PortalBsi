@@ -17,9 +17,9 @@
     <li class="<%= verificaMenuAtivo(tipo,"mobilidade")%> oportunidades"><%= link_to 'Mobilidade Acadêmica Nacional', oportunidades_mobilidade_academica_path %></li>
     
     <% if !user_signed_in? %>
-         <li class="<%= verificaMenuAtivo(tipo,"divulgador")%> empresa"><%= link_to 'Torne-se um Divulgador', new_empresa_path %></li>
+         <li class="<%= verificaMenuAtivo(tipo,"divulgador")%> empresa"><%= link_to 'Cadastrar Empresa', new_empresa_path %></li>
     <% else %>
-         <li class="hidden"><%= link_to 'Torne-se um Divulgador', new_empresa_path %></li>
+         <li class="hidden"><%= link_to 'Cadastrar Empresa', new_empresa_path %></li>
     <% end %>
   </ul>
 </aside>

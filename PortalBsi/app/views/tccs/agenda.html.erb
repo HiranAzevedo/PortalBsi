@@ -21,6 +21,9 @@
         <%=  item.titulo %><br>
         <p><%= item.user.nome %> .Orientador <%= @prof.find(item.orientador).nome %>. <%= item.data.to_date.strftime("%d/%m/%Y") %></p>
         <p>Tags: <%= raw item.tag_list.map { |t| link_to t, tccs_publicacoes_path(tag: t) }.join(', ') %></p>
+        <% if item.user == current_user  %>
+            <p><%= link_to 'Editar', tcc_path(item)%></p>
+        <% end %>
       </li>
   <% end %>
 

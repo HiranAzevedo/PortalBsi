@@ -28,13 +28,13 @@
     <p>
       <%= f.label :has_partnership %><br/>
       <%= f.radio_button :has_partnership, true %> 
-      <%= f.label :has_partnership, "Yes", :value => "true" %> &nbsp;
+      <%= f.label :has_partnership, "Sim", :value => "true" %> &nbsp;
       <%= f.radio_button :has_partnership, false %> 
-      <%= f.label :has_partnership, "No", :value => "false" %>
+      <%= f.label :has_partnership, "Não", :value => "false" %>
     </p>
     <p>
-      <%= f.label :tag_list, "Tags (Separada por vírgulas)" %><br/>
-      <%= f.text_field :tag_list %>
+      <%= f.label :tag_list, "Tags" %><br/>
+      <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name)%>
     </p>
     <p>
       <%= f.label :picture %>

@@ -11,8 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141012033321) do
-
+ActiveRecord::Schema.define(version: 20141007195827) do
+  
   create_table "oportunidades", force: true do |t|
     t.string   "company_name"
     t.string   "title"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20141012033321) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "picture"
-  end
+  end 
 
   create_table "professors", force: true do |t|
     t.string   "nome"
@@ -97,6 +97,12 @@ ActiveRecord::Schema.define(version: 20141012033321) do
   add_index "tccs", ["user_id"], name: "index_tccs_on_user_id"
   add_index "tccs", ["users_id"], name: "index_tccs_on_users_id"
 
+  create_table "turmas", force: true do |t|
+    t.string   "nome"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -120,9 +126,11 @@ ActiveRecord::Schema.define(version: 20141012033321) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.string   "role"
+    t.integer  "turma_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-
+  add_index "users", ["turma_id"], name: "index_users_on_turma_id"
+  
 end

@@ -1,5 +1,6 @@
 <% provide(:title, 'Alunos') %>
   <%= render partial: "menu", locals: {tipo: "index"} %>
+  <%= flash[:notice] %>
   <article class="col-sm-9 col-xs-12">
 
     <h1>Alunos</h1>
@@ -9,7 +10,7 @@
     <dl>
       <dt><%= link_to "Matriculados", alunos_matriculados_path %></dt>
       <dd>Lista dos alunos matriculados no curso</dd>
-      <dt><%= link_to "Turmas", alunos_turmas_path %></dt>
+      <dt><%= link_to "Turmas", turmas_path %></dt>
       <dd>Cada turma listada de acordo com o ano de ingresso e com suas respectivas informações.</dd>
       <dt><%= link_to "Portal do Aluno", alunos_portal_path %></dt>
       <dd>Inscrições em disciplinas, exclusão de disciplinas, histórico escolar e outras tarefas que são efetudas no portal do aluno.</dd>

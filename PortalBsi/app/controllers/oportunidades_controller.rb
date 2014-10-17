@@ -3,6 +3,12 @@ class OportunidadesController < ApplicationController
   
   def new
     @oportunidade = Oportunidade.new
+    params[:oportunidade][:tag_ids].each do |tag_id|
+      if !tag_id.empty?
+        tag = Tag.find(tag_id)
+        @oportunidade.tag_list.add(tag.name)
+      end
+    end    
   end
 
   def index
@@ -46,6 +52,6 @@ class OportunidadesController < ApplicationController
   private
   def oportunidade_params
     params.require(:oportunidade).permit(:company_name, :title, :description, :expiration_date, 
-    	                                     :has_partnership, :picture, :tag_list)
+    	                                     :has_partnership, :picture, :tag_ids)
   end
 end

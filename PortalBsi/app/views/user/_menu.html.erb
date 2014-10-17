@@ -1,0 +1,37 @@
+<aside class="col-sm-3 col-xs-6 sidebar-offcanvas">
+  <ul class="menu">
+    <li class=" <%=verificaMenuAtivo(tipo,"index")%> alunos">
+      <%= link_to "Alunos", alunos_path %>
+    </li>
+    <li class=" <%=verificaMenuAtivo(tipo,"matriculados")%> alunos">
+      <%= link_to "Matriculados", alunos_matriculados_path %>
+    </li>
+    <li class=" <%=verificaMenuAtivo(tipo,"turmas")%> alunos">
+      <%= link_to "Turmas", alunos_turmas_path %>
+    </li>
+    <li class=" <%=verificaMenuAtivo(tipo,"portal")%> alunos">
+      <%= link_to "Portal do Aluno", alunos_portal_path %>
+    </li>
+    <li class=" <%=verificaMenuAtivo(tipo,"diretorio")%> alunos">
+      <%= link_to "Diretório Acadêmico", alunos_diretorioAcademico_path %>
+    </li>
+    <li class=" <%=verificaMenuAtivo(tipo,"carteirinha")%> alunos">
+      <%= link_to "Carteirinha de Estudante", alunos_carteirinha_path %>
+    </li>
+    <li class=" <%=verificaMenuAtivo(tipo,"enade")%> alunos">
+      <%= link_to "ENADE", alunos_enade_path %>
+    </li>
+    <% if !user_signed_in? %>
+        <li class=" <%=verificaMenuAtivo(tipo,"login")%> alunos">
+          <%= link_to "Login", new_user_session_path %>
+        </li>
+    <% elsif user_signed_in? %>
+        <li class=" <%=verificaMenuAtivo(tipo,"edit")%> alunos">
+          <%= link_to "Editar Perfil", edit_user_registration_path %>
+        </li>
+        <li class=" <%=verificaMenuAtivo(tipo,"logout")%> alunos">
+          <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+        </li>
+    <% end %>
+  </ul>
+</aside>

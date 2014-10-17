@@ -1,0 +1,18 @@
+<% provide(:title, @user.nome) %>
+<%= render partial: "menu", locals: {tipo: "turmas"} %>
+
+<article class="col-sm-9 col-xs-12">
+
+  <h1>Perfil Aluno</h1>
+
+  <section class="boxgrid caption">
+    <%= image_tag(@user.avatar.url(:thumb), class: "photo") %>
+  </section>
+  <p>Nome: <%= @user.nome %><br><br>
+    Nome de tratamento: <% if @user.apelido.nil? %> <%= retornaApelido(@user.nome) %> <% else %> <%= @user.apelido %> <% end %> <br><br>
+    Facebook: <a href="<%= @user.facebook_link %>"><%= @user.facebook_link %></a><br><br>
+    Github: <a href="<%= @user.github_link %>"><%= @user.github_link %></a><br></p>
+
+
+</article>
+

@@ -1,7 +1,9 @@
 <% provide(:title, 'BSI UNIRIO') %>
     <%= render partial: "menu_bsi", locals: {tipo: "root"} %>
-
     <article class="col-sm-9 col-xs-12">
+      <% if !flash[:notice].nil? %>
+        <div class="alert alert-success" role="alert"><%= flash[:notice] %></div>
+      <% end %>
 
       <h1> Bacharelado em Sistemas de Informa&ccedil;&atilde;o - UNIRIO </h1>
 

@@ -1,0 +1,22 @@
+<% provide(:title, 'Turmas') %>
+<%= render partial: "menu", locals: {tipo: "turmas"} %>
+<article class="col-sm-9 col-xs-12">
+
+  <h1>Turmas</h1>
+
+
+  <p>Email do BSI CCET: bsi<img src="../uniriotecbr.png" alt="BSI Alunos"><br>
+    Email do BSI Alunos: bsi-alunos<img src="../uniriotecbr.png" alt="BSI Alunos"><br>
+    Email do BSI Professores: profBSI<img src="../uniriotecbr.png" alt="BSI Alunos"><br>
+    Facebook do BSI: <a href="https://www.facebook.com/groups/bsi.unirio/">Sistemas de Informação Unirio</a>, <a href="https://www.facebook.com/groups/informatica.unirio/">Informática Unirio</a>, <a href="https://www.facebook.com/groups/estudantes.unirio/">Unirio</a>
+  </p>
+
+  <% @turmas.each do |turma| %>
+      <p><b><%= link_to 'Turma ' + turma.nome, turma %></b><br>
+        Facebook: <a href="https://www.facebook.com/groups/654723007903993/">BSI 2014.1</a>
+      </p>
+  <% end %>
+
+</article>
+
+<br style="clear: both">

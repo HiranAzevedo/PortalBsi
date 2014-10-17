@@ -1,10 +1,7 @@
-    <article>
+
+<%= render partial: "menu", locals: {tipo: 'show'} %>
+    <article class="col-sm-9 col-xs-12">
       <h1>Edição de TCC</h1>
 
-      <%= render partial: "menu", locals: {tipo: 'new'} %>
       <%= render 'form' %>
-
-      <% unless @tcc.apresentado %>
-          <%= link_to "Publicar Tcc", tccs_publicar_path(@tcc.id) %>
-      <% end %>
     </article>

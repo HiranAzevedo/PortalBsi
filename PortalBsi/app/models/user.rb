@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   ROLES = %W[administrador aluno representante_de_empresa]	
   has_one :tcc
   has_many :solicitations
+  belongs_to :turma
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100#" }, :default_url => "//placehold.it/100"
@@ -9,4 +10,5 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   validates_presence_of :nome, :matricula
+  acts_as_taggable
 end

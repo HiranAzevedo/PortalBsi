@@ -61,11 +61,16 @@
       <% end %>
       </p>
       <p>
-        <%= f.label :tag_list, "Tags (separated by commas)" %><br />
-        <%= f.text_field :tag_list %>
+        <%= f.label :tag_list, "Tags" %><br />
+        <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) %>
       </p>
       <p>
         <%= f.submit "Agendar TCC" %>
       </p>
+      <% unless @tcc.apresentado %>
+          <p>
+            <%= link_to "Publicar Tcc", tccs_publicar_path(@tcc.id) %>
+          </p>
+      <% end %>
   <% end %>
 </div>

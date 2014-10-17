@@ -1,11 +1,19 @@
 Rails.application.routes.draw do
+  resources :turmas
+
   resources :solicitations
 
   resources :solicitacao_tipos
 
   resources :professors
 
+  #devise_for :users, :controllers => { registrations: 'registrations' }
   devise_for :users, :controllers => { registrations: 'registrations' }
+  devise_scope :user do
+    get '/login' => 'devise/sessions#new'
+    get '/logout' => 'devise/sessions#destroy'
+  end
+  resources :user, :controller => 'user'
   root 'bsi#home'
   match '/depoimentos', to: 'bsi#depoimentos', via: 'get'
   match '/historico', to: 'bsi#historico', via: 'get'
@@ -48,6 +56,7 @@ Rails.application.routes.draw do
   resources :tccs
   resources :oportunidades
   resources "empresas", only: [:new, :create]
+  resources :tags
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

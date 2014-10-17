@@ -40,7 +40,9 @@ class Ability
       end
       can [:new,:create,:tipos,:modelo,:processo,:agenda,:publicacoes,:index], Tcc
       can :read,:update, User
+      can [:new,:create], Solicitation
       can [:read, :home, :index, :bolsas_permanencia, :jovens_talentos, :monitoria, :iniciacao_cientifica, :ciencia_sem_fronteira, :mobilidade_academica], Oportunidade
+
     elsif user && user.persisted? && user.role == "representante_de_empresa"	
 	  can [:tipos,:modelo,:processo,:agenda,:publicacoes,:index], Tcc
 	  cannot :salva_publicacao, Tcc

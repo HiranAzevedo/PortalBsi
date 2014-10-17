@@ -23,6 +23,13 @@ class TccsController < ApplicationController
   def new
     @tcc = Tcc.new
     @prof = Professor.all
+    @tcc.tag_list.clear
+    params[:tcc][:tag_ids].each do |tag_id|
+      if !tag_id.empty?
+        tag = Tag.find(tag_id)
+        @tcc.tag_list.add(tag.name)
+      end
+    end
   end
   def index
   end
@@ -93,6 +100,13 @@ class TccsController < ApplicationController
   end
   def update
     @tcc = Tcc.find(params[:id])
+    @tcc.tag_list.clear
+    params[:tcc][:tag_ids].each do |tag_id|
+      if !tag_id.empty?
+        tag = Tag.find(tag_id)
+        @tcc.tag_list.add(tag.name)
+      end
+    end
     authorize!(:update, @tcc)
     if @tcc.update(tcc_params)
       redirect_to @tcc, notice: 'Cadastro atualizado com sucesso!' and return
@@ -103,7 +117,7 @@ class TccsController < ApplicationController
   private
   def tcc_params
     params.require(:tcc).permit(:titulo, :resumo, :data, :orientador, :local,
-                                :coorientador, :arquivo,:nome_arquivo,:apresentado, :tag_list)
+                                :coorientador, :arquivo,:nome_arquivo,:apresentado, :tag_ids)
   end
   def find_by_id(params)
     @tcc = Tcc.find(params[:id])

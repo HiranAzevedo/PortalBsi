@@ -1,10 +1,10 @@
-<header> 
+<header>
   <div class="container">
     <nav>
       <%= link_to(root_path) do %>
           <div class="iconeAtivo grande bsi"><p class="subtitle"><%= image_tag("iBSI.png", alt: "bsi",class: "tamanhoBsi") %><br><span class="titleBSI">BACHARELADO&nbsp;&nbsp;EM<br><span class="subtitleGrande">SISTEMAS&nbsp;DE<br>INFORMA&Ccedil;&Atilde;O</span></span></div>
       <%end%>
-      <div class="meio">
+      <div style="float:left;">
         <%= link_to (disciplinas_path) do %>
             <div class="icone normal disciplinas"><p class="subtitle"><%= image_tag("iDisciplinas.png", alt: "disciplinas",class: "icon") %><br>DISCIPLINAS</p></div>
         <%end%>
@@ -14,6 +14,7 @@
         <%= link_to (tccs_path) do %>
             <div class="icone normal tcc"><p class="subtitle"><%= image_tag("iTCC.png", alt: "Trabalho de Conclusão de Curso",class: "icon") %><br>TCC</p></div>
         <%end%>
+        <br style="clear: both;">
         <%= link_to (professors_path) do %>
             <div class= "icone normal professores"><p class="subtitle"><%= image_tag("iProfessores.png", alt: "Professores",class: "icon") %><br>PROFESSORES</p></div>
         <%end%>
@@ -27,8 +28,8 @@
             <div class= "icone normal institucional"><p class="subtitle"><%= image_tag("iInstitucional.png", alt: "institucional") %><br>INSTITUCIONAL</p></div>
         <%end %>
       </div>
-      <%= link_to (noticias_path) do %>
-          <div class="noticias icone grande semMargem"><p class="subtitle subtitleGrande"><%= image_tag("iNoticias.png", alt: "notícias", class: "tamanhoNoticias") %><br>NOT&Iacute;CIAS</p></div>
+      <%= link_to (noticias_path)  do %>
+          <div class="noticias icone grande semMargem"><p class="subtitle subtitleGrande"><%= image_tag("iNoticias.png", alt: "notícias") %><br>NOT&Iacute;CIAS</p></div>
       <%end%>
     </nav>
   </div>

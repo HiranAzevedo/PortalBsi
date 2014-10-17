@@ -1,0 +1,33 @@
+<% provide(:title, 'Cadastro') %>
+<%= render partial: "menuSecretaria", locals: {tipo: "cadastrar"} %>
+<article class="col-sm-9 col-xs-12">
+
+  <h2>Cadastrar Usuário</h2>
+
+  <%= form_for @user, :url => user_index_path do |f| %>
+
+      <div><%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true %></div>
+
+      <div><%= f.label :nome %><br />
+        <%= f.text_field :nome %></div>
+
+      <div><%= f.label :matricula %><br />
+        <%= f.text_field :matricula %></div>
+
+      <div><br/><%= f.collection_select :role, User::ROLES, :to_s, :humanize %></div> 
+
+
+      <div><%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
+        <%= f.password_field :password, autocomplete: "off" %></div>
+
+      <div><%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+
+      <div><%= f.submit "Cadastrar" %></div>
+  <% end %>
+
+
+</article>
+
+<br style="clear: both">
