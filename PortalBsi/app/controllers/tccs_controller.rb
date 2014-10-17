@@ -31,6 +31,9 @@ class TccsController < ApplicationController
   end
   def index
   end
+  def meu_tcc
+
+  end
   def create
     @tcc = Tcc.new(tcc_params)
     @prof = Professor.all

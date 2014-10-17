@@ -10,6 +10,8 @@
     <label style="padding-right: 2px;margin-left: 50px">Coorientador: <%= @tcc.coorientador %></label><br><br>
     <label style="padding-right: 38px;">Data: <%= @tcc.data %></label>
     <label style="padding-right: 2px;margin-left: 91px">Local: <%= @tcc.local %></label><br><br>
-    <button style="padding: 3px 10px"type="button"><%= link_to "Editar Tcc", edit_tcc_path(@tcc) %></button>
-    <button style="padding: 3px 10px; color: red"type="button"><%= link_to "Publicar Tcc", tccs_publicar_path(@tcc.id) %></button>
+    <% if @tcc.user == current_user %>
+        <%= button_to "Editar TCC", edit_tcc_path(@tcc),class: "btn btn-default", method: "get", padding: "3px 10px" %>
+        <%= button_to "Publicar TCC",tccs_publicar_path(@tcc.id),class: "btn btn-default", method: "get", padding: "3px 10px" %>
+    <% end %>
 </article>

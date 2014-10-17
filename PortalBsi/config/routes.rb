@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   match '/alunos/matriculados', to: 'alunos#matriculados', via: 'get'
   match '/alunos/portal', to: 'alunos#portal', via: 'get'
   match '/alunos/turmas', to: 'alunos#turmas', via: 'get'
+  match '/tccs/meu_tcc', to:'tccs#show_empty', via: 'get', as: 'tccs_show_empty'
   match '/tccs/:id/publicar', to: 'tccs#publicar', via: 'get', as: 'tccs_publicar'
   match '/tccs/lista_publicados', to: 'tccs#lista_publicados', via: 'get', as: 'tccs_lista_publicado'
   match '/tccs/:id/desfaz_publicado', to: 'tccs#desfaz_publicado', via: 'post', as:  'tccs_desfaz_publicado'
