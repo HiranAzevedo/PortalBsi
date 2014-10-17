@@ -18,9 +18,9 @@
         &nbsp; &nbsp; &nbsp; &nbsp; 
 
         <% if user_signed_in? && current_user.role == "administrador" %>
-                <%= link_to 'Apagar', oportunidade, method: :delete, data: {confirm: 'Você tem certeza?'}, :class => "btn btn-danger" %>
+                <%= link_to 'Apagar', oportunidade, method: :delete, :class => "btn btn-danger" %>
         <% elsif user_signed_in? && current_user.role != "administrador" %> 
-                <%= link_to 'Apagar', oportunidade, method: :delete, data: {confirm: 'Você tem certeza?'}, :class => "hidden" %>
+                <%= link_to 'Apagar', oportunidade, method: :delete, :class => "hidden" %>
         <% end %>      
           
         <p>Tags: <%= raw oportunidade.tag_list.map { |t| link_to t, oportunidades_path(tag: t) }.join(', ') %></p>

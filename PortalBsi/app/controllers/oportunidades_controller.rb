@@ -3,12 +3,6 @@ class OportunidadesController < ApplicationController
   
   def new
     @oportunidade = Oportunidade.new
-    params[:oportunidade][:tag_ids].each do |tag_id|
-      if !tag_id.empty?
-        tag = Tag.find(tag_id)
-        @oportunidade.tag_list.add(tag.name)
-      end
-    end    
   end
 
   def index
@@ -25,6 +19,13 @@ class OportunidadesController < ApplicationController
 
   def create
     @oportunidade = Oportunidade.new(oportunidade_params)
+    @oportunidade.tag_list.clear
+    params[:oportunidade][:tag_ids].each do |tag_id|
+      if !tag_id.empty?
+        tag = Tag.find(tag_id)
+        @oportunidade.tag_list.add(tag.name)
+      end
+    end    
     if @oportunidade.save
        redirect_to @oportunidade, notice: 'Oportunidade de Estágio cadastrada com sucesso.'
     else
@@ -45,6 +46,7 @@ class OportunidadesController < ApplicationController
 
   def destroy
     @oportunidade = Oportunidade.find(params[:id])
+    @oportunidade.tag_list.clear
   	@oportunidade.destroy
   	redirect_to oportunidades_url
   end

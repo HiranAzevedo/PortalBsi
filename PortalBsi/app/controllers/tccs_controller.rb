@@ -23,6 +23,12 @@ class TccsController < ApplicationController
   def new
     @tcc = Tcc.new
     @prof = Professor.all
+  end
+  def index
+  end
+  def create
+    @tcc = Tcc.new(tcc_params)
+    @prof = Professor.all
     @tcc.tag_list.clear
     params[:tcc][:tag_ids].each do |tag_id|
       if !tag_id.empty?
@@ -30,12 +36,6 @@ class TccsController < ApplicationController
         @tcc.tag_list.add(tag.name)
       end
     end
-  end
-  def index
-  end
-  def create
-    @tcc = Tcc.new(tcc_params)
-    @prof = Professor.all
     @tcc.apresentado = false
     @tcc.user_id = current_user.id
     if @tcc.save

@@ -14,7 +14,7 @@
     <li class="<%= verificaMenuAtivo(tipo,"monitoria")%> oportunidades"><%= link_to 'Monitoria', oportunidades_monitoria_path %></li>
     <li class="<%= verificaMenuAtivo(tipo,"iniciacao_cientifica")%> oportunidades"><%= link_to 'Iniciação Científica', oportunidades_iniciacao_cientifica_path %></li>
     <li class="<%= verificaMenuAtivo(tipo,"ciencia_sem_fronteira")%> oportunidades"><%= link_to 'Ciência Sem Fronteira', oportunidades_ciencia_sem_fronteira_path %></li>
-    <li class="<%= verificaMenuAtivo(tipo,"mobilidade")%> oportunidades"><%= link_to 'Mobilidade Acadêmica Nacional', oportunidades_mobilidade_academica_path %></li>
+    <li class="<%= verificaMenuAtivo(tipo,"mobilidade")%> oportunidades"><%= link_to 'Mobilidade Acadêmica', oportunidades_mobilidade_academica_path %></li>
     
     <% if !user_signed_in? %>
          <li class="<%= verificaMenuAtivo(tipo,"divulgador")%> empresa"><%= link_to 'Cadastrar Empresa', new_empresa_path %></li>

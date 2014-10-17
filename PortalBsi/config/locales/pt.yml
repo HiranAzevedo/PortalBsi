@@ -8,7 +8,7 @@ pt:
       oportunidade: oportunidade
     attributes:
       oportunidade:
-         company_name: Nome da Empresa
+         company_name: Nome do Ofertante
          title: Título
          description: Descrição
          expiration_date: Data de Expiração
