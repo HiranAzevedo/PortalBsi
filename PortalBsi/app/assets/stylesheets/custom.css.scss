@@ -55,7 +55,7 @@ text-align: left;
   background-color: white;
   padding: 20px 25px;
   margin-top: 10px;
-  margin-left: 290px;
+  margin-left: 250px;
   @include shadow(#ccc, 0, 3px, 6px);
 }
 
@@ -73,4 +73,4 @@ text-align: left;
   .l { font-size: 1.8em; }
 }
 
-.custom { float: right}
+.btn_position { float: right }

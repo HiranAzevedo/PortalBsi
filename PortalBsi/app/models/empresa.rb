@@ -9,13 +9,13 @@ class Empresa < MailForm::Base
   attribute :nickname, :captcha => true
   attribute :file, :attachment => true
   
-
   def headers
   	{
   	  :subject => "Criação de Conta de Usuário tipo Representante Empresa",
   	  :to => "guilherme.albuquerque@uniriotec.br",
   	  :from => %{"#{name}" <#{email}>}
-
   	}
   end	
-end	
+
+end
+

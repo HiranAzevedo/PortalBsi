@@ -17,6 +17,11 @@
       <%= error_tag @oportunidade, :company_name %>
     </p>
     <p>
+      <%= f.label :currency %><br/>
+      <%= f.text_field :currency %>
+      <%= error_tag @oportunidade, :currency %>
+    </p>
+    <p>
       <%=f.label :type %> &nbsp; <%= f.collection_select :type, Oportunidade::TYPES, :to_s, :humanize, :include_blank => "- Escolha uma Opção -" %><br/>
     </p>
     <p>

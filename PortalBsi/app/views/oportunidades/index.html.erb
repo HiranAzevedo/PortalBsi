@@ -1,9 +1,12 @@
 <div class="container">
   <div class="row-offcanvas">
+
     <% if !flash[:notice].nil? %>
       <div class="alert alert-success hidethenotice" role="alert"><%= flash[:notice] %></div>
     <% end %>
+
     <%= render partial: "menu_oportunidades", locals: {tipo: 'index'} %>
+
      <h1>Oportunidades de Estágio</h1>
 
       <div id="tag_cloud">
@@ -13,23 +16,25 @@
       </div>
 
      <% @oportunidades.each do |oportunidade| %>
-      <article class="oportunidade">
-      <div> 
+     
+      <div class = "oportunidade" > 
          <%=image_tag oportunidade.picture_url(:thumb) if oportunidade.picture? %>
          <h2><%= link_to oportunidade.title, oportunidade %></h2>
-         <span> <h2> - <%= oportunidade.company_name %></h2></span>
-         &nbsp; &nbsp; &nbsp; &nbsp; 
+         <span> <h2> - Valor: <%= number_to_currency(oportunidade.currency, unit: "R$", spearator: ",", delimiter: "" )%></h2></span>
+         <p> Ofertante: <%= oportunidade.company_name %> </p>
 
          <% if user_signed_in? && current_user.role == "administrador" %>
-                 <%= link_to 'Apagar', oportunidade, method: :delete, :class => "btn btn-primary custom" %>
+                 <%= link_to 'Apagar', oportunidade, method: :delete, :class => "btn btn-primary btn_position" %>
          <% elsif user_signed_in? && current_user.role != "administrador" %> 
                  <%= link_to 'Apagar', oportunidade, method: :delete, :class => "hidden" %>
         <% end %>      
           
          <p>Tags: <%= raw oportunidade.tag_list.map { |t| link_to t, oportunidades_path(tag: t) }.join(', ') %></p>
       </div>
-       </article>
+       
      <% end %> 
     <%= paginate @oportunidades %>
-   </div>
+  </div>
 </div>  
+
+

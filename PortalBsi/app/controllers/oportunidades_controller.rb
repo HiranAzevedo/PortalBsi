@@ -54,6 +54,6 @@ class OportunidadesController < ApplicationController
   private
   def oportunidade_params
     params.require(:oportunidade).permit(:company_name, :title, :description, :expiration_date, 
-    	                                     :has_partnership, :picture, :tag_ids, :type)
+    	                                     :has_partnership, :picture, :tag_ids, :type, :currency)
   end
 end

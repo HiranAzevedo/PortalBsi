@@ -5,8 +5,10 @@
 	<article class="col-sm-9 col-xs-12">
 	   <h2>Oportunidade: <%= @oportunidade.title %></h2>
 	     <p>Ofertante: <%= @oportunidade.company_name %></p>
-       <p>Tipo da Oportunidade: <%= @oportunidade.type %></p>
-       <p>Descrição: <%= @oportunidade.description %></p>
+       <p>Tipo da Oportunidade: <%= @oportunidade.type.humanize %></p>
+       <p> Valor da Bolsa: <%= number_to_currency(@oportunidade.currency, unit: "R$", spearator: ",", delimiter: "" )%></p>
+       <p>Descrição:</p>
+       <p><%= @oportunidade.description %></p>
 
        <% if @oportunidade.has_partnership? %>
    		   <p>Convênio: Sim</p>
