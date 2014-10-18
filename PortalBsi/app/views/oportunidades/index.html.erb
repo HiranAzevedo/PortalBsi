@@ -1,32 +1,35 @@
 <div class="container">
   <div class="row-offcanvas">
-   <%= render partial: "menu_oportunidades", locals: {tipo: 'index'} %>
-    <h1>Oportunidades de Estágio</h1>
+    <% if !flash[:notice].nil? %>
+      <div class="alert alert-success hidethenotice" role="alert"><%= flash[:notice] %></div>
+    <% end %>
+    <%= render partial: "menu_oportunidades", locals: {tipo: 'index'} %>
+     <h1>Oportunidades de Estágio</h1>
 
-     <div id="tag_cloud">
-      <% tag_cloud Oportunidade.tag_counts, %w{s m l} do |tag, css_class| %>
-          <%= link_to tag.name, oportunidades_path(tag: tag.name), class: css_class %>
-      <% end %>
-     </div>
+      <div id="tag_cloud">
+       <% tag_cloud Oportunidade.tag_counts, %w{s m l} do |tag, css_class| %>
+           <%= link_to tag.name, oportunidades_path(tag: tag.name), class: css_class %>
+       <% end %>
+      </div>
 
-    <% @oportunidades.each do |oportunidade| %>
+     <% @oportunidades.each do |oportunidade| %>
       <article class="oportunidade">
       <div> 
-        <%=image_tag oportunidade.picture_url(:thumb) if oportunidade.picture? %>
-        <h2><%= link_to oportunidade.title, oportunidade %></h2>
-        <span> <h2> - <%= oportunidade.company_name %></h2></span>
-        &nbsp; &nbsp; &nbsp; &nbsp; 
+         <%=image_tag oportunidade.picture_url(:thumb) if oportunidade.picture? %>
+         <h2><%= link_to oportunidade.title, oportunidade %></h2>
+         <span> <h2> - <%= oportunidade.company_name %></h2></span>
+         &nbsp; &nbsp; &nbsp; &nbsp; 
 
-        <% if user_signed_in? && current_user.role == "administrador" %>
-                <%= link_to 'Apagar', oportunidade, method: :delete, :class => "btn btn-danger" %>
-        <% elsif user_signed_in? && current_user.role != "administrador" %> 
-                <%= link_to 'Apagar', oportunidade, method: :delete, :class => "hidden" %>
+         <% if user_signed_in? && current_user.role == "administrador" %>
+                 <%= link_to 'Apagar', oportunidade, method: :delete, :class => "btn btn-primary" %>
+         <% elsif user_signed_in? && current_user.role != "administrador" %> 
+                 <%= link_to 'Apagar', oportunidade, method: :delete, :class => "hidden" %>
         <% end %>      
           
-        <p>Tags: <%= raw oportunidade.tag_list.map { |t| link_to t, oportunidades_path(tag: t) }.join(', ') %></p>
+         <p>Tags: <%= raw oportunidade.tag_list.map { |t| link_to t, oportunidades_path(tag: t) }.join(', ') %></p>
       </div>
-      </article>
-    <% end %> 
-   <%= paginate @oportunidades %>
-  </div>
+       </article>
+     <% end %> 
+    <%= paginate @oportunidades %>
+   </div>
 </div>  

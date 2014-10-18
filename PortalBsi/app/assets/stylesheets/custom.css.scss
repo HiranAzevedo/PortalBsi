@@ -1,3 +1,6 @@
+@import "shadow";
+$error-text-color: #b84947;
+
 .hidden { display: none; }
 
 /*flash*/
@@ -29,3 +32,44 @@ border-color: #d6e9c6;
 color: #468847;
 text-align: left;
 }
+
+/*Customizada nas Mensagens de erro */
+
+.error_message {
+  margin-left: 5px;
+  display: inline;
+  color: $error-text-color;
+}
+
+.padded_flash {
+  padding: 10px;
+  margin: 10px 0;
+  font-weight: bold;
+  width: 500px;
+}
+
+
+/* Oportunidades - Área de Divulgação */
+
+.oportunidade{
+  background-color: white;
+  padding: 20px 25px;
+  margin-top: 10px;
+  margin-left: 290px;
+  @include shadow(#ccc, 0, 3px, 6px);
+}
+
+.oportunidade h2{
+  display: inline;
+  a { font-size: 1.3em;}
+}
+
+/*Tag Cloud */
+
+#tag_cloud{
+  line-height: 1.6em;
+  .s { font-size: 0.8em; }
+  .m { font-size: 1.2em; }
+  .l { font-size: 1.8em; }
+}
+

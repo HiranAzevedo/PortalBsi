@@ -13,7 +13,7 @@ class EmpresasController < ApplicationController
   	else
   	  flash.now[:error] = 'A mensagem não pode ser enviada.'
   	  render :new
-  	end    
+  	end      
   end	
 end
 

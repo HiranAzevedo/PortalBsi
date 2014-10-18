@@ -41,19 +41,19 @@ class Ability
       can [:new,:create,:tipos,:modelo,:processo,:agenda,:publicacoes,:index], Tcc
       can :read,:update, User
       can [:new,:create], Solicitation
-      can [:read, :home, :index, :bolsas_permanencia, :jovens_talentos, :monitoria, :iniciacao_cientifica, :ciencia_sem_fronteira, :mobilidade_academica], Oportunidade
+      can [:read, :index, :bolsas_permanencia, :jovens_talentos, :monitoria, :iniciacao_cientifica, :ciencia_sem_fronteira, :mobilidade_academica], Oportunidade
 
     elsif user && user.persisted? && user.role == "representante_de_empresa"	
 	  can [:tipos,:modelo,:processo,:agenda,:publicacoes,:index], Tcc
 	  cannot :salva_publicacao, Tcc
       can :read, Professor
       can :read, User
-      can [:read, :create, :home, :index, :bolsas_permanencia, :jovens_talentos, :monitoria, :iniciacao_cientifica, :ciencia_sem_fronteira, :mobilidade_academica], Oportunidade       
+      can [:read, :create, :index, :bolsas_permanencia, :jovens_talentos, :monitoria, :iniciacao_cientifica, :ciencia_sem_fronteira, :mobilidade_academica], Oportunidade       
     else
       can [:tipos,:modelo,:processo,:agenda,:publicacoes,:index], Tcc
       can :read, Professor
       can :read, User
-      can [:read, :home, :index, :bolsas_permanencia, :jovens_talentos, :monitoria, :iniciacao_cientifica, :ciencia_sem_fronteira, :mobilidade_academica], Oportunidade
+      can [:read, :index, :bolsas_permanencia, :jovens_talentos, :monitoria, :iniciacao_cientifica, :ciencia_sem_fronteira, :mobilidade_academica], Oportunidade
       can [:new, :create], Empresa  
     end
   end

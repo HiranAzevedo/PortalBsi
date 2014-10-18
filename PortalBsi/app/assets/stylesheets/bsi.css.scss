@@ -1,8 +1,5 @@
 /* Estilo página BSI */
 
-@import "shadow";
-$error-text-color: #b84947;
-
 * {
   margin: 0;
   padding: 0;
@@ -544,58 +541,3 @@ form:after {
   background-position: 0 -135px;
   color: #00aeef;
 }
-
-/*======================== Lanche ==================================================*/
-/*Customizada nas Mensagens de erro */
-
-/*.field_with_errors {
-  display: inline;
-  label { color: $error-text-color; }
-  input[type=text], input[type=password], textarea {
-    border: 1px solid rgba(189,74,72, 0.5);
-    @include shadow(rgba(189,74,72, 0.2), 0px, 0px, 8px);
-    &:focus { border: 1px solid rgba(189,74,72, 0.6); }
-  }
-}*/
-.error_message {
-  margin-left: 5px;
-  display: inline;
-  color: $error-text-color;
-}
-
-.padded_flash {
-  padding: 10px;
-  margin: 10px 0;
-  font-weight: bold;
-  width: 500px;
-}
-
-/*#error_explanation {
-  border: 1px solid $error-text-color;
-  color: $error-text-color;
-  background-color: #F2DEDE;
-  @extend .padded_flash;
-}*/
-
-/* Oportunidades - Área de Divulgação */
-.oportunidade{
-  background-color: white;
-  padding: 20px 25px;
-  margin-top: 10px;
-  margin-left: 290px;
-  @include shadow(#ccc, 0, 3px, 6px);
-}
-
-.oportunidade h2{
-  display: inline;
-  a { font-size: 1.3em;}
-}
-
-/*Tag Cloud */
-#tag_cloud{
-  line-height: 1.6em;
-  .s { font-size: 0.8em; }
-  .m { font-size: 1.2em; }
-  .l { font-size: 1.8em; }
-}
-

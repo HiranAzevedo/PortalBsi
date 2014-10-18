@@ -27,7 +27,7 @@ class OportunidadesController < ApplicationController
       end
     end    
     if @oportunidade.save
-       redirect_to @oportunidade, notice: 'Oportunidade de Estágio cadastrada com sucesso.'
+       redirect_to oportunidades_path, notice: 'Oportunidade cadastrada com sucesso.'
     else
       render action: :new
     end     
@@ -38,7 +38,7 @@ class OportunidadesController < ApplicationController
 
   def update
   	if @oportunidade.update(oportunidade_params)
-  	  redirect_to @oportunidade, notice: 'Oportunidade de Estágio atualizada com sucesso.'
+  	  redirect_to @oportunidade, notice: 'Oportunidade atualizada com sucesso.'
   	else
   	  render :edit
   	end  
@@ -48,7 +48,7 @@ class OportunidadesController < ApplicationController
     @oportunidade = Oportunidade.find(params[:id])
     @oportunidade.tag_list.clear
   	@oportunidade.destroy
-  	redirect_to oportunidades_url
+  	redirect_to oportunidades_url, notice: 'A Oportunidade foi removida.'
   end
   
   private
