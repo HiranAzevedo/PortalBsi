@@ -26,6 +26,11 @@ class TccsController < ApplicationController
   end
   def index
   end
+
+  def meu_tcc
+
+  end
+
   def create
     @tcc = Tcc.new(tcc_params)
     @prof = Professor.all
@@ -45,6 +50,7 @@ class TccsController < ApplicationController
       render action: :new
     end
   end
+
   def show
     @tcc = Tcc.find(params[:id])
     @prof = Professor.all

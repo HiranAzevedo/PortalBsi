@@ -9,7 +9,7 @@
     <% if user_signed_in? %>
         <% tccId = RetornaTccidByUserid(current_user.id) %>
         <% if tccId.nil? %>
-            <li class="<%= verificaMenuAtivo(tipo,"new")%> tcc"><%= link_to "Cadastro de Tcc", new_tcc_path %></li>
+            <li class="<%= verificaMenuAtivo(tipo,"new")%> tcc"><%= link_to "Meu Tcc", tccs_show_empty_path %></li>
         <% else %>
             <li class="<%= verificaMenuAtivo(tipo,"show")%> tcc"><%= link_to "Meu Tcc", tcc_path(tccId) %></li>
         <%end %>

@@ -1,0 +1,9 @@
+<%= render partial: "menu", locals: {tipo: 'show'} %>
+<article class="col-sm-9 col-xs-12">
+  <p id="notice"><%= notice %> </p>
+  <p id="alert"> <%= alert %></p>
+
+  <h1>Meu TCC</h1>
+  <p>TCC não cadastrado ainda. Para realizar o cadastro clique no botão abaixo <br><br>
+    <%= button_to "Cadastrar TCC",new_tcc_path,class: "btn btn-default",padding: "3px 10px", method: 'get' %>
+</article>
