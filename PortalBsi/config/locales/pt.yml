@@ -15,7 +15,7 @@ pt:
          has_partnership: Possui Convênio ?
          picture: Foto
          type: "Tipo da Oportunidade:"
-         currency: "Valor da Bolsa:"
+         currency: "Valor da Bolsa"
   mail_form:
     models:
       empresa: "empresa"

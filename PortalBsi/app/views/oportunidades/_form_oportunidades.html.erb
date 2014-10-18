@@ -17,7 +17,7 @@
       <%= error_tag @oportunidade, :company_name %>
     </p>
     <p>
-      <%= f.label :currency %><br/>
+      <%= f.label :currency %> &nbsp; <span>(números seguidos de ponto para separar os centavos)</span><br/>
       <%= f.text_field :currency %>
       <%= error_tag @oportunidade, :currency %>
     </p>
