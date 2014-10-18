@@ -14,6 +14,7 @@ pt:
          expiration_date: Data de Expiração
          has_partnership: Possui Convênio ?
          picture: Foto
+         type: "Tipo da Oportunidade:"
   mail_form:
     models:
       empresa: "empresa"

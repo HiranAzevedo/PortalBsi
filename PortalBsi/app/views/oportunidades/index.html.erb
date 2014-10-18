@@ -21,7 +21,7 @@
          &nbsp; &nbsp; &nbsp; &nbsp; 
 
          <% if user_signed_in? && current_user.role == "administrador" %>
-                 <%= link_to 'Apagar', oportunidade, method: :delete, :class => "btn btn-primary" %>
+                 <%= link_to 'Apagar', oportunidade, method: :delete, :class => "btn btn-primary custom" %>
          <% elsif user_signed_in? && current_user.role != "administrador" %> 
                  <%= link_to 'Apagar', oportunidade, method: :delete, :class => "hidden" %>
         <% end %>      

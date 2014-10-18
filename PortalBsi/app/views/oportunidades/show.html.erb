@@ -4,11 +4,12 @@
 	<p><%= notice %></p>
 	<article class="col-sm-9 col-xs-12">
 	   <h2>Oportunidade: <%= @oportunidade.title %></h2>
-	   <p>Empresa: <%= @oportunidade.company_name %></p>
+	     <p>Ofertante: <%= @oportunidade.company_name %></p>
+       <p>Tipo da Oportunidade: <%= @oportunidade.type %></p>
        <p>Descrição: <%= @oportunidade.description %></p>
 
        <% if @oportunidade.has_partnership? %>
-   		 <p>Convênio: Sim</p>
+   		   <p>Convênio: Sim</p>
        <% else %>
          <p>Convênio: Não</p>
        <% end %>
