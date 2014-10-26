@@ -20,8 +20,15 @@
       <div class = "oportunidade" > 
          <%=image_tag oportunidade.picture_url(:thumb), :class => "img-position" if oportunidade.picture? %>
          <h2><%= link_to oportunidade.title, oportunidade %></h2>
-         <span> <h2> - Valor: <%= number_to_currency(oportunidade.currency, unit: "R$", spearator: ",", delimiter: "" )%></h2></span>
-         <p> Ofertante: <%= oportunidade.company_name %> </p>
+
+         <% if oportunidade.currency != nil %>
+         	<span> <h2> - Valor: <%= number_to_currency(oportunidade.currency, unit: "R$", spearator: ",", delimiter: "" )%></h2></span>
+         <% else %>	
+            <span class="hidden"> <h2> - Valor: <%= number_to_currency(oportunidade.currency, unit: "R$", spearator: ",", delimiter: "" )%></h2></span>
+         <% end %>   
+
+         <p> Ofertante: <%= oportunidade.company_name %></p>
+
          <% if user_signed_in? && current_user.role == "administrador" %>
                  <%= link_to 'Apagar', oportunidade, method: :delete, :class => "btn btn-primary btn_position" %>
          <% elsif user_signed_in? && current_user.role != "administrador" %> 
@@ -29,6 +36,7 @@
         <% end %>      
           
          <p>Tags: <%= raw oportunidade.tag_list.map { |t| link_to t, oportunidades_path(tag: t) }.join(', ') %></p>
+         <p>Tipo: <%= oportunidade.type %></p>
       </div>
        
      <% end %> 

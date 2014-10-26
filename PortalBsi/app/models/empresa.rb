@@ -7,7 +7,13 @@ class Empresa < MailForm::Base
   attribute :phone, :validate => /\A([2-9][0-9]{3,})-([0-9]{4,})|([2-9][0-9]{4,})-([0-9]{4,})\z/i
   attribute :message
   attribute :nickname, :captcha => true
-  attribute :file, :attachment => true
+  attribute :file, :attachment => true, :validate => :is_file_attached?
+
+  def is_file_attached?
+    if file.nil?
+      self.errors.add(:file, "Comprovante de vínculo é obrigatório")
+    end
+  end
   
   def headers
   	{

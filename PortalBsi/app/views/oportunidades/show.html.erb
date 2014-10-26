@@ -10,10 +10,12 @@
        <p>Descrição:</p>
        <p><%= @oportunidade.description %></p>
 
-       <% if @oportunidade.has_partnership? %>
+       <% if @oportunidade.has_partnership? and @oportunidade.type == "estagio"%>
    		   <p>Convênio: Sim</p>
-       <% else %>
+       <% elsif !@oportunidade.has_partnership? and @oportunidade.type == "estagio"%>
          <p>Convênio: Não</p>
+        <% else %>
+         <p>Convênio: Não se aplica</p> 
        <% end %>
 
        <p>Válido até o dia: <%= @oportunidade.expiration_date.strftime("%d/%m/%Y") %></p>
