@@ -13,6 +13,11 @@
       </ul>
     </div>
 <% end %>-->
+  <p> Essa página irá realizar a publicação do seu TCC, ação que não poderá ser desfeita! Por isso reveja os dados e
+  o arquivo que está sendo enviado para o site</p>
+  <p> Por isso tenha certeza do arquivo que você está enviando e se tudo está correto</p>
+  <p> Caso algum problema aconteça entre em contato com o administrador do sistema</p>
+
 <%= form_for @tcc, :url => { :action => "salva_publicado" },
              :html => { :multipart => true } do |f| %>
     <p>
