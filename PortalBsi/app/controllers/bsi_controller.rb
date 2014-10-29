@@ -29,4 +29,6 @@ class BsiController < ApplicationController
   end
   def ccet
   end
+  def transparencia
+  end
 end

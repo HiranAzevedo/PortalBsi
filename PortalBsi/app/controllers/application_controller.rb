@@ -3,9 +3,9 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  after_filter :store_location
-
   before_filter :configure_permitted_parameters, if: :devise_controller?
+
+  after_filter :store_location
 
   def store_location
     # store last url - this is needed for post-login redirect to whatever the user last visited.

@@ -126,7 +126,7 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
       mime-types
-    pg (0.15.1)
+    pg (0.17.1)
     polyglot (0.3.5)
     pry (0.10.0)
       coderay (~> 1.1.0)
@@ -255,7 +255,7 @@ DEPENDENCIES
   jquery-rails (= 3.0.4)
   mailcatcher
   paperclip
-  pg (= 0.15.1)
+  pg (= 0.17.1)
   rails (= 4.0.8)
   rails_12factor (= 0.0.2)
   rspec-rails (= 2.13.1)

@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   match '/historico', to: 'bsi#historico', via: 'get'
   match '/localizacao', to: 'bsi#localizacao', via: 'get'
   match '/secretaria', to: 'bsi#secretaria', via: 'get'
+  match '/transparencia', to: 'bsi#transparencia', via: 'get'
   match '/disciplinas', to: 'bsi#disciplinas', via: 'get'
   match '/disciplinas/eletivas', to: 'bsi#eletivas', via: 'get'
   match '/alunos', to: 'alunos#index', via: 'get'
