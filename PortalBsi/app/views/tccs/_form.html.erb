@@ -67,7 +67,7 @@
       <p>
         <%= f.submit "Salvar TCC" %>
       </p>
-      <% unless @tcc.apresentado %>
+      <% if @tcc.apresentado? %>
           <p>
             <%= link_to "Publicar Tcc", tccs_publicar_path(@tcc.id) %>
           </p>

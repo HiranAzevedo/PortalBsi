@@ -21,13 +21,6 @@ class TccsController < ApplicationController
   def new
     @tcc = Tcc.new
     @prof = Professor.all
-    @tcc.tag_list.clear
-    params[:tcc][:tag_ids].each do |tag_id|
-      if !tag_id.empty?
-        tag = Tag.find(tag_id)
-        @tcc.tag_list.add(tag.name)
-      end
-    end
   end
   def index
   end
@@ -39,6 +32,13 @@ class TccsController < ApplicationController
     @prof = Professor.all
     @tcc.apresentado = false
     @tcc.user_id = current_user.id
+    @tcc.tag_list.clear
+    params[:tcc][:_ids].each do |tag_id|
+      if !tag_id.empty?
+        tag = Tag.find(tag_id)
+        @tcc.tag_list.add(tag.name)
+      end
+    end
     if @tcc.save
       TccMailer.create_email(@tcc)
       redirect_to @tcc, notice: 'Cadastro de TCC criado com sucesso!'
