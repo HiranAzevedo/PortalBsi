@@ -48,6 +48,7 @@
             <% end %>
           <% else %>
             <label style="margin-top: 25px">Olá <%= current_user.nome %></label>
+            <%= link_to "Editar Perfil", edit_user_registration_path %>
             <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
           <% end %>
       </div>

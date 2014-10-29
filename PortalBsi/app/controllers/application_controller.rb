@@ -17,25 +17,28 @@ class ApplicationController < ActionController::Base
         request.path != "/users/confirmation" &&
         request.path != "/users/sign_out" &&
         !request.xhr?) # don't store ajax calls
-      session[:previous_url] = request.fullpath
+      session[:previous_url] = request.referrer
     end
   end
 
   def after_sign_in_path_for(resource)
+    session[:previous_url] = request.referrer
     session[:previous_url] || root_path
   end
 
   def after_sign_out_path_for(resource)
+    session[:previous_url] = request.referrer
     session[:previous_url] || root_path
   end
 
   def after_update_path_for(resource)
+    session[:previous_url] = request.referrer
     session[:previous_url] || root_path
   end
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:nome,:matricula, :email, :password) }
-    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:nome, :apelido, :matricula, :email, :password, :password_confirmation, :current_password, :avatar) }
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:nome,:admin,:matricula, :email, :password) }
+    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:nome, :apelido, :matricula, :email,:admin, :facebook_link, :github_link, :password, :password_confirmation, :current_password, :avatar) }
   end
 
   rescue_from CanCan::AccessDenied do |exception|
