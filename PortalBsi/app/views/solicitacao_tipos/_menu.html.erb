@@ -8,7 +8,7 @@
         <li class=" <%=verificaMenuAtivo(tipo,"novaSolicitacao")%> secretaria">
           <%= link_to "Nova Solicitação", new_solicitation_path %>
         </li>
-        <% if current_user.role == 'administrador' %>
+        <% if current_user.admin? %>
             <li class=" <%=verificaMenuAtivo(tipo,"solicitacoes")%> secretaria">
               <%= link_to "Solicitações", solicitations_path %>
             </li>

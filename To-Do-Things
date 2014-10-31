@@ -25,11 +25,11 @@ Cadastrar tipos de solicitação
 
 TCC->
 publicar TCC - YURI
-no form, trocar botao agendar por salvar
-nos botões de publicar colocar TCC maiusculo
+no form, trocar botao agendar por salvar DONE
+nos botões de publicar colocar TCC maiusculo DONE
 Texto terrorista para publicar
-Botão editar sumir e virar criar se o cara nao tiver o tcc cadastrado mas ficar tudo no meu TCC
-Acertar links da pagina home
+Botão editar sumir e virar criar se o cara nao tiver o tcc cadastrado mas ficar tudo no meu TCC DONE
+Acertar links da pagina home DONE
 Cor dos links
 
 
@@ -56,6 +56,14 @@ trocar o cadastri de tags pra checkbox
 colocar as paginas estaticas de disciplinas
 
 Popular banco para teste na quarta que vem!!
+-> Tirar o notice quando login/logout acontece.
+-> Verificar os menus da seção TCC
+-> Testes de aceitação para o projeto
+-> Padronizar os botões
+-> Texto -> texto final, depois da defesa e das revisões a partir dos comentarios da banca, professor precisa aprovar a versão final do texto
+-> Cadastrar usario está mais abaixo que o menu
+-> acertar o menu do cadastro de usuario
+-> menu editar perfil
 
 
 
@@ -75,12 +83,12 @@ Popular banco para teste na quarta que vem!!
 
 
 
-
-
-
+-------------------------------------------------------------------------------------------------
 LANCHINHO -> 
 PRIMEIRO : MANDAR ELE IR A MERDA E/OU TOMAR NO CU !!!!
 
 SEGUNDO: 
 instalar imagemagick.libmagickcore-dev // mas por que ? 
 Na hora que vc der o bundle para instalar a gem carrierwave e o rmagick vai dar erro se vcs nao tiverem o libmagickcore-dev.
+
+----------------------------------------------------------------------------------------
