@@ -13,5 +13,11 @@ class Oportunidade < ActiveRecord::Base
   self.inheritance_column = nil
 
   scope :greater_than_today, -> { where("expiration_date >=?", DateTime.now)}
+
+
+  def currency=(num)
+    num.gsub!(',','.') if num.is_a?(String)
+    self[:currency] = num
+  end
   
 end

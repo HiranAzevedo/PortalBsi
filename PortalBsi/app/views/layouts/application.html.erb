@@ -27,7 +27,7 @@
 <div class="container">
   <div class="row-offcanvas">
     <% if !flash[:notice].nil? %>
-        <div class="alert alert-success" role="alert"><%= flash[:notice] %></div>
+        <div class="alert alert-success hidethenotice" role="alert"><%= flash[:notice] %></div>
     <% end %>
     <%= yield %>
   </div>

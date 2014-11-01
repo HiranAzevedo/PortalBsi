@@ -1,13 +1,12 @@
 <div class="container">
   <div class="row-offcanvas">
-
-    <% if !flash[:notice].nil? %>
-      <div class="alert alert-success hidethenotice" role="alert"><%= flash[:notice] %></div>
-    <% end %>
-
+  
     <%= render partial: "menu_oportunidades", locals: {tipo: 'index'} %>
 
      <h1>Oportunidades</h1>
+
+     <p> Nesta página encontram-se todas as oportunidades de aprendizado cadastradas no sistema </p>
+     <br/>
 
       <div id="tag_cloud">
        <% tag_cloud Oportunidade.tag_counts, %w{s m l} do |tag, css_class| %>
