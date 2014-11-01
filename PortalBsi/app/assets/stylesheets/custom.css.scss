@@ -72,13 +72,17 @@ text-align: left;
 }
 
 /*Posicionamento do botão*/
-.position { float: right; }
+.position { 
+  float: right;
+  margin-top: 10px;
+  
+}
 
 /*Posicionamento da imagem*/
 .img-position {
-  float: left;
+  float: right;
   margin-right: 10px;
- }
+}
 
 /*Tag Cloud */
 #tag_cloud{
