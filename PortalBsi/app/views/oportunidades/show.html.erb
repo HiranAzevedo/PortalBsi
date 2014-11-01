@@ -1,27 +1,34 @@
 <div class="container">
   <div class="row-offcanvas">
     <%= render partial: "menu_oportunidades", locals: {tipo: 'vazio'} %>
+    
 	<p><%= notice %></p>
+
+  <h2>Oportunidade: <%= @oportunidade.title %></h2>
+
 	<article class="col-sm-9 col-xs-12">
-	   <h2>Oportunidade: <%= @oportunidade.title %></h2>
-	     <p>Ofertante: <%= @oportunidade.company_name %></p>
        <p>Tipo da Oportunidade: <%= @oportunidade.type.humanize %></p>
-       <p> Valor da Bolsa: <%= number_to_currency(@oportunidade.currency, unit: "R$", spearator: ",", delimiter: "" )%></p>
+
+       <% if @oportunidade.currency != nil %>
+         <p> Valor Pago: <%= number_to_currency(@oportunidade.currency, unit: "R$", spearator: ",", delimiter: "" )%></p>
+       <% else %> 
+         <p class="hidden"> Valor Pago: <%= number_to_currency(@oportunidade.currency, unit: "R$", spearator: ",", delimiter: "" )%></p>
+       <% end %>  
+
        <p>Descrição:</p>
        <p><%= @oportunidade.description %></p>
+	     <p>Ofertante: <%= @oportunidade.company_name %></p>
 
        <% if @oportunidade.has_partnership? and @oportunidade.type == "estagio"%>
    		   <p>Convênio: Sim</p>
        <% elsif !@oportunidade.has_partnership? and @oportunidade.type == "estagio"%>
          <p>Convênio: Não</p>
         <% else %>
-         <p>Convênio: Não se aplica</p> 
+         <p class = "hidden">@oportunidade.has_partnership</p> 
        <% end %>
 
-       <p>Válido até o dia: <%= @oportunidade.expiration_date.strftime("%d/%m/%Y") %></p>
+       <p>Data limite para a inscrição: <%= @oportunidade.expiration_date.strftime("%d/%m/%Y") %></p>
        <p><%= image_tag @oportunidade.picture_url.to_s if @oportunidade.picture_url.present? %></p>
 	</article>
   </div>
 </div>
-
-

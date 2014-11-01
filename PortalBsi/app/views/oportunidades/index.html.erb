@@ -7,7 +7,7 @@
 
     <%= render partial: "menu_oportunidades", locals: {tipo: 'index'} %>
 
-     <h1>Oportunidades de Estágio</h1>
+     <h1>Oportunidades</h1>
 
       <div id="tag_cloud">
        <% tag_cloud Oportunidade.tag_counts, %w{s m l} do |tag, css_class| %>
@@ -19,24 +19,21 @@
      
       <div class = "oportunidade" > 
          <%=image_tag oportunidade.picture_url(:thumb), :class => "img-position" if oportunidade.picture? %>
-         <h2><%= link_to oportunidade.title, oportunidade %></h2>
-
-         <% if oportunidade.currency != nil %>
-         	<span> <h2> - Valor: <%= number_to_currency(oportunidade.currency, unit: "R$", spearator: ",", delimiter: "" )%></h2></span>
-         <% else %>	
-            <span class="hidden"> <h2> - Valor: <%= number_to_currency(oportunidade.currency, unit: "R$", spearator: ",", delimiter: "" )%></h2></span>
-         <% end %>   
+    
+         <h3> <%= link_to oportunidade.title, oportunidade %>  [ <%= oportunidade.type.humanize%> ] </h3>
+         <span> <h3> - Cadastrado em : <%= oportunidade.created_at.strftime("%d/%m/%Y") %></h3></span>
 
          <p> Ofertante: <%= oportunidade.company_name %></p>
 
          <% if user_signed_in? && current_user.role == "administrador" %>
-                 <%= link_to 'Apagar', oportunidade, method: :delete, :class => "btn btn-primary btn_position" %>
+                 <%= link_to 'Apagar', oportunidade, method: :delete, :class => "btn btn-default position" %>
          <% elsif user_signed_in? && current_user.role != "administrador" %> 
                  <%= link_to 'Apagar', oportunidade, method: :delete, :class => "hidden" %>
         <% end %>      
-          
-         <p>Tags: <%= raw oportunidade.tag_list.map { |t| link_to t, oportunidades_path(tag: t) }.join(', ') %></p>
-         <p>Tipo: <%= oportunidade.type %></p>
+         
+   
+         <p>Tags: <%= raw oportunidade.tag_list.map { |t| link_to t, oportunidades_path(tag: t) }.join(', ') %> </p>
+         
       </div>
        
      <% end %> 

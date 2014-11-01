@@ -56,22 +56,34 @@ text-align: left;
   padding: 20px 25px;
   margin-top: 10px;
   margin-left: 250px;
-  @include shadow(#ccc, 0, 0px, 3px);
+  @include shadow(#ccc, 0, 3px, 0px);
 }
 
-.oportunidade h2{
+/*Regular tamanho do titulo */
+
+.oportunidade h3{
   display: inline;
-  a { font-size: 1.3em;}
+  a { font-size: 0.9em;}
 }
+
+.oportunidade span{
+ h3{ font-size: 0.8em;}
+ color: lightgray;
+}
+
+/*Posicionamento do botão*/
+.position { float: right; }
+
+/*Posicionamento da imagem*/
+.img-position {
+  float: left;
+  margin-right: 10px;
+ }
 
 /*Tag Cloud */
-
 #tag_cloud{
   line-height: 1.6em;
   .s { font-size: 0.8em; }
   .m { font-size: 1.2em; }
   .l { font-size: 1.8em; }
 }
-
-.btn_position { float: right }
-.img-position { float: left}

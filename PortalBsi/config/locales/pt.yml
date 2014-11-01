@@ -11,11 +11,11 @@ pt:
          company_name: Nome do Ofertante
          title: Título
          description: Descrição
-         expiration_date: Data de Expiração
+         expiration_date: Data de Validade
          has_partnership: Possui Convênio ?
          picture: Foto
          type: "Tipo da Oportunidade:"
-         currency: "Valor da Bolsa"
+         currency: "Valor Pago: "
   mail_form:
     models:
       empresa: "empresa"
