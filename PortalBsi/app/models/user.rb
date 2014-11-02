@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
    
   def send_account_created_email
     if self.role == "representante_de_empresa"
-      BsiMailer.reset_password_instructions(self)
+      self.send_reset_password_instructions 
     end
   end
 

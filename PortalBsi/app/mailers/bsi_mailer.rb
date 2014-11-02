@@ -21,25 +21,15 @@ class BsiMailer < ActionMailer::Base
          })
     mail.deliver
   end
-  def create_company_email(user)
-    @user = user
-    mail({
-              to: user.email,
-              subject: "Conta Criada"
+  def confirmation_instructions(record, token, opts={})
+    devise_mail(record, :confirmation_instructions, opts)
+  end
 
-        })
-    mail.deliver
+  def reset_password_instructions(record, token, opts={})
+    devise_mail(record, :reset_password_instructions, opts)
   end
-  def publish_company_email(user)
-    @user = user
-    mail({
-              to: user.email,
-              subject: "Conta Criada"
-        })
-    mail.deliver
+
+  def unlock_instructions(record, token, opts={})
+    devise_mail(record, :unlock_instructions, opts)
   end
-  def reset_password_instructions(user, token, options)
-    devise_mail(user, :reset_password_instructions)
-    super
-  end  
 end
