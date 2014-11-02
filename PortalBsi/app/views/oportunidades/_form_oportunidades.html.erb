@@ -25,13 +25,15 @@
       <%=f.label :type %> &nbsp; <%= f.collection_select :type, Oportunidade::TYPES, :to_s, :humanize, :include_blank => "- Escolha uma Opção -" %><br/>
     </p>
     
-    <p>
+    
+    <p class ="partnership">
       <%= f.label :has_partnership %><br/>
       <%= f.radio_button :has_partnership, true %> 
       <%= f.label :has_partnership, "Sim", :value => "true" %> &nbsp;
       <%= f.radio_button :has_partnership, false %> 
       <%= f.label :has_partnership, "Não", :value => "false" %>
     </p>
+
     <p>
       <%= f.label :description %><br/>
       <%= f.text_area :description, style: "height:215px; max-height:215px; width:717px; max-width:717px"%><br/>
@@ -55,6 +57,3 @@
     </p>
 <% end %>
 </article>
-
-
-params[:micropost][:repetitive_task]
