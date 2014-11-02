@@ -22,5 +22,6 @@ module PortalBsi
     config.time_zone = 'Brasilia'
     config.i18n.default_locale = :pt
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+    config.autoload_paths = %W(#{config.root}/lib)
   end
 end
