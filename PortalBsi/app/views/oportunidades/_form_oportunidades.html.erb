@@ -24,6 +24,7 @@
     <p>
       <%=f.label :type %> &nbsp; <%= f.collection_select :type, Oportunidade::TYPES, :to_s, :humanize, :include_blank => "- Escolha uma Opção -" %><br/>
     </p>
+    
     <p>
       <%= f.label :has_partnership %><br/>
       <%= f.radio_button :has_partnership, true %> 
@@ -54,3 +55,6 @@
     </p>
 <% end %>
 </article>
+
+
+params[:micropost][:repetitive_task]

@@ -37,8 +37,8 @@ class ApplicationController < ActionController::Base
   end
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:nome, { roles: [] },:matricula, :email, :password) }
-    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:nome, :apelido, :matricula, :email, { roles: [] }, :facebook_link, :github_link, :password, :password_confirmation, :current_password, :avatar) }
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:nome, { role: [] },:matricula, :email, :password) }
+    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:nome, :apelido, :matricula, :email, { role: [] }, :facebook_link, :github_link, :password, :password_confirmation, :current_password, :avatar) }
   end
 
   rescue_from CanCan::AccessDenied do |exception|

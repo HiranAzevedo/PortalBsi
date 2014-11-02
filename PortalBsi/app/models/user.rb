@@ -11,4 +11,13 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   validates_presence_of :nome, :matricula
   acts_as_taggable
+  after_create :send_account_created_email
+
+   
+  def send_account_created_email
+    if self.role == "representante_de_empresa"
+      BsiMailer.reset_password_instructions(self)
+    end
+  end
+
 end

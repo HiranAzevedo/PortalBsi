@@ -51,7 +51,7 @@ class TccsController < ApplicationController
       end
     end
     if @tcc.save
-      TccMailer.create_email(@tcc)
+      BsiMailer.create_email(@tcc)
       redirect_to @tcc, notice: 'Cadastro de TCC criado com sucesso!'
     else
       render action: :new
@@ -105,7 +105,7 @@ class TccsController < ApplicationController
     @tcc = Tcc.find(params[:id])
     authorize!(:salva_publicado, @tcc)
     if @tcc.update(tcc_params)
-      TccMailer.publish_email(@tcc)
+      BsiMailer.publish_email(@tcc)
       redirect_to @tcc, notice: 'Cadastro atualizado com sucesso!' and return
     else
       render action: :index
