@@ -78,4 +78,14 @@ class RegistrationsController < Devise::RegistrationsController
     params.require(:user).permit(:nome,:matricula,:email, :password, :password_confirmation, :role, :tag_ids)
   end
 
+  protected
+
+    def after_sign_up_path_for(resource)
+      signed_in_root_path(resource)
+    end
+
+    def after_update_path_for(resource)
+      signed_in_root_path(resource)
+    end 
+
 end
