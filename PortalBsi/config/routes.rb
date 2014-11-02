@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :professors
 
-  devise_for :users, :controllers => { registrations: 'registrations', :passwords => 'passwords' }
+  devise_for :users, :controllers => { registrations: 'registrations'}
   
   devise_scope :user do
     get '/login' => 'devise/sessions#new'
