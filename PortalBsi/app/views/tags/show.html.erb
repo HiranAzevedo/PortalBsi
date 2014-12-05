@@ -1,9 +1,21 @@
+<% provide(:title,"Solicitações") %>
+<%= render partial: "menu", locals: {tipo: "solicitacoes"} %>
+<article class="col-sm-9 col-xs-12">
 <p id="notice"><%= notice %></p>
 
+  <p>
+    <strong>Name:</strong>
+    <%= @tag.id %>
+  </p>
+
 <p>
-  <strong>Nome:</strong>
-  <%= @tag.nome %>
+  <strong>Name:</strong>
+  <%= @tag.name %>
 </p>
 
-<%= link_to 'Edit', edit_tag_path(@tag) %> |
+
+<%= link_to 'Edit', edit_solicitation_path(@tag) %> |
 <%= link_to 'Back', tags_path %>
+</article>
+
+<br style="clear: both">

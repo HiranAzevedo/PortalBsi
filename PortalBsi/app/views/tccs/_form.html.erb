@@ -12,6 +12,15 @@
 <div id="form_tcc" class="col-sm-9 col-xs-12">
   <%= form_for @tcc do |f| %>
       <p>
+        <%= f.label "Segundo Autor", style: "padding-right: 2px;" %><br/>
+        <%= f.collection_select(:user_id, User.where("tcc_id is NULL and id != ?", current_user.id ), :id, :nome, :include_blank => true) %>
+        <% if @tcc.errors.has_key? :orientador %>
+          <div class="error_message">
+            <%= @tcc.errors[:orientador].first %>
+          </div>
+      <% end %>
+      </p>
+      <p>
         <%= f.label :titulo, style: "padding-right: 7px;" %><br/>
         <%= f.text_field :titulo, style: "width:640px;" %>
         <% if @tcc.errors.has_key? :titulo %>

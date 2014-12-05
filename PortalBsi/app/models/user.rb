@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_one :tcc
+  belongs_to :tcc
   has_many :solicitations
   belongs_to :turma
   # Include default devise modules. Others available are:

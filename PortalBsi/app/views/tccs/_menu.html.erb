@@ -7,7 +7,7 @@
     <li class="<%= verificaMenuAtivo(tipo,"publicacoes")%> tcc"><%= link_to "Publicações", tccs_publicacoes_path %></li>
     <li class="<%= verificaMenuAtivo(tipo,"agenda")%> tcc"><%= link_to "Próximas Defesas", tccs_agenda_path %></li>
     <% if user_signed_in? %>
-        <% tccId = RetornaTccidByUserid(current_user.id) %>
+        <% tccId = current_user.tcc_id %>
         <% if tccId.nil? %>
             <li class="<%= verificaMenuAtivo(tipo,"new")%> tcc"><%= link_to "Meu Tcc", tccs_show_empty_path %></li>
         <% else %>

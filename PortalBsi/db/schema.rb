@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141007195827) do
+ActiveRecord::Schema.define(version: 20141205022346) do
 
   create_table "professors", force: true do |t|
     t.string   "nome"
@@ -115,10 +115,12 @@ ActiveRecord::Schema.define(version: 20141007195827) do
     t.datetime "avatar_updated_at"
     t.boolean  "admin"
     t.integer  "turma_id"
+    t.integer  "tcc_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["tcc_id"], name: "index_users_on_tcc_id"
   add_index "users", ["tccs_id"], name: "index_users_on_tccs_id"
   add_index "users", ["turma_id"], name: "index_users_on_turma_id"
 

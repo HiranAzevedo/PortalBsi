@@ -31,15 +31,23 @@ class TccsController < ApplicationController
     @tcc = Tcc.new(tcc_params)
     @prof = Professor.all
     @tcc.apresentado = false
-    @tcc.user_id = current_user.id
     @tcc.tag_list.clear
-    params[:tcc][:_ids].each do |tag_id|
-      if !tag_id.empty?
-        tag = Tag.find(tag_id)
-        @tcc.tag_list.add(tag.name)
+    if params[:tcc][:tag_ids].empty?
+      params[:tcc][:tag_ids].each do |tag_id|
+        if !tag_id.empty?
+          tag = Tag.find(tag_id)
+          @tcc.tag_list.add(tag.name)
+        end
       end
     end
     if @tcc.save
+      if !params[:tcc][:user_id].empty?
+          user = User.find(params[:tcc][:user_id])
+          user.tcc_id = @tcc.id
+          user.save
+      end
+      current_user.tcc_id = @tcc.id
+      current_user.save
       TccMailer.create_email(@tcc)
       redirect_to @tcc, notice: 'Cadastro de TCC criado com sucesso!'
     else
@@ -102,14 +110,23 @@ class TccsController < ApplicationController
   def update
     @tcc = Tcc.find(params[:id])
     @tcc.tag_list.clear
-    params[:tcc][:tag_ids].each do |tag_id|
-      if !tag_id.empty?
-        tag = Tag.find(tag_id)
-        @tcc.tag_list.add(tag.name)
+    if params[:tcc][:tag_ids].empty?
+      params[:tcc][:tag_ids].each do |tag_id|
+        if !tag_id.empty?
+          tag = Tag.find(tag_id)
+          @tcc.tag_list.add(tag.name)
+        end
       end
     end
     authorize!(:update, @tcc)
     if @tcc.update(tcc_params)
+      if !params[:tcc][:user_id].empty?
+        user = User.find(params[:tcc][:user_id])
+        user.tcc_id = @tcc.id
+        user.save
+      end
+      current_user.tcc_id = @tcc.id
+      current_user.save
       redirect_to @tcc, notice: 'Cadastro atualizado com sucesso!' and return
     else
       render action: :index
@@ -118,7 +135,7 @@ class TccsController < ApplicationController
   private
   def tcc_params
     params.require(:tcc).permit(:titulo, :resumo, :data, :orientador, :local,
-                                :coorientador, :arquivo,:nome_arquivo,:apresentado, :tag_ids)
+                                :coorientador, :arquivo,:nome_arquivo,:apresentado, :tag_ids,:user_id)
   end
   def find_by_id(params)
     @tcc = Tcc.find(params[:id])

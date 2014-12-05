@@ -36,7 +36,7 @@ class Ability
       # cannot :destroy, Post, user_id: nil
     elsif user && user.persisted? && !user.admin?
       can [:edit, :update, :salva_publicado, :publicar], Tcc, ['user_id = ?', user.id] do |tcc|
-        tcc.user_id == user.id
+        tcc.id == user.tcc_id
       end
       can [:new,:create,:tipos,:modelo,:processo,:agenda,:publicacoes,:index], Tcc
       can :read,:update, User
