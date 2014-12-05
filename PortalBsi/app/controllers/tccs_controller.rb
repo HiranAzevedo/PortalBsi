@@ -99,6 +99,10 @@ class TccsController < ApplicationController
   def salva_publicado
     params[:tcc][:apresentado] = true
     @tcc = Tcc.find(params[:id])
+    unless ["pdf"].include? request.headers[:content_type]
+      flash[:error]= 'tipo invalido'
+      redirect_to tccs_publicar_path(@tcc), notice: "Tipo de arquivo inválido" and return
+    end
     authorize!(:salva_publicado, @tcc)
     if @tcc.update(tcc_params)
       TccMailer.publish_email(@tcc)
