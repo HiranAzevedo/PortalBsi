@@ -21,9 +21,5 @@ test:
   database: db/test.sqlite3
 
 production:
- adapter: postgresql
- encoding: unicode
- database: portalBSI
- pool: 5
- username: rails
- password: rails
+ <<: *default
+ database: db/production.sqlite3
