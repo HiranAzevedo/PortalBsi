@@ -9,77 +9,61 @@
         </div>
     <% end %>
 
-<div id="form_tcc" class="col-sm-9 col-xs-12">
   <%= form_for @tcc do |f| %>
-      <p>
-        <%= f.label "Segundo Autor", style: "padding-right: 2px;" %><br/>
-        <%= f.collection_select(:user_id, User.where("tcc_id is NULL and id != ?", current_user.id ), :id, :nome, :include_blank => true) %>
-        <% if @tcc.errors.has_key? :orientador %>
-          <div class="error_message">
-            <%= @tcc.errors[:orientador].first %>
-          </div>
-      <% end %>
-      </p>
-      <p>
-        <%= f.label :titulo, style: "padding-right: 7px;" %><br/>
-        <%= f.text_field :titulo, style: "width:640px;" %>
-        <% if @tcc.errors.has_key? :titulo %>
-          <div class="error_message">
-            <%= @tcc.errors[:titulo].first %>
-          </div>
-      <% end %>
-      </p>
-      <p>
-        <%= f.label :resumo, style: "padding-right: 17px;" %> <br/>
-        <%= f.text_area :resumo, style: "height:215px; max-height:215px; width:717px; max-width:717px" %>
-      </p>
-      <p>
-        <%= f.label :orientador, style: "padding-right: 2px;" %><br/>
+        <p>
+          <%= f.label "Segundo Autor", style: "padding-right: 2px;" %>
+          <%= f.collection_select(:user_id, User.where("tcc_id is NULL and id != ?", current_user.id ), :id, :nome, :include_blank => true) %>
+          <% if @tcc.errors.has_key? :orientador %>
+            <div class="error_message">
+              <%= @tcc.errors[:orientador].first %>
+            </div>
+        <% end %>
+        </p>
+        <p>
+      <%= f.label :titulo, style: "padding-right: 7px;" %> <%= f.text_field :titulo, style: "width:639px;" %><br><br>
+      <%= f.label :resumo, style: "padding-right: 17px;" %> <%= f.text_area :resumo, style: "height:215px; max-height:215px; width:693px; max-width:693px" %><br><br>
+        <%= f.label :orientador, style: "padding-right: 2px;" %>
         <%= f.select :orientador, options_from_collection_for_select(@prof.all,:id,:nome,@tcc.orientador),include_blank: true %>
         <% if @tcc.errors.has_key? :orientador %>
           <div class="error_message">
             <%= @tcc.errors[:orientador].first %>
           </div>
       <% end %>
-      </p>
-      <p>
-        <%= f.label :coorientador,style: "padding-right: 2px;" %><br/>
+        <%= f.label :coorientador,style: "padding-right: 2px;margin-left: 50px" %>
         <%= f.text_field :coorientador %>
         <% if @tcc.errors.has_key? :coorientador %>
           <div class="error_message">
             <%= @tcc.errors[:coorientador].first %>
           </div>
       <% end %>
-      </p>
-      <p>
-        <%= f.label :data, style: "padding-right: 38px;" %> <br/>
-        <%= f.datetime_select :data, style: "margin: 0 4px 0 2px; width: 25px" %>
+        </p>
+      <p style="padding-top: 2px">
+        <%= f.label :data, style: "padding-right: 10px;" %>
+        <%= f.date_select :data, style: "margin: 0 4px 0 2px; width: 25px" %>
         <% if @tcc.errors.has_key? :data %>
           <div class="error_message">
             <%= @tcc.errors[:data].first %>
           </div>
       <% end %>
-      </p>
-      <p>
-        <%= f.label :local, style:"padding-right: 2px;" %><br/>
-        <%= f.text_field :local, value: "sala" %>
+        <%= f.label :local, style:"padding-right: 2px;margin-left:15px" %>
+        <%= f.text_field :local, value: "sala", style:"margin-left:57px" %>
         <% if @tcc.errors.has_key? :local %>
           <div class="error_message">
             <%= @tcc.errors[:local].first %>
           </div>
       <% end %>
       </p>
-      <p>
-        <%= f.label :tag_list, "Tags" %><br />
-        <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) %>
-      </p>
+        <% Tag.uniq.pluck(:category).each do |categoria| %>
+            <p>
+                <%= f.label :tag_list, "Tags de %s:" % [categoria] %><br />
+                <%= f.collection_check_boxes(:tag_ids, Tag.find_all_by_category(categoria), :id, :name) do |c| %>
+                  <%= c.label style:"padding-right:10px" do%>
+                      <%=c.check_box + c.text%>
+                  <%end%>
+                <% end %>
+            </p>
+        <% end %>
       <p>
         <%= f.submit "Salvar TCC" %>
       </p>
-      <% if @tcc.apresentado? %>
-          <p>
-            <%= link_to "Publicar Tcc", tccs_publicar_path(@tcc.id) %>
-          </p>
-      <% end %>
   <% end %>
-</div>

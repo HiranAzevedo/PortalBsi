@@ -11,15 +11,17 @@ class UserController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    turma = Turma.find_by_nome(@user.matricula[0..3] + '.' + @user.matricula[4])
-    if(turma.nil?)
-      turma = Turma.new
-      turma.nome = @user.matricula[0..3] + '.' + @user.matricula[4]
-      turma.save
+    if !@user.matricula.empty?
+      turma = Turma.find_by_nome(@user.matricula[0..3] + '.' + @user.matricula[4])
+      if(turma.nil?)
+        turma = Turma.new
+        turma.nome = @user.matricula[0..3] + '.' + @user.matricula[4]
+        turma.save
+      end
+      @user.turma = turma
     end
-    @user.turma = turma
     if @user.save
-      flash[:notice] = "Successfully created User."
+      flash[:notice] = "Usuário cadastrado com sucesso."
       redirect_to root_path
     else
       render :action => 'new'
@@ -33,7 +35,7 @@ class UserController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     if @user.destroy
-      flash[:notice] = "Successfully deleted User."
+      flash[:notice] = "Usuário deletado com sucesso."
       redirect_to root_path
     end
   end

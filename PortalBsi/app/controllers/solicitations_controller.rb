@@ -15,6 +15,7 @@ class SolicitationsController < ApplicationController
   # GET /solicitations/new
   def new
     @solicitation = Solicitation.new
+    @solicitation_tipo = SolicitacaoTipo.all
   end
 
   # GET /solicitations/1/edit
@@ -25,10 +26,10 @@ class SolicitationsController < ApplicationController
   # POST /solicitations.json
   def create
     @solicitation = Solicitation.new(solicitation_params)
-
+    @solicitation.user_id = current_user.id
     respond_to do |format|
       if @solicitation.save
-        format.html { redirect_to @solicitation, notice: 'Solicitation was successfully created.' }
+        format.html { redirect_to @solicitation, notice: 'Solicitação realizada com sucesso.' }
         format.json { render action: 'show', status: :created, location: @solicitation }
       else
         format.html { render action: 'new' }

@@ -1,5 +1,5 @@
 <% provide(:title, 'Editar Perfil') %>
-<%= render partial: "menu", locals: {tipo: "edit"} %>
+<%= render partial: "menu", locals: {tipo: "index"} %>
 <article class="col-sm-9 col-xs-12">
 
   <h1>Editar Perfil</h1>
@@ -51,14 +51,21 @@
         <%= f.label "Senha Atual",style:"padding-right: 7px;" %>
         <%= f.text_field :current_password, style: "width:295px;", autocomplete: "off" %>
         <br><br>
-        <%= f.label :tag_list, "Tags" %><br />
-        <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) %>
+      <% Tag.uniq.pluck(:category).each do |categoria| %>
+          <p>
+            <%= f.label :tag_list, "Tags de %s:" % [categoria] %><br />
+            <%= f.collection_check_boxes(:tag_ids, Tag.find_all_by_category(categoria), :id, :name) do |c| %>
+                <%= c.label style:"padding-right:10px" do%>
+                    <%=c.check_box + c.text%>
+                <%end%>
+            <% end %>
+          </p>
+      <% end %>
         <br><br>
 
         <p><%= f.submit "Salvar Alterações" %></p>
 
     <% end %>
-    <%= link_to "Back", :back %>
 
 </article>
 

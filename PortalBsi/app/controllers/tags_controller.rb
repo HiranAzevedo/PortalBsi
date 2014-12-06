@@ -6,6 +6,7 @@ class TagsController < ApplicationController
   # GET /solicitations/1
   # GET /solicitations/1.json
   def show
+    @tag = Tag.find(params[:id])
   end
 
   # GET /solicitations/new
@@ -15,6 +16,7 @@ class TagsController < ApplicationController
 
   # GET /solicitations/1/edit
   def edit
+    @tag = Tag.find(params[:id])
   end
 
   # POST /solicitations
@@ -65,6 +67,6 @@ class TagsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def tag_params
-    params.require(:tag).permit(:name)
+    params.require(:tag).permit(:name,:category)
   end
 end

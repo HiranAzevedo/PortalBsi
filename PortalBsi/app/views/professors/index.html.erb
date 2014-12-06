@@ -28,7 +28,7 @@
 <section class="boxgrid caption">
   <%= image_tag professor.avatar.url(:original), alt:professor.nome, class:"photo" %>
   <div class="cover boxcaption" style="top: 125px;">
-    <h3 class="slidebox"><a href="<%= professor.lattes %>"  target="_blank"><%= professor.nome %></a></h3>
+    <h3 class="slidebox"><%= link_to professor.nome, url_with_protocol(professor.lattes), target: "_blank" %></h3>
     <p class="correio"><%= professor.email.split("@")[0] %><%= image_tag "uniriotecbr.gif" ,alt:professor.nome ,class:"correioImage"%></p>
   </div>
 </section>

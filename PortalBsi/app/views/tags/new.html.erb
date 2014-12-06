@@ -1,10 +1,12 @@
-<% provide(:title,"Nova Solicitação") %>
+<% provide(:title,"Cadastrar Tags") %>
+
+<%= render partial: "menu", locals: {tipo: "cadastrarTags"} %>
 <article class="col-sm-9 col-xs-12">
-<h1>New solicitation</h1>
+<h1>Cadastrar Tag</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', tags_path %>
+<%= link_to 'Voltar', secretaria_path %>
 </article>
 
 <br style="clear: both">

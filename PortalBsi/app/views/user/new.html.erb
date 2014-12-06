@@ -1,8 +1,7 @@
 <% provide(:title, 'Cadastro') %>
 <%= render partial: "menuSecretaria", locals: {tipo: "cadastrar"} %>
 <article class="col-sm-9 col-xs-12">
-
-  <h2>Cadastrar Usuário</h2>
+  <h1>Cadastrar Usuário</h1>
 
   <%= form_for @user, :url => user_index_path do |f| %>
 

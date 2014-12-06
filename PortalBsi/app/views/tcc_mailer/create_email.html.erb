@@ -1,6 +1,6 @@
 <h1> SISTEMA BSI </h1>
 <p>Olá Bsi,</p>
-<p>Temos uma nova apresentação de TCC agendada, do aluno "ENTRAR NOME DO ALUNO".</p>
+<p>Temos uma nova apresentação de TCC agendada, do aluno <%= raw User.find_all_by_tcc_id(@tcc.id).map { |t| t.nome }.join(',') %>.</p>
 
 <p>
   Titulo: <%= @tcc.titulo %>

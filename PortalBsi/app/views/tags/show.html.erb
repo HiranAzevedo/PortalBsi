@@ -5,16 +5,16 @@
 
   <p>
     <strong>Name:</strong>
-    <%= @tag.id %>
+    <%= @tag.name %>
   </p>
 
 <p>
   <strong>Name:</strong>
-  <%= @tag.name %>
+  <%= @tag.category %>
 </p>
 
 
-<%= link_to 'Edit', edit_solicitation_path(@tag) %> |
+<%= link_to 'Edit', edit_tag_path(@tag) %> |
 <%= link_to 'Back', tags_path %>
 </article>
 
