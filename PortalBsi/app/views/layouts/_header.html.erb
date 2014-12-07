@@ -42,7 +42,7 @@
             <label style="padding-right: 7px;padding-left: 500px;">Email:</label><%= f.text_field :email%>
             <label>Senha:</label><%= f.password_field :password %>
             <%= f.check_box :remember_me %>
-            <%= f.label :remember_me %>
+            <%= f.label "Mantenha-me conectado" %>
             <%= f.submit 'Login', style: "padding: 3px 10px" %>
         <% end %>
     <% else %>
