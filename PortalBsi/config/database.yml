@@ -23,7 +23,9 @@ test:
 production:
  adapter: postgresql
  encoding: unicode
- database: portalBSI
  pool: 5
- username: rails
- password: rails
+# database: portalBSI
+
+# username: rails
+# password: rails
+
