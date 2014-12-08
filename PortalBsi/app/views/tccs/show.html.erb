@@ -11,7 +11,7 @@
         <span style="padding-right: 2px;margin-left: 50px">Coorientador: <%= @tcc.coorientador %></span>
     <% end %>
     <br><br>
-    <span style="padding-right: 38px;">Data: <%= @tcc.data %></span>
+    <span style="padding-right: 38px;">Data: <%= @tcc.data.strftime("%d/%m/%Y") %></span>
     <span style="padding-right: 2px;margin-left: 91px">Local: <%= @tcc.local %></span><br>
     <% if @tcc.id == current_user.tcc_id %>
         <%= button_to "Editar TCC", edit_tcc_path(@tcc),class: "btn btn-default", method: "get",style:"padding:3px 10px; float:left; margin-right:10px" %>

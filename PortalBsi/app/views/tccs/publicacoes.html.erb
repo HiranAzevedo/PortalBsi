@@ -25,8 +25,8 @@
 <ul>
 <%@tcc.each do |item| %>
 <li class="monografia">
-   <%= link_to item.titulo, item.arquivo.url(:original, false),class: "monografiaTitulo" %><br>
-<p><<%= raw User.find_all_by_tcc_id(item.id).map { |t| t.nome }.join(',') %>.Orientador <%= @prof.find(item.orientador).nome %>. <%= item.data.to_date.strftime("%d/%m/%Y") %></p>
+   <%= link_to item.titulo, item.arquivo.url(:original, false),class: "monografiaTitulo", style: "float:left;padding-right:10px" %> <% if current_user.admin? %> <%= button_to "Desfazer publicação", tccs_desfaz_publicado_path(item.id) %> <% end %><br>
+<p><%= raw User.find_all_by_tcc_id(item.id).map { |t| t.nome }.join(',') %>.Orientador <%= @prof.find(item.orientador).nome %>. <%= item.data.to_date.strftime("%d/%m/%Y") %></p>
   <% if !item.tag_list.empty? %>
     <p>Tags: <%= raw item.tag_list.map { |t| link_to t, tccs_publicacoes_path(tag: t) }.join(', ') %></p>
   <% end %>
