@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  ROLES = %W[administrador aluno representante_de_empresa]	
-  has_one :tcc
+  ROLES = %W[administrador aluno representante_de_empresa]
+  belongs_to :tcc
   has_many :solicitations
   belongs_to :turma
   # Include default devise modules. Others available are:
@@ -9,11 +9,10 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  validates_presence_of :nome, :matricula
+  validates_presence_of :nome
   acts_as_taggable
   after_create :send_account_created_email
 
-   
   def send_account_created_email
     if self.role == "representante_de_empresa"
       self.send_reset_password_instructions 

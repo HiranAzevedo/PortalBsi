@@ -12,18 +12,14 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :solicitacao_tipos_id %><br>
-    <%= f.text_field :solicitacao_tipos_id %>
+    <%= f.label "Tipo de Solicitação" %><br>
+    <%= f.select :solicitacao_tipos_id, options_from_collection_for_select(@solicitation_tipo.all,:id,:tipo,@solicitation.solicitacao_tipo),include_blank: false %>
   </div>
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :observacao %><br>
-    <%= f.text_field :observacao %>
+    <%= f.label "Observação" %><br>
+    <%= f.text_area :observacao, style: "height:215px; max-height:215px; width:717px; max-width:717px"  %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Salvar" %>
   </div>
 <% end %>

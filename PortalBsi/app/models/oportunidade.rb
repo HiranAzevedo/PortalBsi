@@ -12,7 +12,7 @@ class Oportunidade < ActiveRecord::Base
   acts_as_taggable
   self.inheritance_column = nil
 
-  scope :greater_than_today, -> { where("expiration_date >=?", DateTime.now)}
+  scope :greater_than_today, -> { where('expiration_date >=?', DateTime.now)}
 
 
   def currency=(num)

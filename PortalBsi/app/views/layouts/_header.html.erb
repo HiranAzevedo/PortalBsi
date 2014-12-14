@@ -32,26 +32,25 @@
           <div class="noticias icone grande semMargem"><p class="subtitle subtitleGrande"><%= image_tag("iNoticias.png", alt: "notícias") %><br>NOT&Iacute;CIAS</p></div>
       <%end%>
 
-      <div>
-          <% if !user_signed_in? %>
-            <%= form_for(:user, :url => session_path(:user), :html => {class: 'navbar-form navbar-right'}) do |f| %>
-                <div class="form-group">
-                    <%= f.text_field :email, class: "form-control"%>
-                </div>
-                <div class="form-group">
-                  <%= f.password_field :password, class: "form-control" %>
-                </div>
-                <%= f.check_box :remember_me %>
-                <%= f.label :remember_me %>
-                <%= f.submit 'Sign in', class: "btn btn-success" %>
-                <%= link_to "Forgot your password?", new_password_path(:user) %>
-            <% end %>
-          <% else %>
-            <label style="margin-top: 25px">Olá <%= current_user.nome %></label>
-            <%= link_to "Editar Perfil", edit_user_registration_path %>
-            <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
-          <% end %>
-      </div>
     </nav>
   </div>
 </header>
+<div id="barraLogin">
+  <ul>
+    <% if !user_signed_in? %>
+        <%= form_for(:user, :url => session_path(:user)) do |f| %>
+            <label style="padding-right: 7px;padding-left: 500px;">Email:</label><%= f.text_field :email%>
+            <label>Senha:</label><%= f.password_field :password %>
+            <%= f.check_box :remember_me %>
+            <%= f.label "Mantenha-me conectado" %>
+            <%= f.submit 'Login', style: "padding: 3px 10px" %>
+        <% end %>
+    <% else %>
+        <div id="logado" style="margin-left: 550px;padding-top: 18px;font-size: 100%;">
+          Olá, <%= current_user.nome %>!
+          <%= link_to "Editar Perfil", edit_user_registration_path %>
+          <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+        </div>
+    <% end %>
+  </ul>
+</div>

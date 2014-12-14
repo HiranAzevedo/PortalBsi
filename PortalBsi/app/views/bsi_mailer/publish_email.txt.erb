@@ -1,6 +1,6 @@
 SISTEMA BSI
 Olá Bsi,
-Temos uma apresentação de TCC publicada, do aluno "ENTRAR NOME DO ALUNO".
+Temos uma apresentação de TCC publicada, do aluno <%= raw User.find_all_by_tcc_id(@tcc.id).map { |t| t.nome }.join(',') %>.
 
 
   Titulo: <%= @tcc.titulo %>

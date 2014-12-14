@@ -69,6 +69,6 @@ class SolicitacaoTiposController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def solicitacao_tipo_params
-      params.require(:solicitacao_tipos).permit(:tipo)
+      params.require(:solicitacao_tipo).permit(:tipo)
     end
 end

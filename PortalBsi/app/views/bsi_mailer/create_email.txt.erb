@@ -1,6 +1,6 @@
 SISTEMA BSI
 Olá Bsi,
-Temos uma nova apresentação de TCC agendada, do aluno "ENTRAR NOME DO ALUNO".
+Temos uma nova apresentação de TCC agendada, do aluno <%= raw User.find_all_by_tcc_id(@tcc.id).map { |t| t.nome }.join(',') %>.
 
   Titulo: <%= @tcc.titulo %>
 

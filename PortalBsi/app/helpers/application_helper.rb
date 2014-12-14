@@ -1,15 +1,23 @@
 module ApplicationHelper
   def verificaMenuAtivo(tipo,nome_do_link)
     if tipo == nome_do_link
-      return "ativo"
+      return 'ativo'
     end
   end
 
   def error_tag(model, attribute)
-  	if model.errors.has_key? attribute
-  	  content_tag(:div,model.errors[attribute].first, class: 'error_message')
-  	end
-  end  
+    if model.errors.has_key? attribute
+      content_tag(:div,model.errors[attribute].first, class: 'error_message')
+    end
+  end
+
+  def verificaiconeAtivo(secao,nome_secao)
+    if nome_secao == secao
+      return 'iconeAtivo'
+    else
+      return 'icone'
+    end
+  end
 
   def verificaTccExiste(user_id)
     if Tcc.find_by_user_id(user_id).nil?
@@ -26,6 +34,7 @@ module ApplicationHelper
       return nome.split[0]
     end
   end
+
   def RetornaTccidByUserid(userid)
     tcc_menu = Tcc.find_by_user_id(userid)
     if tcc_menu.nil?
@@ -34,4 +43,9 @@ module ApplicationHelper
       return tcc_menu.id
     end
   end
+
+  def url_with_protocol(url)
+    /^http/i.match(url) ? url : "http://#{url}"
+  end
+
 end

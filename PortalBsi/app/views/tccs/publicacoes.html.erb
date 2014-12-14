@@ -25,15 +25,13 @@
 <ul>
 <%@tcc.each do |item| %>
 <li class="monografia">
-   <%= link_to item.titulo, item.arquivo.url(:original, false),class: "monografiaTitulo" %><br>
-<p><%= item.user.nome %> .Orientador <%= @prof.find(item.orientador).nome %>. <%= item.data.to_date.strftime("%d/%m/%Y") %></p>
-  <p>Tags: <%= raw item.tag_list.map { |t| link_to t, tccs_publicacoes_path(tag: t) }.join(', ') %></p>
+   <%= link_to item.titulo, item.arquivo.url(:original, false),class: "monografiaTitulo", style: "float:left;padding-right:10px" %> <% if current_user.admin? %> <%= button_to "Desfazer publicação", tccs_desfaz_publicado_path(item.id) %> <% end %><br>
+<p><%= raw User.find_all_by_tcc_id(item.id).map { |t| t.nome }.join(',') %>.Orientador <%= @prof.find(item.orientador).nome %>. <%= item.data.to_date.strftime("%d/%m/%Y") %></p>
+  <% if !item.tag_list.empty? %>
+    <p>Tags: <%= raw item.tag_list.map { |t| link_to t, tccs_publicacoes_path(tag: t) }.join(', ') %></p>
+  <% end %>
 </li>
 <% end %>
-<li class="monografia">
-  <span class="monografiaTitulo">Migrando Aplicações de Banco de Dados para Sistemas de Informação na Web- Estudos de Caso na Área de Saúde</span><br>
-  Marcelo da Silva Moreira. Orientador: Asterio kiyoshi Tanaka. 19/08/2004.
-</li>
 </ul>
 </article>
 <br style="clear: both">

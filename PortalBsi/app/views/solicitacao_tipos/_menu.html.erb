@@ -8,7 +8,7 @@
         <li class=" <%=verificaMenuAtivo(tipo,"novaSolicitacao")%> secretaria">
           <%= link_to "Nova Solicitação", new_solicitation_path %>
         </li>
-        <% if current_user.role == "administrador" %>
+        <% if current_user.role == 'administrador' %>
             <li class=" <%=verificaMenuAtivo(tipo,"solicitacoes")%> secretaria">
               <%= link_to "Solicitações", solicitations_path %>
             </li>
@@ -20,6 +20,9 @@
             </li>
             <li class=" <%=verificaMenuAtivo(tipo,"cadastrarProfessor")%> secretaria">
               <%= link_to "Cadastrar Professor", new_professor_path %>
+            </li>
+            <li class=" <%=verificaMenuAtivo(tipo,"cadastrarTags")%> secretaria">
+              <%= link_to "Cadastrar Tags", new_tag_path %>
             </li>
         <% end %>
     <% end %>

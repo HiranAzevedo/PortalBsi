@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141018175512) do
+ActiveRecord::Schema.define(version: 20141205050250) do
 
   create_table "oportunidades", force: true do |t|
     t.string   "company_name"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 20141018175512) do
   create_table "tags", force: true do |t|
     t.string  "name"
     t.integer "taggings_count", default: 0
+    t.string  "category"
   end
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true
@@ -129,10 +130,12 @@ ActiveRecord::Schema.define(version: 20141018175512) do
     t.datetime "avatar_updated_at"
     t.string   "role"
     t.integer  "turma_id"
+    t.integer  "tcc_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["tcc_id"], name: "index_users_on_tcc_id"
   add_index "users", ["turma_id"], name: "index_users_on_turma_id"
 
 end

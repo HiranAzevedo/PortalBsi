@@ -21,6 +21,9 @@
             <li class=" <%=verificaMenuAtivo(tipo,"cadastrarProfessor")%> secretaria">
               <%= link_to "Cadastrar Professor", new_professor_path %>
             </li>
+            <li class=" <%=verificaMenuAtivo(tipo,"cadastrarTags")%> secretaria">
+              <%= link_to "Cadastrar Tags", new_tag_path %>
+            </li>
         <% end %>
     <% end %>
   </ul>
