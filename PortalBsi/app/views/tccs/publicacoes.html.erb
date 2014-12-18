@@ -16,11 +16,11 @@
 
 <p>Lista dos trabalhos já defendidos. Os TCCs são publicados em nosso site para servirem de exemplos do que se espera de um TCC e de possíveis temas, além de constituem uma boa fonte de informação sobre tópicos específicos e atualizados na área de Sistemas de Informação. Uma dica: se você gostar de algum TCC, procure o professor-orientador daquele TCC e informe-se da possibilidade de dar continuidade ao trabalho ou elaborar um novo projeto seguindo a mesma linha.</p>
 
-  <div id="tag_cloud">
+  <!--<div id="tag_cloud">
     <% tag_cloud Tcc.tag_counts, %w{s m l} do |tag, css_class| %>
         <%= link_to tag.name, tccs_publicacoes_path(tag: tag.name), class: css_class %>
     <% end %>
-  </div>
+  </div>-->
 
 <ul>
 <%@tcc.each do |item| %>

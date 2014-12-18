@@ -32,7 +32,7 @@ class TccsController < ApplicationController
     @prof = Professor.all
     @tcc.apresentado = false
     @tcc.tag_list.clear
-    if params[:tcc][:tag_ids].empty?
+    if !params[:tcc][:tag_ids].empty?
       params[:tcc][:tag_ids].each do |tag_id|
         if !tag_id.empty?
           tag = Tag.find(tag_id)
@@ -110,7 +110,7 @@ class TccsController < ApplicationController
   def update
     @tcc = Tcc.find(params[:id])
     @tcc.tag_list.clear
-    if params[:tcc][:tag_ids].empty?
+    if !params[:tcc][:tag_ids].empty?
       params[:tcc][:tag_ids].each do |tag_id|
         if !tag_id.empty?
           tag = Tag.find(tag_id)
