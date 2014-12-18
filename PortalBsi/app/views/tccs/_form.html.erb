@@ -59,7 +59,7 @@
                 <%= f.collection_check_boxes(:tag_ids, Tag.find_all_by_category(categoria), :id, :name) do |c| %>
                   <%= c.label style:"padding-right:10px" do%>
                       <%=c.check_box + c.text%>
-                  <%end%>
+                  <% end %>
                 <% end %>
             </p>
         <% end %>

@@ -41,15 +41,15 @@
         <br><br>
 
         <%= f.label "Nova Senha",style:"padding-right: 7px;" %>
-        <%= f.text_field :password, style: "width:295px;", autocomplete: "off" %>
+        <%= f.password_field :password, style: "width:295px;", autocomplete: "off" %>
         <br><br>
 
         <%= f.label "Confirme a Nova Senha Senha",style:"padding-right: 7px;" %>
-        <%= f.text_field :password_confirmation, style: "width:295px;", autocomplete: "off" %>
+        <%= f.password_field :password_confirmation, style: "width:295px;", autocomplete: "off" %>
         <br><br>
 
         <%= f.label "Senha Atual",style:"padding-right: 7px;" %>
-        <%= f.text_field :current_password, style: "width:295px;", autocomplete: "off" %>
+        <%= f.password_field :current_password, style: "width:295px;", autocomplete: "off" %>
         <br><br>
       <% Tag.uniq.pluck(:category).each do |categoria| %>
           <p>

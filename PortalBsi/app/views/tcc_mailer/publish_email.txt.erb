@@ -7,5 +7,7 @@ Temos uma apresentação de TCC publicada, do aluno <%= raw User.find_all_by_tcc
 
   Resumo: <%= @tcc.resumo %>
 
+  Data: <%=  @tcc.data %>
+
   <%= link_to(@tcc.titulo, tcc_url(@tcc), port:3000) %>
 
