@@ -1,7 +1,10 @@
 <%= render partial: "menu", locals: {tipo: 'show'} %>
 <article class="col-sm-9 col-xs-12">
-  <p id="notice"><%= notice %> </p>
-  <p id="alert"> <%= alert %></p>
+  <% flash.each do |key, value| %>
+      <div class="<%= flash_class(key) %>">
+        <%= value %>
+      </div>
+  <% end %>
 
   <h1>Meu TCC</h1>
   <p>Título: <%= @tcc.titulo %><br><br>

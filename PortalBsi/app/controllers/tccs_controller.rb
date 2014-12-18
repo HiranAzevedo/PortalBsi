@@ -104,7 +104,7 @@ class TccsController < ApplicationController
       TccMailer.publish_email(@tcc)
       redirect_to @tcc, notice: 'Cadastro atualizado com sucesso!' and return
     else
-      redirect_to tccs_publicar_path(@tcc), notice: "Tipo inválido" and return
+      redirect_to tccs_publicar_path(@tcc), alert: "Tipo inválido" and return
     end
   end
   def update
