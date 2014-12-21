@@ -54,10 +54,12 @@ class RegistrationsController < Devise::RegistrationsController
     resource_updated = update_resource(resource, account_update_params)
     yield resource if block_given?
     resource.tag_list.clear
-    params[:user][:tag_ids].each do |tag_id|
-      if !tag_id.empty?
-        tag = Tag.find(tag_id)
-        resource.tag_list.add(tag.name)
+    if !params[:user][:tag_ids].empty?
+      params[:user][:tag_ids].each do |tag_id|
+        if !tag_id.empty?
+          tag = Tag.find(tag_id)
+          resource.tag_list.add(tag.name)
+        end
       end
     end
     if resource_updated

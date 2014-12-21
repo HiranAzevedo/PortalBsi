@@ -23,7 +23,7 @@
         <% if !item.tag_list.empty? %>
             <p>Tags: <%= raw item.tag_list.map { |t| link_to t, tccs_publicacoes_path(tag: t) }.join(', ') %></p>
         <% end %>
-        <% if item.id == current_user.tcc_id  %>
+        <% if user_signed_in? && item.id == current_user.tcc_id  %>
             <p><%= link_to 'Editar', tcc_path(item)%></p>
         <% end %>
       </li>

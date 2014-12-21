@@ -41,7 +41,7 @@ class TccsController < ApplicationController
     @prof = Professor.all
     @tcc.apresentado = false
     @tcc.tag_list.clear
-    if params[:tcc][:tag_ids].empty?
+    if !params[:tcc][:tag_ids].empty?
       params[:tcc][:tag_ids].each do |tag_id|
         if !tag_id.empty?
           tag = Tag.find(tag_id)
@@ -119,14 +119,14 @@ class TccsController < ApplicationController
       BsiMailer.publish_email(@tcc)
       redirect_to @tcc, notice: 'Cadastro atualizado com sucesso!' and return
     else
-      redirect_to tccs_publicar_path(@tcc), notice: "Tipo inválido" and return
+      redirect_to tccs_publicar_path(@tcc), alert: "Tipo inválido" and return
     end
   end
 
   def update
     @tcc = Tcc.find(params[:id])
     @tcc.tag_list.clear
-    if params[:tcc][:tag_ids].empty?
+    if !params[:tcc][:tag_ids].empty?
       params[:tcc][:tag_ids].each do |tag_id|
         if !tag_id.empty?
           tag = Tag.find(tag_id)

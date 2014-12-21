@@ -12,7 +12,7 @@
   <%= form_for @tcc do |f| %>
         <p>
           <%= f.label "Segundo Autor", style: "padding-right: 2px;" %>
-          <%= f.collection_select(:user_id, User.where("tcc_id is NULL and id != ?", current_user.id ), :id, :nome, :include_blank => true) %>
+          <%= f.collection_select(:user_id, User.where("(tcc_id is NULL or tcc_id == ?) and id != ?",@tcc.id, current_user.id ), :id, :nome, :include_blank => true) %>
           <% if @tcc.errors.has_key? :orientador %>
             <div class="error_message">
               <%= @tcc.errors[:orientador].first %>
@@ -59,7 +59,7 @@
                 <%= f.collection_check_boxes(:tag_ids, Tag.find_all_by_category(categoria), :id, :name) do |c| %>
                   <%= c.label style:"padding-right:10px" do%>
                       <%=c.check_box + c.text%>
-                  <%end%>
+                  <% end %>
                 <% end %>
             </p>
         <% end %>
