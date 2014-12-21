@@ -1,5 +1,4 @@
 class BsiMailer < ActionMailer::Base
-  include Devise::Mailers::Helpers
 
   default from: "sistema@uniriotec.br"
 
@@ -12,6 +11,7 @@ class BsiMailer < ActionMailer::Base
          })
     mail.deliver
   end
+
   def publish_email(tcc)
     @tcc = tcc
     mail({
@@ -21,15 +21,15 @@ class BsiMailer < ActionMailer::Base
          })
     mail.deliver
   end
-  #def confirmation_instructions(record, token, opts={})
-   # devise_mail(record, :confirmation_instructions, opts)
-  #end
 
-  #def reset_password_instructions(record, token, opts={})
-   # devise_mail(record, :reset_password_instructions, opts)
-  #end
+  def oportunidade_email(oportunidade, email)
+    @oportunidade = oportunidade
+    @email = email
+    mail({
+              to: email,
+              subject: 'Uma nova Oportunidade foi publicada'
+      })
+    mail.deliver
+  end
 
-  #def unlock_instructions(record, token, opts={})
-   # devise_mail(record, :unlock_instructions, opts)
-  #end
 end

@@ -57,7 +57,7 @@ class TccsController < ApplicationController
       end
       current_user.tcc_id = @tcc.id
       current_user.save
-      BsiMailer.create_create_email(@tcc)
+      BsiMailer.create_email(@tcc)
       redirect_to @tcc, notice: 'Cadastro de TCC criado com sucesso!'
     else
       render action: :new

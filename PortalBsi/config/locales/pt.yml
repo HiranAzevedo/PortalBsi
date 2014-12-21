@@ -1,19 +1,19 @@
-pt:
+pt-BR:
   helpers:
     submit:
       empresa:
         create: "Solicitar Criação de Conta"
   activerecord:
     models:
-      oportunidade: oportunidade
+      oportunidade: "oportunidade"
     attributes:
       oportunidade:
-         company_name: Nome do Ofertante
-         title: Título
-         description: Descrição
-         expiration_date: Data de Validade
-         has_partnership: Possui Convênio ?
-         picture: Foto
+         company_name: "Nome do Ofertante"
+         title: "Título"
+         description: "Descrição"
+         expiration_date: "Data de Validade"
+         has_partnership: "Possui Convênio ?"
+         picture: "Foto"
          type: "Tipo da Oportunidade:"
          currency: "Valor Pago: "
   mail_form:
