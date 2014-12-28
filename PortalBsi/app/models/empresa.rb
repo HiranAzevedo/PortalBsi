@@ -15,6 +15,7 @@ class Empresa < MailForm::Base
     end
   end
   
+  #mudar o email no dia do deploy
   def headers
   	{
   	  :subject => "Criação de Conta de Usuário tipo Representante Empresa",

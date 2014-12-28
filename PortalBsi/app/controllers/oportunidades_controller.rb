@@ -19,24 +19,17 @@ class OportunidadesController < ApplicationController
 
   def create
     @oportunidade = Oportunidade.new(oportunidade_params)
-    @tag
     @oportunidade.tag_list.clear
     if !params[:oportunidade][:tag_ids].empty?
       params[:oportunidade][:tag_ids].each do |tag_id|
         if !tag_id.empty?
-          @tag = Tag.find(tag_id)
-          @oportunidade.tag_list.add(@tag.name)
+          tag = Tag.find(tag_id)
+          @oportunidade.tag_list.add(tag.name)
         end
       end
     end
-    user = User.all
-    @taggeduser = user.tagged_with(params[:tag])    
 
     if @oportunidade.save
-      @taggeduser.each do |user|
-         email = user.email
-         BsiMailer.oportunidade_email(@oportunidade, email)
-      end 	
        redirect_to oportunidades_path, notice: 'Oportunidade cadastrada com sucesso.'  
     else
       render action: :new

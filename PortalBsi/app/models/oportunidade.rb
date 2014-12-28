@@ -20,4 +20,8 @@ class Oportunidade < ActiveRecord::Base
     self[:currency] = num
   end
   
+  def self.newsletter_email
+    email = User.pluck(:email)
+    BsiMailer.oportunidade_email(self, email)
+  end  
 end
