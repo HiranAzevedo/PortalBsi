@@ -1,5 +1,9 @@
-SISTEMA BSI 
-
 Olá,
-Uma nova oportunidade foi cadastrada em nosso sistema 
-Visite nosso site para conferir ou clique<%= link_to('aqui.', oportunidade_url(@oportunidade), port:3000) %>.
+Vejam as novas oportunidades que foram cadastradas em nosso site.
+Para mais detalhes visite o site do portal BSI.
+-----------------------------------------------------------
+<% @oportunidade.oportunities_with_one_week.each do |a|  %>       	
+  <%= a.title%>
+  Ofertante: <%= a.company_name %>   
+-----------------------------------------------------------       	 
+<%end %>	

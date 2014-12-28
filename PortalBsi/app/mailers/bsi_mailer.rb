@@ -26,7 +26,7 @@ class BsiMailer < ActionMailer::Base
     @oportunidade = oportunidade
     @email = email
     mail({
-              to: email,
+              to: @email,
               subject: 'Uma nova Oportunidade foi publicada'
       })
     mail.deliver

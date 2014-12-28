@@ -13,7 +13,7 @@ class Oportunidade < ActiveRecord::Base
   self.inheritance_column = nil
 
   scope :greater_than_today, -> { where('expiration_date >=?', DateTime.now)}
-
+  scope :day_since_creation, -> { where (['created_at >=?', DateTime.now - 7.days ])}
 
   def currency=(num)
     num.gsub!(',','.') if num.is_a?(String)
@@ -23,5 +23,10 @@ class Oportunidade < ActiveRecord::Base
   def self.newsletter_email
     email = User.pluck(:email)
     BsiMailer.oportunidade_email(self, email)
+  end
+
+  def self.oportunities_with_one_week
+    oportunidade = Oportunidade.day_since_creation
   end  
+
 end

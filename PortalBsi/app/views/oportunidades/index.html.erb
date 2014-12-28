@@ -8,12 +8,12 @@
      <p> Nesta página encontram-se todas as oportunidades de aprendizado cadastradas no sistema </p>
      <br/>
 
-      <div id="tag_cloud">
+      <!--<div id="tag_cloud">
        <% tag_cloud Oportunidade.tag_counts, %w{s m l} do |tag, css_class| %>
            <%= link_to tag.name, oportunidades_path(tag: tag.name), class: css_class %>
        <% end %>
-      </div>
-
+      </div> -->
+      
      <% @oportunidades.each do |oportunidade| %>
      
       <div class = "oportunidade" > 
