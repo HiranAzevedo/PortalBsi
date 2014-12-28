@@ -21,7 +21,7 @@ set :output, "/home/guilherme/Projetos_Ruby/PortalBsi/PortalBsi/log/PortalBsi.lo
 # end
 
 # Learn more: http://github.com/javan/whenever
-every 1.minute do
+every :friday, :at => '12pm' do
   runner "Oportunidade.newsletter_email" 
 end	
 
