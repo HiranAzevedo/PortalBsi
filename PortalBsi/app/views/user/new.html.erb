@@ -14,9 +14,7 @@
       <div><%= f.label :matricula %><br />
         <%= f.text_field :matricula %></div>
 
-      <div><%= f.check_box :admin %> <%= f.label "Administrador" %>
-      </div>
-
+      <div><br/><%= f.collection_select :role, User::ROLES, :to_s, :humanize %></div>
 
       <div><%= f.label "Senha" %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
         <%= f.password_field :password, autocomplete: "off" %></div>
@@ -26,7 +24,6 @@
 
       <div><%= f.submit "Cadastrar" %></div>
   <% end %>
-
 
 </article>
 

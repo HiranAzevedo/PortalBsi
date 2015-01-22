@@ -1,4 +1,5 @@
-class TccMailer < ActionMailer::Base
+class BsiMailer < ActionMailer::Base
+
   default from: "sistema@uniriotec.br"
 
   def create_email(tcc)
@@ -10,6 +11,7 @@ class TccMailer < ActionMailer::Base
          })
     mail.deliver
   end
+
   def publish_email(tcc)
     @tcc = tcc
     mail({
@@ -19,4 +21,15 @@ class TccMailer < ActionMailer::Base
          })
     mail.deliver
   end
+
+  def oportunidade_email(oportunidade, email)
+    @oportunidade = oportunidade
+    @email = email
+    mail({
+              to: @email,
+              subject: 'Uma nova Oportunidade foi publicada'
+      })
+    mail.deliver
+  end
+
 end

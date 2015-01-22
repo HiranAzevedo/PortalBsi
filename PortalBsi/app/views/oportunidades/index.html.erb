@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row-offcanvas">
+  
+    <%= render partial: "menu_oportunidades", locals: {tipo: 'index'} %>
+
+     <h1>Oportunidades</h1>
+
+     <p> Nesta página encontram-se todas as oportunidades de aprendizado cadastradas no sistema </p>
+     <br/>
+
+      <!--<div id="tag_cloud">
+       <% tag_cloud Oportunidade.tag_counts, %w{s m l} do |tag, css_class| %>
+           <%= link_to tag.name, oportunidades_path(tag: tag.name), class: css_class %>
+       <% end %>
+      </div> -->
+      
+     <% @oportunidades.each do |oportunidade| %>
+     
+      <div class = "oportunidade" > 
+         <%=image_tag oportunidade.picture_url(:thumb), :class => "img-position" if oportunidade.picture? %>
+    
+         <h3> <%= link_to oportunidade.title, oportunidade %>  [ <%= oportunidade.type.humanize%> ] </h3>
+         <span> <h3> - Cadastrado em : <%= oportunidade.created_at.strftime("%d/%m/%Y") %></h3></span>
+
+         <p> Ofertante: <%= oportunidade.company_name %></p>
+
+         <% if user_signed_in? && current_user.role == "administrador" %>
+                 <%= link_to 'Apagar', oportunidade, method: :delete, :class => "btn btn-default position" %>
+         <% elsif user_signed_in? && current_user.role != "administrador" %> 
+                 <%= link_to 'Apagar', oportunidade, method: :delete, :class => "hidden" %>
+        <% end %>      
+         
+   
+         <p>Tags: <%= raw oportunidade.tag_list.map { |t| link_to t, oportunidades_path(tag: t) }.join(', ') %> </p>
+         
+      </div>
+       
+     <% end %> 
+    <%= paginate @oportunidades %>
+  </div>
+</div>  
+
+

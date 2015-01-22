@@ -1,7 +1,7 @@
 class RegistrationsController < Devise::RegistrationsController
 
   def account_update_params
-    params.require(:user).permit(:nome, :apelido, :matricula, :email,:admin, :facebook_link, :github_link, :password, :password_confirmation, :current_password, :avatar, :tag_ids)
+    params.require(:user).permit(:nome, :apelido, :matricula, :email, :role, :password, :password_confirmation, :current_password, :avatar, :tag_ids)
   end
 
   def new
@@ -77,7 +77,17 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def registration_params
-    params.require(:user).permit(:nome,:matricula,:email,:admin, :password, :password_confirmation, :tag_ids)
+    params.require(:user).permit(:nome,:matricula,:email, :password, :password_confirmation, :role, :tag_ids)
   end
+
+  protected
+
+    def after_sign_up_path_for(resource)
+      signed_in_root_path(resource)
+    end
+
+    def after_update_path_for(resource)
+      signed_in_root_path(resource)
+    end 
 
 end

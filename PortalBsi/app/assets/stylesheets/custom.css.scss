@@ -1,0 +1,93 @@
+@import "shadow";
+$error-text-color: #b84947;
+
+.hidden { display: none; }
+
+/*flash*/
+
+.alert-error {
+background-color: #f2dede;
+border-color: #eed3d7;
+color: #b94a48;
+text-align: left;
+}
+
+.alert-alert {
+background-color: #f2dede;
+border-color: #eed3d7;
+color: #b94a48;
+text-align: left;
+}
+
+.alert-success {
+background-color: #dff0d8;
+border-color: #d6e9c6;
+color: #468847;
+text-align: left;
+}
+
+.alert-notice {
+background-color: #dff0d8;
+border-color: #d6e9c6;
+color: #468847;
+text-align: left;
+}
+
+/*Customizada nas Mensagens de erro */
+
+.error_message {
+  margin-left: 5px;
+  display: inline;
+  color: $error-text-color;
+}
+
+.padded_flash {
+  padding: 10px;
+  margin: 10px 0;
+  font-weight: bold;
+  width: 500px;
+}
+
+
+/* Oportunidades - Área de Divulgação */
+
+.oportunidade{
+  background-color: white;
+  padding: 20px 25px;
+  margin-top: 10px;
+  margin-left: 250px;
+  @include shadow(#ccc, 0, 3px, 0px);
+}
+
+/*Regular tamanho do titulo */
+
+.oportunidade h3{
+  display: inline;
+  a { font-size: 0.9em;}
+}
+
+.oportunidade span{
+ h3{ font-size: 0.8em;}
+ color: lightgray;
+}
+
+/*Posicionamento do botão*/
+.position { 
+  float: right;
+  margin-top: 10px;
+  
+}
+
+/*Posicionamento da imagem*/
+.img-position {
+  float: right;
+  margin-right: 10px;
+}
+
+/*Tag Cloud */
+#tag_cloud{
+  line-height: 1.6em;
+  .s { font-size: 0.8em; }
+  .m { font-size: 1.2em; }
+  .l { font-size: 1.8em; }
+}

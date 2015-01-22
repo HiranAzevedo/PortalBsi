@@ -13,6 +13,19 @@
 
 ActiveRecord::Schema.define(version: 20141205050250) do
 
+  create_table "oportunidades", force: true do |t|
+    t.string   "company_name"
+    t.string   "title"
+    t.string   "description"
+    t.date     "expiration_date"
+    t.boolean  "has_partnership", limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "picture"
+    t.string   "type"
+    t.decimal  "currency",                    precision: 8, scale: 2
+  end
+
   create_table "professors", force: true do |t|
     t.string   "nome"
     t.string   "email"
@@ -79,11 +92,13 @@ ActiveRecord::Schema.define(version: 20141205050250) do
     t.string   "arquivo_content_type"
     t.integer  "arquivo_file_size"
     t.datetime "arquivo_updated_at"
+    t.integer  "users_id"
     t.integer  "professor_id"
   end
 
   add_index "tccs", ["professor_id"], name: "index_tccs_on_professor_id"
   add_index "tccs", ["user_id"], name: "index_tccs_on_user_id"
+  add_index "tccs", ["users_id"], name: "index_tccs_on_users_id"
 
   create_table "turmas", force: true do |t|
     t.string   "nome"
@@ -109,12 +124,11 @@ ActiveRecord::Schema.define(version: 20141205050250) do
     t.string   "matricula"
     t.string   "facebook_link"
     t.string   "github_link"
-    t.integer  "tccs_id"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.boolean  "admin"
+    t.string   "role"
     t.integer  "turma_id"
     t.integer  "tcc_id"
   end
@@ -122,7 +136,6 @@ ActiveRecord::Schema.define(version: 20141205050250) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   add_index "users", ["tcc_id"], name: "index_users_on_tcc_id"
-  add_index "users", ["tccs_id"], name: "index_users_on_tccs_id"
   add_index "users", ["turma_id"], name: "index_users_on_turma_id"
 
 end

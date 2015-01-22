@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  ROLES = %W[administrador aluno representante_de_empresa]
   belongs_to :tcc
   has_many :solicitations
   belongs_to :turma
@@ -10,4 +11,12 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   validates_presence_of :nome
   acts_as_taggable
+  after_create :send_account_created_email
+
+  def send_account_created_email
+    if self.role == "representante_de_empresa"
+      self.send_reset_password_instructions 
+    end
+  end
+
 end

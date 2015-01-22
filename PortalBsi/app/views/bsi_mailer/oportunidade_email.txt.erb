@@ -1,0 +1,9 @@
+Olá,
+Vejam as novas oportunidades que foram cadastradas em nosso site.
+Para mais detalhes visite o site do portal BSI.
+-----------------------------------------------------------
+<% @oportunidade.oportunities_with_one_week.each do |a|  %>       	
+  <%= a.title%>
+  Ofertante: <%= a.company_name %>   
+-----------------------------------------------------------       	 
+<%end %>	

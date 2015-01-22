@@ -1,0 +1,29 @@
+pt-BR:
+  helpers:
+    submit:
+      empresa:
+        create: "Solicitar Criação de Conta"
+  activerecord:
+    models:
+      oportunidade: "oportunidade"
+    attributes:
+      oportunidade:
+         company_name: "Nome do Ofertante"
+         title: "Título"
+         description: "Descrição"
+         expiration_date: "Data de Validade"
+         has_partnership: "Possui Convênio ?"
+         picture: "Foto"
+         type: "Tipo da Oportunidade:"
+         currency: "Valor Pago: "
+  mail_form:
+    models:
+      empresa: "empresa"
+    attributes:
+      empresa:
+        name: "Nome do Representante"
+        email: "E-mail para contato"
+        phone: "Telefone"
+        nickname: "apelido"
+        file: "Comprovação de Vínculo com a Empresa:"
+        message: "Informações Adicionais"

@@ -7,8 +7,8 @@ Rails.application.routes.draw do
 
   resources :professors
 
-  #devise_for :users, :controllers => { registrations: 'registrations' }
-  devise_for :users, :controllers => { registrations: 'registrations' }
+  devise_for :users, :controllers => { registrations: 'registrations', passwords: 'passwords' }
+  
   devise_scope :user do
     get '/login' => 'devise/sessions#new'
     get '/logout' => 'devise/sessions#destroy'
@@ -43,13 +43,22 @@ Rails.application.routes.draw do
   match '/tccs/agenda', to: 'tccs#agenda', via: 'get'
   match '/noticias', to: 'bsi#noticias', via: 'get'
   match '/professores', to: 'bsi#professores', via: 'get'
-  match '/oportunidades', to: 'bsi#oportunidades', via: 'get'
   match '/institucional', to: 'bsi#institucional', via: 'get'
   match '/institucional/eia', to: 'bsi#eia', via: 'get'
   match '/institucional/ccet', to: 'bsi#ccet', via: 'get'
   match '/institucional/unirio', to: 'bsi#unirio', via: 'get'
+  match '/oportunidades/bolsas_permanencia', to: 'oportunidades#bolsas_permanencia', via:'get', as: 'oportunidades_bolsas_permanencia'
+  match '/oportunidades/jovens_talentos', to: 'oportunidades#jovens_talentos', via:'get', as: 'oportunidades_jovens_talentos'
+  match '/oportunidades/monitoria', to: 'oportunidades#monitoria', via:'get', as: 'oportunidades_monitoria'
+  match '/oportunidades/iniciacao_cientifica', to: 'oportunidades#iniciacao_cientifica', via:'get', as: 'oportunidades_iniciacao_cientifica'
+  match '/oportunidades/ciencia_sem_fronteira', to: 'oportunidades#ciencia_sem_fronteira', via:'get', as: 'oportunidades_ciencia_sem_fronteira'
+  match '/oportunidades/mobilidade_academica', to: 'oportunidades#mobilidade_academica', via:'get', as: 'oportunidades_mobilidade_academica'
+  match '/empresas', to: 'empresas#new', via: 'get'
   resources :tccs
+  resources :oportunidades
+  resources "empresas", only: [:new, :create]
   resources :tags
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

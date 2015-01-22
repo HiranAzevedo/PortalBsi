@@ -28,23 +28,33 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
-    if user && user.persisted? && user.admin? # Logged-in user
+    if user && user.persisted? && user.role == 'administrador' # Logged-in user
       # User can destroy his/her own post
       can :manage, :all
       # Non-logged in users cannot destroy Posts.
       # Typically, can is used a lot more than cannot.
       # cannot :destroy, Post, user_id: nil
-    elsif user && user.persisted? && !user.admin?
+    elsif user && user.persisted? && user.role == 'aluno'
       can [:edit, :update, :salva_publicado, :publicar], Tcc, ['user_id = ?', user.id] do |tcc|
         tcc.id == user.tcc_id
       end
       can [:new,:create,:tipos,:modelo,:processo,:agenda,:publicacoes,:index], Tcc
       can :read,:update, User
       can [:new,:create], Solicitation
+      can [:read, :index, :bolsas_permanencia, :jovens_talentos, :monitoria, :iniciacao_cientifica, :ciencia_sem_fronteira, :mobilidade_academica], Oportunidade
+
+    elsif user && user.persisted? && user.role == 'representante_de_empresa'
+	  can [:tipos,:modelo,:processo,:agenda,:publicacoes,:index], Tcc
+	  cannot :salva_publicacao, Tcc
+      can :read, Professor
+      can :read, User
+      can [:read, :create, :index, :bolsas_permanencia, :jovens_talentos, :monitoria, :iniciacao_cientifica, :ciencia_sem_fronteira, :mobilidade_academica], Oportunidade       
     else
       can [:tipos,:modelo,:processo,:agenda,:publicacoes,:index], Tcc
       can :read, Professor
       can :read, User
+      can [:read, :index, :bolsas_permanencia, :jovens_talentos, :monitoria, :iniciacao_cientifica, :ciencia_sem_fronteira, :mobilidade_academica], Oportunidade
+      can [:new, :create], Empresa  
     end
   end
 end
